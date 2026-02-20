@@ -1,0 +1,1044 @@
+export type Language =
+  | "en"
+  | "fr"
+  | "it"
+  | "de"
+  | "es"
+  | "ar"
+  | "id"
+  | "ja"
+  | "ko"
+  | "pt-BR"
+  | "pl"
+  | "ru"
+  | "zh-CN"
+  | "th"
+  | "zh-TW"
+  | "tr"
+  | "uk"
+  | "vi";
+
+export const LANGUAGE_NAMES: Record<Language, string> = {
+  en: "English",
+  fr: "Français",
+  it: "Italiano",
+  de: "Deutsch",
+  es: "Español",
+  "pt-BR": "Português (BR)",
+  ru: "Русский",
+  pl: "Polski",
+  uk: "Українська",
+  tr: "Türkçe",
+  ar: "العربية",
+  ja: "日本語",
+  ko: "한국어",
+  "zh-CN": "简体中文",
+  "zh-TW": "繁體中文",
+  th: "ไทย",
+  vi: "Tiếng Việt",
+  id: "Bahasa Indonesia",
+};
+
+export const RTL_LANGUAGES: Language[] = ["ar"];
+
+type Translations = Record<string, string>;
+
+export const translations: Record<Language, Translations> = {
+  en: {
+    appTitle: "On-Together Name Customiser",
+    appSubtitle:
+      "Customise your display name colours for On-Together: Virtual Co-Working",
+    nameLabel: "Display Name",
+    namePlaceholder: "Enter your display name...",
+    letterColoursTitle: "Letter Colours",
+    letterColoursHint:
+      "Click letters to select them, then apply a colour or gradient. Use Shift+Click for range, Ctrl/Cmd+Click to toggle.",
+    selectAll: "Select All",
+    deselectAll: "Deselect All",
+    colourLabel: "Colour",
+    applyColour: "Apply Colour",
+    gradientLabel: "Gradient",
+    gradientStart: "Start",
+    gradientEnd: "End",
+    applyGradient: "Apply Gradient",
+    chatColoursTitle: "Chat Colours",
+    colonColourLabel: "Colon Colour",
+    colonColourHint:
+      "The colour of the colon (:) shown after your name in chat",
+    messageColourLabel: "Message Colour",
+    messageColourHint: "The colour of your chat messages",
+    previewTitle: "Preview",
+    previewSampleMessage: "Hello everyone!",
+    generatedCodeTitle: "Generated Code",
+    generatedCodeHint:
+      'Copy this and paste it as the value of "Name" in your PlayerData.txt file',
+    copyButton: "Copy",
+    copiedButton: "Copied!",
+    instructionsTitle: "How to Apply",
+    instructionIntro:
+      "To apply your custom name, edit the PlayerData.txt file:",
+    step1: "Close the game completely.",
+    step2: "Open the PlayerData.txt file located at:",
+    step3: 'Find the "Name" field in the file.',
+    step4: "Replace the value with the generated code above.",
+    step5: "Save the file and start the game.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Alternative Method",
+    altMethodDesc:
+      "You can also use the StatusManager mod by officer_balls and use the /setname command in-game.",
+    tipTitle: "Tips",
+    tip40Char:
+      "The in-game name field has a 40-character limit, but editing PlayerData.txt bypasses this.",
+    tipBackup: "Always back up your PlayerData.txt before editing.",
+    tipEscapeQuotes:
+      'If your name contains quotes, escape them with a backslash (\\") in the JSON file.',
+    enterName: "Enter a name above to get started",
+    noLettersSelected: "Select one or more letters to set their colour",
+    languageLabel: "Language",
+    enableChatColours: "Enable chat colours",
+  },
+
+  ja: {
+    appTitle: "On-Together 名前カスタマイザー",
+    appSubtitle:
+      "On-Together: Virtual Co-Working の表示名の色をカスタマイズ",
+    nameLabel: "表示名",
+    namePlaceholder: "表示名を入力...",
+    letterColoursTitle: "文字の色",
+    letterColoursHint:
+      "文字をクリックして選択し、色やグラデーションを適用。Shift+クリックで範囲選択、Ctrl/Cmd+クリックで個別切替。",
+    selectAll: "すべて選択",
+    deselectAll: "選択解除",
+    colourLabel: "色",
+    applyColour: "色を適用",
+    gradientLabel: "グラデーション",
+    gradientStart: "開始",
+    gradientEnd: "終了",
+    applyGradient: "グラデーションを適用",
+    chatColoursTitle: "チャットの色",
+    colonColourLabel: "コロンの色",
+    colonColourHint: "チャットで名前の後に表示されるコロン（:）の色",
+    messageColourLabel: "メッセージの色",
+    messageColourHint: "チャットメッセージの色",
+    previewTitle: "プレビュー",
+    previewSampleMessage: "みなさん、こんにちは！",
+    generatedCodeTitle: "生成コード",
+    generatedCodeHint:
+      "これをコピーしてPlayerData.txtの「Name」の値として貼り付け",
+    copyButton: "コピー",
+    copiedButton: "コピーしました！",
+    instructionsTitle: "適用方法",
+    instructionIntro:
+      "カスタム名を適用するにはPlayerData.txtファイルを編集します：",
+    step1: "ゲームを完全に終了します。",
+    step2: "以下の場所にあるPlayerData.txtを開きます：",
+    step3: "ファイル内の「Name」項目を見つけます。",
+    step4: "値を上で生成されたコードに置き換えます。",
+    step5: "ファイルを保存してゲームを起動します。",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "別の方法",
+    altMethodDesc:
+      "officer_ballsのStatusManagerモッドを使用して、ゲーム内で/setnameコマンドを使うこともできます。",
+    tipTitle: "ヒント",
+    tip40Char:
+      "ゲーム内の名前欄は40文字制限がありますが、PlayerData.txtの編集でこれを回避できます。",
+    tipBackup: "編集前にPlayerData.txtのバックアップを必ず取ってください。",
+    tipEscapeQuotes:
+      '名前に引用符が含まれる場合、JSONファイルではバックスラッシュでエスケープしてください（\\"）。',
+    enterName: "上に名前を入力して開始",
+    noLettersSelected: "1つ以上の文字を選択して色を設定",
+    languageLabel: "言語",
+    enableChatColours: "チャットの色を有効にする",
+  },
+
+  ko: {
+    appTitle: "On-Together 이름 커스터마이저",
+    appSubtitle:
+      "On-Together: Virtual Co-Working 표시 이름 색상 커스터마이즈",
+    nameLabel: "표시 이름",
+    namePlaceholder: "표시 이름을 입력하세요...",
+    letterColoursTitle: "글자 색상",
+    letterColoursHint:
+      "글자를 클릭하여 선택한 후 색상이나 그라데이션을 적용하세요. Shift+클릭으로 범위 선택, Ctrl/Cmd+클릭으로 토글.",
+    selectAll: "모두 선택",
+    deselectAll: "선택 해제",
+    colourLabel: "색상",
+    applyColour: "색상 적용",
+    gradientLabel: "그라데이션",
+    gradientStart: "시작",
+    gradientEnd: "끝",
+    applyGradient: "그라데이션 적용",
+    chatColoursTitle: "채팅 색상",
+    colonColourLabel: "콜론 색상",
+    colonColourHint: "채팅에서 이름 뒤에 표시되는 콜론(:)의 색상",
+    messageColourLabel: "메시지 색상",
+    messageColourHint: "채팅 메시지의 색상",
+    previewTitle: "미리보기",
+    previewSampleMessage: "안녕하세요!",
+    generatedCodeTitle: "생성된 코드",
+    generatedCodeHint:
+      '이것을 복사하여 PlayerData.txt의 "Name" 값으로 붙여넣기',
+    copyButton: "복사",
+    copiedButton: "복사됨!",
+    instructionsTitle: "적용 방법",
+    instructionIntro:
+      "커스텀 이름을 적용하려면 PlayerData.txt 파일을 편집하세요:",
+    step1: "게임을 완전히 종료합니다.",
+    step2: "다음 위치에 있는 PlayerData.txt를 엽니다:",
+    step3: '파일에서 "Name" 항목을 찾습니다.',
+    step4: "값을 위에서 생성된 코드로 교체합니다.",
+    step5: "파일을 저장하고 게임을 시작합니다.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "대안 방법",
+    altMethodDesc:
+      "officer_balls의 StatusManager 모드를 사용하여 게임 내에서 /setname 명령을 사용할 수도 있습니다.",
+    tipTitle: "팁",
+    tip40Char:
+      "게임 내 이름 필드는 40자 제한이 있지만 PlayerData.txt 편집으로 우회할 수 있습니다.",
+    tipBackup: "편집 전에 항상 PlayerData.txt를 백업하세요.",
+    tipEscapeQuotes:
+      '이름에 따옴표가 포함된 경우 JSON 파일에서 백슬래시로 이스케이프하세요(\\").',
+    enterName: "위에 이름을 입력하여 시작",
+    noLettersSelected: "하나 이상의 글자를 선택하여 색상을 설정하세요",
+    languageLabel: "언어",
+    enableChatColours: "채팅 색상 활성화",
+  },
+
+  "zh-CN": {
+    appTitle: "On-Together 名称自定义工具",
+    appSubtitle: "自定义你在 On-Together: Virtual Co-Working 中的显示名称颜色",
+    nameLabel: "显示名称",
+    namePlaceholder: "输入你的显示名称...",
+    letterColoursTitle: "字母颜色",
+    letterColoursHint:
+      "点击字母选择，然后应用颜色或渐变。Shift+点击选择范围，Ctrl/Cmd+点击切换选择。",
+    selectAll: "全选",
+    deselectAll: "取消选择",
+    colourLabel: "颜色",
+    applyColour: "应用颜色",
+    gradientLabel: "渐变",
+    gradientStart: "起始",
+    gradientEnd: "结束",
+    applyGradient: "应用渐变",
+    chatColoursTitle: "聊天颜色",
+    colonColourLabel: "冒号颜色",
+    colonColourHint: "聊天中显示在名称后面的冒号（:）的颜色",
+    messageColourLabel: "消息颜色",
+    messageColourHint: "你的聊天消息的颜色",
+    previewTitle: "预览",
+    previewSampleMessage: "大家好！",
+    generatedCodeTitle: "生成代码",
+    generatedCodeHint: '复制此代码并粘贴为PlayerData.txt中"Name"的值',
+    copyButton: "复制",
+    copiedButton: "已复制！",
+    instructionsTitle: "如何应用",
+    instructionIntro: "要应用自定义名称，需要编辑PlayerData.txt文件：",
+    step1: "完全关闭游戏。",
+    step2: "打开位于以下路径的PlayerData.txt文件：",
+    step3: '在文件中找到"Name"字段。',
+    step4: "将值替换为上面生成的代码。",
+    step5: "保存文件并启动游戏。",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "替代方法",
+    altMethodDesc:
+      "你也可以使用officer_balls的StatusManager模组，在游戏内使用/setname命令。",
+    tipTitle: "提示",
+    tip40Char:
+      "游戏内名称字段有40个字符的限制，但编辑PlayerData.txt可以绕过此限制。",
+    tipBackup: "编辑前请务必备份你的PlayerData.txt。",
+    tipEscapeQuotes:
+      '如果名称包含引号，请在JSON文件中使用反斜杠转义（\\"）。',
+    enterName: "在上方输入名称以开始",
+    noLettersSelected: "选择一个或多个字母来设置颜色",
+    languageLabel: "语言",
+    enableChatColours: "启用聊天颜色",
+  },
+
+  "zh-TW": {
+    appTitle: "On-Together 名稱自訂工具",
+    appSubtitle: "自訂你在 On-Together: Virtual Co-Working 中的顯示名稱顏色",
+    nameLabel: "顯示名稱",
+    namePlaceholder: "輸入你的顯示名稱...",
+    letterColoursTitle: "字母顏色",
+    letterColoursHint:
+      "點擊字母選擇，然後套用顏色或漸層。Shift+點擊選擇範圍，Ctrl/Cmd+點擊切換選擇。",
+    selectAll: "全選",
+    deselectAll: "取消選擇",
+    colourLabel: "顏色",
+    applyColour: "套用顏色",
+    gradientLabel: "漸層",
+    gradientStart: "起始",
+    gradientEnd: "結束",
+    applyGradient: "套用漸層",
+    chatColoursTitle: "聊天顏色",
+    colonColourLabel: "冒號顏色",
+    colonColourHint: "聊天中顯示在名稱後面的冒號（:）的顏色",
+    messageColourLabel: "訊息顏色",
+    messageColourHint: "你的聊天訊息的顏色",
+    previewTitle: "預覽",
+    previewSampleMessage: "大家好！",
+    generatedCodeTitle: "產生的代碼",
+    generatedCodeHint: '複製此代碼並貼上為PlayerData.txt中「Name」的值',
+    copyButton: "複製",
+    copiedButton: "已複製！",
+    instructionsTitle: "如何套用",
+    instructionIntro: "要套用自訂名稱，需要編輯PlayerData.txt檔案：",
+    step1: "完全關閉遊戲。",
+    step2: "開啟位於以下路徑的PlayerData.txt檔案：",
+    step3: '在檔案中找到「Name」欄位。',
+    step4: "將值替換為上方產生的代碼。",
+    step5: "儲存檔案並啟動遊戲。",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "替代方法",
+    altMethodDesc:
+      "你也可以使用officer_balls的StatusManager模組，在遊戲內使用/setname指令。",
+    tipTitle: "提示",
+    tip40Char:
+      "遊戲內名稱欄位有40個字元的限制，但編輯PlayerData.txt可以繞過此限制。",
+    tipBackup: "編輯前請務必備份你的PlayerData.txt。",
+    tipEscapeQuotes:
+      '如果名稱包含引號，請在JSON檔案中使用反斜線轉義（\\"）。',
+    enterName: "在上方輸入名稱以開始",
+    noLettersSelected: "選擇一個或多個字母來設定顏色",
+    languageLabel: "語言",
+    enableChatColours: "啟用聊天顏色",
+  },
+
+  fr: {
+    appTitle: "On-Together - Personnalisation du nom",
+    appSubtitle:
+      "Personnalisez les couleurs de votre nom dans On-Together : Virtual Co-Working",
+    nameLabel: "Nom d'affichage",
+    namePlaceholder: "Entrez votre nom...",
+    letterColoursTitle: "Couleurs des lettres",
+    letterColoursHint:
+      "Cliquez sur les lettres pour les sélectionner, puis appliquez une couleur ou un dégradé. Maj+Clic pour une plage, Ctrl/Cmd+Clic pour basculer.",
+    selectAll: "Tout sélectionner",
+    deselectAll: "Tout désélectionner",
+    colourLabel: "Couleur",
+    applyColour: "Appliquer la couleur",
+    gradientLabel: "Dégradé",
+    gradientStart: "Début",
+    gradientEnd: "Fin",
+    applyGradient: "Appliquer le dégradé",
+    chatColoursTitle: "Couleurs du chat",
+    colonColourLabel: "Couleur des deux-points",
+    colonColourHint:
+      "La couleur des deux-points (:) affichés après votre nom dans le chat",
+    messageColourLabel: "Couleur du message",
+    messageColourHint: "La couleur de vos messages dans le chat",
+    previewTitle: "Aperçu",
+    previewSampleMessage: "Bonjour à tous !",
+    generatedCodeTitle: "Code généré",
+    generatedCodeHint:
+      'Copiez ceci et collez-le comme valeur de "Name" dans votre fichier PlayerData.txt',
+    copyButton: "Copier",
+    copiedButton: "Copié !",
+    instructionsTitle: "Comment appliquer",
+    instructionIntro:
+      "Pour appliquer votre nom personnalisé, éditez le fichier PlayerData.txt :",
+    step1: "Fermez complètement le jeu.",
+    step2: "Ouvrez le fichier PlayerData.txt situé à :",
+    step3: 'Trouvez le champ "Name" dans le fichier.',
+    step4: "Remplacez la valeur par le code généré ci-dessus.",
+    step5: "Enregistrez le fichier et lancez le jeu.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Méthode alternative",
+    altMethodDesc:
+      "Vous pouvez aussi utiliser le mod StatusManager de officer_balls et utiliser la commande /setname en jeu.",
+    tipTitle: "Conseils",
+    tip40Char:
+      "Le champ de nom en jeu a une limite de 40 caractères, mais éditer PlayerData.txt permet de la contourner.",
+    tipBackup:
+      "Faites toujours une sauvegarde de votre PlayerData.txt avant de le modifier.",
+    tipEscapeQuotes:
+      'Si votre nom contient des guillemets, échappez-les avec un antislash (\\") dans le fichier JSON.',
+    enterName: "Entrez un nom ci-dessus pour commencer",
+    noLettersSelected:
+      "Sélectionnez une ou plusieurs lettres pour définir leur couleur",
+    languageLabel: "Langue",
+    enableChatColours: "Activer les couleurs du chat",
+  },
+
+  de: {
+    appTitle: "On-Together Namens-Anpasser",
+    appSubtitle:
+      "Passe die Farben deines Anzeigenamens in On-Together: Virtual Co-Working an",
+    nameLabel: "Anzeigename",
+    namePlaceholder: "Gib deinen Anzeigenamen ein...",
+    letterColoursTitle: "Buchstabenfarben",
+    letterColoursHint:
+      "Klicke auf Buchstaben, um sie auszuwählen, dann wende eine Farbe oder einen Verlauf an. Shift+Klick für Bereich, Strg/Cmd+Klick zum Umschalten.",
+    selectAll: "Alle auswählen",
+    deselectAll: "Auswahl aufheben",
+    colourLabel: "Farbe",
+    applyColour: "Farbe anwenden",
+    gradientLabel: "Verlauf",
+    gradientStart: "Anfang",
+    gradientEnd: "Ende",
+    applyGradient: "Verlauf anwenden",
+    chatColoursTitle: "Chat-Farben",
+    colonColourLabel: "Doppelpunkt-Farbe",
+    colonColourHint:
+      "Die Farbe des Doppelpunkts (:) nach deinem Namen im Chat",
+    messageColourLabel: "Nachrichtenfarbe",
+    messageColourHint: "Die Farbe deiner Chat-Nachrichten",
+    previewTitle: "Vorschau",
+    previewSampleMessage: "Hallo zusammen!",
+    generatedCodeTitle: "Generierter Code",
+    generatedCodeHint:
+      'Kopiere dies und füge es als Wert von "Name" in deiner PlayerData.txt ein',
+    copyButton: "Kopieren",
+    copiedButton: "Kopiert!",
+    instructionsTitle: "So wendest du es an",
+    instructionIntro:
+      "Um deinen benutzerdefinierten Namen anzuwenden, bearbeite die PlayerData.txt:",
+    step1: "Schließe das Spiel vollständig.",
+    step2: "Öffne die PlayerData.txt unter:",
+    step3: 'Finde das "Name"-Feld in der Datei.',
+    step4: "Ersetze den Wert durch den oben generierten Code.",
+    step5: "Speichere die Datei und starte das Spiel.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Alternative Methode",
+    altMethodDesc:
+      "Du kannst auch den StatusManager-Mod von officer_balls verwenden und den /setname-Befehl im Spiel nutzen.",
+    tipTitle: "Tipps",
+    tip40Char:
+      "Das Namensfeld im Spiel hat ein 40-Zeichen-Limit, aber die Bearbeitung von PlayerData.txt umgeht dies.",
+    tipBackup:
+      "Erstelle immer ein Backup deiner PlayerData.txt vor dem Bearbeiten.",
+    tipEscapeQuotes:
+      'Wenn dein Name Anführungszeichen enthält, escape sie mit einem Backslash (\\") in der JSON-Datei.',
+    enterName: "Gib oben einen Namen ein, um zu beginnen",
+    noLettersSelected:
+      "Wähle einen oder mehrere Buchstaben, um die Farbe festzulegen",
+    languageLabel: "Sprache",
+    enableChatColours: "Chat-Farben aktivieren",
+  },
+
+  es: {
+    appTitle: "On-Together - Personalizador de nombre",
+    appSubtitle:
+      "Personaliza los colores de tu nombre en On-Together: Virtual Co-Working",
+    nameLabel: "Nombre para mostrar",
+    namePlaceholder: "Ingresa tu nombre...",
+    letterColoursTitle: "Colores de letras",
+    letterColoursHint:
+      "Haz clic en las letras para seleccionarlas, luego aplica un color o degradado. Shift+Clic para rango, Ctrl/Cmd+Clic para alternar.",
+    selectAll: "Seleccionar todo",
+    deselectAll: "Deseleccionar todo",
+    colourLabel: "Color",
+    applyColour: "Aplicar color",
+    gradientLabel: "Degradado",
+    gradientStart: "Inicio",
+    gradientEnd: "Final",
+    applyGradient: "Aplicar degradado",
+    chatColoursTitle: "Colores del chat",
+    colonColourLabel: "Color de los dos puntos",
+    colonColourHint:
+      "El color de los dos puntos (:) que aparecen después de tu nombre en el chat",
+    messageColourLabel: "Color del mensaje",
+    messageColourHint: "El color de tus mensajes en el chat",
+    previewTitle: "Vista previa",
+    previewSampleMessage: "¡Hola a todos!",
+    generatedCodeTitle: "Código generado",
+    generatedCodeHint:
+      'Copia esto y pégalo como valor de "Name" en tu archivo PlayerData.txt',
+    copyButton: "Copiar",
+    copiedButton: "¡Copiado!",
+    instructionsTitle: "Cómo aplicar",
+    instructionIntro:
+      "Para aplicar tu nombre personalizado, edita el archivo PlayerData.txt:",
+    step1: "Cierra el juego completamente.",
+    step2: "Abre el archivo PlayerData.txt ubicado en:",
+    step3: 'Encuentra el campo "Name" en el archivo.',
+    step4: "Reemplaza el valor con el código generado arriba.",
+    step5: "Guarda el archivo e inicia el juego.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Método alternativo",
+    altMethodDesc:
+      "También puedes usar el mod StatusManager de officer_balls y usar el comando /setname en el juego.",
+    tipTitle: "Consejos",
+    tip40Char:
+      "El campo de nombre en el juego tiene un límite de 40 caracteres, pero editar PlayerData.txt lo evita.",
+    tipBackup:
+      "Siempre haz una copia de seguridad de tu PlayerData.txt antes de editarlo.",
+    tipEscapeQuotes:
+      'Si tu nombre contiene comillas, escápalas con una barra invertida (\\") en el archivo JSON.',
+    enterName: "Ingresa un nombre arriba para comenzar",
+    noLettersSelected:
+      "Selecciona una o más letras para establecer su color",
+    languageLabel: "Idioma",
+    enableChatColours: "Activar colores del chat",
+  },
+
+  "pt-BR": {
+    appTitle: "On-Together - Personalizador de nome",
+    appSubtitle:
+      "Personalize as cores do seu nome no On-Together: Virtual Co-Working",
+    nameLabel: "Nome de exibição",
+    namePlaceholder: "Digite seu nome...",
+    letterColoursTitle: "Cores das letras",
+    letterColoursHint:
+      "Clique nas letras para selecioná-las, então aplique uma cor ou gradiente. Shift+Clique para intervalo, Ctrl/Cmd+Clique para alternar.",
+    selectAll: "Selecionar tudo",
+    deselectAll: "Desmarcar tudo",
+    colourLabel: "Cor",
+    applyColour: "Aplicar cor",
+    gradientLabel: "Gradiente",
+    gradientStart: "Início",
+    gradientEnd: "Fim",
+    applyGradient: "Aplicar gradiente",
+    chatColoursTitle: "Cores do chat",
+    colonColourLabel: "Cor dos dois pontos",
+    colonColourHint:
+      "A cor dos dois pontos (:) exibidos após seu nome no chat",
+    messageColourLabel: "Cor da mensagem",
+    messageColourHint: "A cor das suas mensagens no chat",
+    previewTitle: "Pré-visualização",
+    previewSampleMessage: "Olá a todos!",
+    generatedCodeTitle: "Código gerado",
+    generatedCodeHint:
+      'Copie isso e cole como valor de "Name" no seu arquivo PlayerData.txt',
+    copyButton: "Copiar",
+    copiedButton: "Copiado!",
+    instructionsTitle: "Como aplicar",
+    instructionIntro:
+      "Para aplicar seu nome personalizado, edite o arquivo PlayerData.txt:",
+    step1: "Feche o jogo completamente.",
+    step2: "Abra o arquivo PlayerData.txt localizado em:",
+    step3: 'Encontre o campo "Name" no arquivo.',
+    step4: "Substitua o valor pelo código gerado acima.",
+    step5: "Salve o arquivo e inicie o jogo.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Método alternativo",
+    altMethodDesc:
+      "Você também pode usar o mod StatusManager do officer_balls e usar o comando /setname no jogo.",
+    tipTitle: "Dicas",
+    tip40Char:
+      "O campo de nome no jogo tem um limite de 40 caracteres, mas editar o PlayerData.txt contorna isso.",
+    tipBackup:
+      "Sempre faça backup do seu PlayerData.txt antes de editar.",
+    tipEscapeQuotes:
+      'Se seu nome contém aspas, escape-as com uma barra invertida (\\") no arquivo JSON.',
+    enterName: "Digite um nome acima para começar",
+    noLettersSelected:
+      "Selecione uma ou mais letras para definir sua cor",
+    languageLabel: "Idioma",
+    enableChatColours: "Ativar cores do chat",
+  },
+
+  ru: {
+    appTitle: "On-Together — Настройка имени",
+    appSubtitle:
+      "Настройте цвета отображаемого имени в On-Together: Virtual Co-Working",
+    nameLabel: "Отображаемое имя",
+    namePlaceholder: "Введите имя...",
+    letterColoursTitle: "Цвета букв",
+    letterColoursHint:
+      "Нажмите на буквы для выбора, затем примените цвет или градиент. Shift+Клик для диапазона, Ctrl/Cmd+Клик для переключения.",
+    selectAll: "Выбрать все",
+    deselectAll: "Снять выделение",
+    colourLabel: "Цвет",
+    applyColour: "Применить цвет",
+    gradientLabel: "Градиент",
+    gradientStart: "Начало",
+    gradientEnd: "Конец",
+    applyGradient: "Применить градиент",
+    chatColoursTitle: "Цвета чата",
+    colonColourLabel: "Цвет двоеточия",
+    colonColourHint:
+      "Цвет двоеточия (:) после вашего имени в чате",
+    messageColourLabel: "Цвет сообщения",
+    messageColourHint: "Цвет ваших сообщений в чате",
+    previewTitle: "Предпросмотр",
+    previewSampleMessage: "Всем привет!",
+    generatedCodeTitle: "Сгенерированный код",
+    generatedCodeHint:
+      'Скопируйте это и вставьте как значение "Name" в файле PlayerData.txt',
+    copyButton: "Копировать",
+    copiedButton: "Скопировано!",
+    instructionsTitle: "Как применить",
+    instructionIntro:
+      "Чтобы применить своё имя, отредактируйте файл PlayerData.txt:",
+    step1: "Полностью закройте игру.",
+    step2: "Откройте файл PlayerData.txt по адресу:",
+    step3: 'Найдите поле "Name" в файле.',
+    step4: "Замените значение на сгенерированный код выше.",
+    step5: "Сохраните файл и запустите игру.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Альтернативный метод",
+    altMethodDesc:
+      "Вы также можете использовать мод StatusManager от officer_balls и команду /setname в игре.",
+    tipTitle: "Советы",
+    tip40Char:
+      "Поле имени в игре ограничено 40 символами, но редактирование PlayerData.txt обходит это.",
+    tipBackup:
+      "Всегда делайте резервную копию PlayerData.txt перед редактированием.",
+    tipEscapeQuotes:
+      'Если имя содержит кавычки, экранируйте их обратным слэшем (\\") в JSON-файле.',
+    enterName: "Введите имя выше, чтобы начать",
+    noLettersSelected:
+      "Выберите одну или несколько букв для установки цвета",
+    languageLabel: "Язык",
+    enableChatColours: "Включить цвета чата",
+  },
+
+  it: {
+    appTitle: "On-Together - Personalizzatore del nome",
+    appSubtitle:
+      "Personalizza i colori del tuo nome visualizzato in On-Together: Virtual Co-Working",
+    nameLabel: "Nome visualizzato",
+    namePlaceholder: "Inserisci il tuo nome...",
+    letterColoursTitle: "Colori delle lettere",
+    letterColoursHint:
+      "Clicca sulle lettere per selezionarle, poi applica un colore o sfumatura. Shift+Clic per intervallo, Ctrl/Cmd+Clic per alternare.",
+    selectAll: "Seleziona tutto",
+    deselectAll: "Deseleziona tutto",
+    colourLabel: "Colore",
+    applyColour: "Applica colore",
+    gradientLabel: "Sfumatura",
+    gradientStart: "Inizio",
+    gradientEnd: "Fine",
+    applyGradient: "Applica sfumatura",
+    chatColoursTitle: "Colori della chat",
+    colonColourLabel: "Colore dei due punti",
+    colonColourHint:
+      "Il colore dei due punti (:) mostrati dopo il tuo nome nella chat",
+    messageColourLabel: "Colore del messaggio",
+    messageColourHint: "Il colore dei tuoi messaggi nella chat",
+    previewTitle: "Anteprima",
+    previewSampleMessage: "Ciao a tutti!",
+    generatedCodeTitle: "Codice generato",
+    generatedCodeHint:
+      'Copia questo e incollalo come valore di "Name" nel tuo file PlayerData.txt',
+    copyButton: "Copia",
+    copiedButton: "Copiato!",
+    instructionsTitle: "Come applicare",
+    instructionIntro:
+      "Per applicare il tuo nome personalizzato, modifica il file PlayerData.txt:",
+    step1: "Chiudi completamente il gioco.",
+    step2: "Apri il file PlayerData.txt che si trova in:",
+    step3: 'Trova il campo "Name" nel file.',
+    step4: "Sostituisci il valore con il codice generato sopra.",
+    step5: "Salva il file e avvia il gioco.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Metodo alternativo",
+    altMethodDesc:
+      "Puoi anche usare il mod StatusManager di officer_balls e il comando /setname nel gioco.",
+    tipTitle: "Suggerimenti",
+    tip40Char:
+      "Il campo nome nel gioco ha un limite di 40 caratteri, ma modificare PlayerData.txt lo aggira.",
+    tipBackup:
+      "Fai sempre un backup del tuo PlayerData.txt prima di modificarlo.",
+    tipEscapeQuotes:
+      'Se il tuo nome contiene virgolette, escapale con un backslash (\\") nel file JSON.',
+    enterName: "Inserisci un nome sopra per iniziare",
+    noLettersSelected:
+      "Seleziona una o più lettere per impostare il loro colore",
+    languageLabel: "Lingua",
+    enableChatColours: "Attiva colori della chat",
+  },
+
+  tr: {
+    appTitle: "On-Together Ad Özelleştirici",
+    appSubtitle:
+      "On-Together: Virtual Co-Working'deki görünen adınızın renklerini özelleştirin",
+    nameLabel: "Görünen Ad",
+    namePlaceholder: "Adınızı girin...",
+    letterColoursTitle: "Harf Renkleri",
+    letterColoursHint:
+      "Harflere tıklayarak seçin, sonra renk veya gradyan uygulayın. Shift+Tık aralık seçimi, Ctrl/Cmd+Tık değiştirme.",
+    selectAll: "Tümünü Seç",
+    deselectAll: "Seçimi Kaldır",
+    colourLabel: "Renk",
+    applyColour: "Renk Uygula",
+    gradientLabel: "Gradyan",
+    gradientStart: "Başlangıç",
+    gradientEnd: "Bitiş",
+    applyGradient: "Gradyan Uygula",
+    chatColoursTitle: "Sohbet Renkleri",
+    colonColourLabel: "İki Nokta Rengi",
+    colonColourHint:
+      "Sohbette adınızdan sonra gösterilen iki nokta (:) üst üste rengi",
+    messageColourLabel: "Mesaj Rengi",
+    messageColourHint: "Sohbet mesajlarınızın rengi",
+    previewTitle: "Önizleme",
+    previewSampleMessage: "Herkese merhaba!",
+    generatedCodeTitle: "Oluşturulan Kod",
+    generatedCodeHint:
+      'Bunu kopyalayıp PlayerData.txt dosyanızdaki "Name" değeri olarak yapıştırın',
+    copyButton: "Kopyala",
+    copiedButton: "Kopyalandı!",
+    instructionsTitle: "Nasıl Uygulanır",
+    instructionIntro:
+      "Özel adınızı uygulamak için PlayerData.txt dosyasını düzenleyin:",
+    step1: "Oyunu tamamen kapatın.",
+    step2: "Şu konumdaki PlayerData.txt dosyasını açın:",
+    step3: 'Dosyada "Name" alanını bulun.',
+    step4: "Değeri yukarıda oluşturulan kodla değiştirin.",
+    step5: "Dosyayı kaydedin ve oyunu başlatın.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Alternatif Yöntem",
+    altMethodDesc:
+      "officer_balls'un StatusManager modunu kullanarak oyun içinde /setname komutunu da kullanabilirsiniz.",
+    tipTitle: "İpuçları",
+    tip40Char:
+      "Oyun içi ad alanının 40 karakter sınırı var, ancak PlayerData.txt'yi düzenlemek bunu atlar.",
+    tipBackup:
+      "Düzenlemeden önce her zaman PlayerData.txt'nizin yedeğini alın.",
+    tipEscapeQuotes:
+      'Adınız tırnak işaretleri içeriyorsa, JSON dosyasında ters eğik çizgi ile kaçırın (\\").',
+    enterName: "Başlamak için yukarıya bir ad girin",
+    noLettersSelected:
+      "Renklerini ayarlamak için bir veya daha fazla harf seçin",
+    languageLabel: "Dil",
+    enableChatColours: "Sohbet renklerini etkinleştir",
+  },
+
+  pl: {
+    appTitle: "On-Together — Personalizacja nazwy",
+    appSubtitle:
+      "Dostosuj kolory wyświetlanej nazwy w On-Together: Virtual Co-Working",
+    nameLabel: "Nazwa wyświetlana",
+    namePlaceholder: "Wpisz swoją nazwę...",
+    letterColoursTitle: "Kolory liter",
+    letterColoursHint:
+      "Kliknij litery, aby je wybrać, następnie zastosuj kolor lub gradient. Shift+Klik dla zakresu, Ctrl/Cmd+Klik do przełączania.",
+    selectAll: "Zaznacz wszystko",
+    deselectAll: "Odznacz wszystko",
+    colourLabel: "Kolor",
+    applyColour: "Zastosuj kolor",
+    gradientLabel: "Gradient",
+    gradientStart: "Początek",
+    gradientEnd: "Koniec",
+    applyGradient: "Zastosuj gradient",
+    chatColoursTitle: "Kolory czatu",
+    colonColourLabel: "Kolor dwukropka",
+    colonColourHint:
+      "Kolor dwukropka (:) wyświetlanego po nazwie w czacie",
+    messageColourLabel: "Kolor wiadomości",
+    messageColourHint: "Kolor twoich wiadomości na czacie",
+    previewTitle: "Podgląd",
+    previewSampleMessage: "Cześć wszystkim!",
+    generatedCodeTitle: "Wygenerowany kod",
+    generatedCodeHint:
+      'Skopiuj to i wklej jako wartość "Name" w pliku PlayerData.txt',
+    copyButton: "Kopiuj",
+    copiedButton: "Skopiowano!",
+    instructionsTitle: "Jak zastosować",
+    instructionIntro:
+      "Aby zastosować niestandardową nazwę, edytuj plik PlayerData.txt:",
+    step1: "Całkowicie zamknij grę.",
+    step2: "Otwórz plik PlayerData.txt znajdujący się w:",
+    step3: 'Znajdź pole "Name" w pliku.',
+    step4: "Zamień wartość na wygenerowany powyżej kod.",
+    step5: "Zapisz plik i uruchom grę.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Alternatywna metoda",
+    altMethodDesc:
+      "Możesz też użyć moda StatusManager od officer_balls i komendy /setname w grze.",
+    tipTitle: "Wskazówki",
+    tip40Char:
+      "Pole nazwy w grze ma limit 40 znaków, ale edycja PlayerData.txt omija to.",
+    tipBackup:
+      "Zawsze rób kopię zapasową PlayerData.txt przed edycją.",
+    tipEscapeQuotes:
+      'Jeśli nazwa zawiera cudzysłowy, ucieczka je odwrotnym ukośnikiem (\\") w pliku JSON.',
+    enterName: "Wpisz nazwę powyżej, aby rozpocząć",
+    noLettersSelected:
+      "Wybierz jedną lub więcej liter, aby ustawić ich kolor",
+    languageLabel: "Język",
+    enableChatColours: "Włącz kolory czatu",
+  },
+
+  uk: {
+    appTitle: "On-Together — Налаштування імені",
+    appSubtitle:
+      "Налаштуйте кольори відображуваного імені в On-Together: Virtual Co-Working",
+    nameLabel: "Відображуване ім'я",
+    namePlaceholder: "Введіть ім'я...",
+    letterColoursTitle: "Кольори літер",
+    letterColoursHint:
+      "Натисніть на літери для вибору, потім застосуйте колір або градієнт. Shift+Клік для діапазону, Ctrl/Cmd+Клік для перемикання.",
+    selectAll: "Вибрати все",
+    deselectAll: "Зняти виділення",
+    colourLabel: "Колір",
+    applyColour: "Застосувати колір",
+    gradientLabel: "Градієнт",
+    gradientStart: "Початок",
+    gradientEnd: "Кінець",
+    applyGradient: "Застосувати градієнт",
+    chatColoursTitle: "Кольори чату",
+    colonColourLabel: "Колір двокрапки",
+    colonColourHint:
+      "Колір двокрапки (:) після вашого імені в чаті",
+    messageColourLabel: "Колір повідомлення",
+    messageColourHint: "Колір ваших повідомлень у чаті",
+    previewTitle: "Попередній перегляд",
+    previewSampleMessage: "Привіт усім!",
+    generatedCodeTitle: "Згенерований код",
+    generatedCodeHint:
+      'Скопіюйте це та вставте як значення "Name" у файлі PlayerData.txt',
+    copyButton: "Копіювати",
+    copiedButton: "Скопійовано!",
+    instructionsTitle: "Як застосувати",
+    instructionIntro:
+      "Щоб застосувати власне ім'я, відредагуйте файл PlayerData.txt:",
+    step1: "Повністю закрийте гру.",
+    step2: "Відкрийте файл PlayerData.txt за адресою:",
+    step3: 'Знайдіть поле "Name" у файлі.',
+    step4: "Замініть значення на згенерований код вище.",
+    step5: "Збережіть файл та запустіть гру.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Альтернативний метод",
+    altMethodDesc:
+      "Ви також можете використати мод StatusManager від officer_balls та команду /setname у грі.",
+    tipTitle: "Поради",
+    tip40Char:
+      "Поле імені в грі обмежене 40 символами, але редагування PlayerData.txt обходить це.",
+    tipBackup:
+      "Завжди робіть резервну копію PlayerData.txt перед редагуванням.",
+    tipEscapeQuotes:
+      'Якщо ім\'я містить лапки, екрануйте їх зворотним слешем (\\") у JSON-файлі.',
+    enterName: "Введіть ім'я вище, щоб почати",
+    noLettersSelected:
+      "Виберіть одну або кілька літер для встановлення кольору",
+    languageLabel: "Мова",
+    enableChatColours: "Увімкнути кольори чату",
+  },
+
+  ar: {
+    appTitle: "أداة تخصيص الاسم - On-Together",
+    appSubtitle:
+      "خصّص ألوان اسمك المعروض في On-Together: Virtual Co-Working",
+    nameLabel: "الاسم المعروض",
+    namePlaceholder: "أدخل اسمك...",
+    letterColoursTitle: "ألوان الحروف",
+    letterColoursHint:
+      "انقر على الحروف لتحديدها، ثم طبّق لوناً أو تدرجاً. Shift+نقر للنطاق، Ctrl/Cmd+نقر للتبديل.",
+    selectAll: "تحديد الكل",
+    deselectAll: "إلغاء التحديد",
+    colourLabel: "اللون",
+    applyColour: "تطبيق اللون",
+    gradientLabel: "تدرج",
+    gradientStart: "البداية",
+    gradientEnd: "النهاية",
+    applyGradient: "تطبيق التدرج",
+    chatColoursTitle: "ألوان الدردشة",
+    colonColourLabel: "لون النقطتين",
+    colonColourHint: "لون النقطتين (:) المعروضتين بعد اسمك في الدردشة",
+    messageColourLabel: "لون الرسالة",
+    messageColourHint: "لون رسائلك في الدردشة",
+    previewTitle: "معاينة",
+    previewSampleMessage: "مرحباً بالجميع!",
+    generatedCodeTitle: "الكود المُنشأ",
+    generatedCodeHint:
+      'انسخ هذا والصقه كقيمة "Name" في ملف PlayerData.txt',
+    copyButton: "نسخ",
+    copiedButton: "تم النسخ!",
+    instructionsTitle: "كيفية التطبيق",
+    instructionIntro:
+      "لتطبيق اسمك المخصص، عدّل ملف PlayerData.txt:",
+    step1: "أغلق اللعبة تماماً.",
+    step2: "افتح ملف PlayerData.txt الموجود في:",
+    step3: 'ابحث عن حقل "Name" في الملف.',
+    step4: "استبدل القيمة بالكود المُنشأ أعلاه.",
+    step5: "احفظ الملف وابدأ اللعبة.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "طريقة بديلة",
+    altMethodDesc:
+      "يمكنك أيضاً استخدام مود StatusManager من officer_balls واستخدام أمر /setname في اللعبة.",
+    tipTitle: "نصائح",
+    tip40Char:
+      "حقل الاسم في اللعبة محدود بـ 40 حرفاً، لكن تعديل PlayerData.txt يتجاوز هذا.",
+    tipBackup: "احرص دائماً على نسخ PlayerData.txt احتياطياً قبل التعديل.",
+    tipEscapeQuotes:
+      'إذا كان اسمك يحتوي على علامات اقتباس، قم بتهريبها بشرطة مائلة عكسية (\\") في ملف JSON.',
+    enterName: "أدخل اسماً أعلاه للبدء",
+    noLettersSelected: "حدد حرفاً واحداً أو أكثر لتعيين لونه",
+    languageLabel: "اللغة",
+    enableChatColours: "تفعيل ألوان الدردشة",
+  },
+
+  id: {
+    appTitle: "On-Together Kustomisasi Nama",
+    appSubtitle:
+      "Kustomisasi warna nama tampilan Anda di On-Together: Virtual Co-Working",
+    nameLabel: "Nama Tampilan",
+    namePlaceholder: "Masukkan nama Anda...",
+    letterColoursTitle: "Warna Huruf",
+    letterColoursHint:
+      "Klik huruf untuk memilih, lalu terapkan warna atau gradien. Shift+Klik untuk rentang, Ctrl/Cmd+Klik untuk beralih.",
+    selectAll: "Pilih Semua",
+    deselectAll: "Batalkan Pilihan",
+    colourLabel: "Warna",
+    applyColour: "Terapkan Warna",
+    gradientLabel: "Gradien",
+    gradientStart: "Mulai",
+    gradientEnd: "Akhir",
+    applyGradient: "Terapkan Gradien",
+    chatColoursTitle: "Warna Chat",
+    colonColourLabel: "Warna Titik Dua",
+    colonColourHint:
+      "Warna titik dua (:) yang ditampilkan setelah nama Anda di chat",
+    messageColourLabel: "Warna Pesan",
+    messageColourHint: "Warna pesan chat Anda",
+    previewTitle: "Pratinjau",
+    previewSampleMessage: "Halo semuanya!",
+    generatedCodeTitle: "Kode yang Dihasilkan",
+    generatedCodeHint:
+      'Salin ini dan tempel sebagai nilai "Name" di file PlayerData.txt Anda',
+    copyButton: "Salin",
+    copiedButton: "Tersalin!",
+    instructionsTitle: "Cara Menerapkan",
+    instructionIntro:
+      "Untuk menerapkan nama kustom Anda, edit file PlayerData.txt:",
+    step1: "Tutup game sepenuhnya.",
+    step2: "Buka file PlayerData.txt yang terletak di:",
+    step3: 'Temukan kolom "Name" di file.',
+    step4: "Ganti nilainya dengan kode yang dihasilkan di atas.",
+    step5: "Simpan file dan mulai game.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Metode Alternatif",
+    altMethodDesc:
+      "Anda juga bisa menggunakan mod StatusManager dari officer_balls dan menggunakan perintah /setname di dalam game.",
+    tipTitle: "Tips",
+    tip40Char:
+      "Kolom nama di game memiliki batas 40 karakter, tetapi mengedit PlayerData.txt melewati ini.",
+    tipBackup: "Selalu cadangkan PlayerData.txt Anda sebelum mengedit.",
+    tipEscapeQuotes:
+      'Jika nama Anda mengandung tanda kutip, escape dengan backslash (\\") di file JSON.',
+    enterName: "Masukkan nama di atas untuk memulai",
+    noLettersSelected:
+      "Pilih satu atau lebih huruf untuk mengatur warnanya",
+    languageLabel: "Bahasa",
+    enableChatColours: "Aktifkan warna chat",
+  },
+
+  th: {
+    appTitle: "On-Together เครื่องมือปรับแต่งชื่อ",
+    appSubtitle:
+      "ปรับแต่งสีชื่อแสดงผลของคุณใน On-Together: Virtual Co-Working",
+    nameLabel: "ชื่อที่แสดง",
+    namePlaceholder: "ป้อนชื่อของคุณ...",
+    letterColoursTitle: "สีตัวอักษร",
+    letterColoursHint:
+      "คลิกตัวอักษรเพื่อเลือก แล้วใช้สีหรือไล่สี Shift+คลิกเพื่อเลือกช่วง Ctrl/Cmd+คลิกเพื่อสลับ",
+    selectAll: "เลือกทั้งหมด",
+    deselectAll: "ยกเลิกการเลือก",
+    colourLabel: "สี",
+    applyColour: "ใช้สี",
+    gradientLabel: "ไล่สี",
+    gradientStart: "เริ่ม",
+    gradientEnd: "สิ้นสุด",
+    applyGradient: "ใช้ไล่สี",
+    chatColoursTitle: "สีแชท",
+    colonColourLabel: "สีจุดคู่",
+    colonColourHint: "สีของจุดคู่ (:) ที่แสดงหลังชื่อของคุณในแชท",
+    messageColourLabel: "สีข้อความ",
+    messageColourHint: "สีข้อความแชทของคุณ",
+    previewTitle: "ตัวอย่าง",
+    previewSampleMessage: "สวัสดีทุกคน!",
+    generatedCodeTitle: "โค้ดที่สร้าง",
+    generatedCodeHint:
+      'คัดลอกนี้และวางเป็นค่าของ "Name" ในไฟล์ PlayerData.txt',
+    copyButton: "คัดลอก",
+    copiedButton: "คัดลอกแล้ว!",
+    instructionsTitle: "วิธีใช้งาน",
+    instructionIntro:
+      "เพื่อใช้ชื่อแบบกำหนดเอง ให้แก้ไขไฟล์ PlayerData.txt:",
+    step1: "ปิดเกมทั้งหมด",
+    step2: "เปิดไฟล์ PlayerData.txt ที่ตั้งอยู่ที่:",
+    step3: 'ค้นหาฟิลด์ "Name" ในไฟล์',
+    step4: "แทนที่ค่าด้วยโค้ดที่สร้างด้านบน",
+    step5: "บันทึกไฟล์และเริ่มเกม",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "วิธีทางเลือก",
+    altMethodDesc:
+      "คุณยังสามารถใช้ม็อด StatusManager โดย officer_balls และใช้คำสั่ง /setname ในเกม",
+    tipTitle: "เคล็ดลับ",
+    tip40Char:
+      "ช่องชื่อในเกมมีจำกัด 40 ตัวอักษร แต่การแก้ไข PlayerData.txt จะข้ามข้อจำกัดนี้",
+    tipBackup: "สำรองไฟล์ PlayerData.txt ก่อนแก้ไขเสมอ",
+    tipEscapeQuotes:
+      'หากชื่อมีเครื่องหมายอัญประกาศ ให้ escape ด้วย backslash (\\") ในไฟล์ JSON',
+    enterName: "ป้อนชื่อด้านบนเพื่อเริ่มต้น",
+    noLettersSelected: "เลือกตัวอักษรหนึ่งตัวขึ้นไปเพื่อตั้งสี",
+    languageLabel: "ภาษา",
+    enableChatColours: "เปิดใช้สีแชท",
+  },
+
+  vi: {
+    appTitle: "On-Together Tùy chỉnh Tên",
+    appSubtitle:
+      "Tùy chỉnh màu sắc tên hiển thị trong On-Together: Virtual Co-Working",
+    nameLabel: "Tên hiển thị",
+    namePlaceholder: "Nhập tên của bạn...",
+    letterColoursTitle: "Màu chữ cái",
+    letterColoursHint:
+      "Nhấp vào chữ cái để chọn, sau đó áp dụng màu hoặc gradient. Shift+Nhấp cho phạm vi, Ctrl/Cmd+Nhấp để chuyển đổi.",
+    selectAll: "Chọn tất cả",
+    deselectAll: "Bỏ chọn",
+    colourLabel: "Màu",
+    applyColour: "Áp dụng màu",
+    gradientLabel: "Gradient",
+    gradientStart: "Bắt đầu",
+    gradientEnd: "Kết thúc",
+    applyGradient: "Áp dụng gradient",
+    chatColoursTitle: "Màu chat",
+    colonColourLabel: "Màu dấu hai chấm",
+    colonColourHint:
+      "Màu của dấu hai chấm (:) hiển thị sau tên bạn trong chat",
+    messageColourLabel: "Màu tin nhắn",
+    messageColourHint: "Màu tin nhắn chat của bạn",
+    previewTitle: "Xem trước",
+    previewSampleMessage: "Xin chào mọi người!",
+    generatedCodeTitle: "Mã được tạo",
+    generatedCodeHint:
+      'Sao chép và dán làm giá trị "Name" trong tệp PlayerData.txt',
+    copyButton: "Sao chép",
+    copiedButton: "Đã sao chép!",
+    instructionsTitle: "Cách áp dụng",
+    instructionIntro:
+      "Để áp dụng tên tùy chỉnh, chỉnh sửa tệp PlayerData.txt:",
+    step1: "Đóng trò chơi hoàn toàn.",
+    step2: "Mở tệp PlayerData.txt tại:",
+    step3: 'Tìm trường "Name" trong tệp.',
+    step4: "Thay thế giá trị bằng mã được tạo ở trên.",
+    step5: "Lưu tệp và khởi động trò chơi.",
+    windowsLabel: "Windows",
+    macLabel: "Mac",
+    altMethodTitle: "Phương pháp thay thế",
+    altMethodDesc:
+      "Bạn cũng có thể sử dụng mod StatusManager của officer_balls và dùng lệnh /setname trong trò chơi.",
+    tipTitle: "Mẹo",
+    tip40Char:
+      "Trường tên trong trò chơi giới hạn 40 ký tự, nhưng chỉnh sửa PlayerData.txt bỏ qua giới hạn này.",
+    tipBackup: "Luôn sao lưu PlayerData.txt trước khi chỉnh sửa.",
+    tipEscapeQuotes:
+      'Nếu tên chứa dấu ngoặc kép, hãy thoát chúng bằng dấu gạch chéo ngược (\\") trong tệp JSON.',
+    enterName: "Nhập tên ở trên để bắt đầu",
+    noLettersSelected:
+      "Chọn một hoặc nhiều chữ cái để đặt màu",
+    languageLabel: "Ngôn ngữ",
+    enableChatColours: "Bật màu chat",
+  },
+};

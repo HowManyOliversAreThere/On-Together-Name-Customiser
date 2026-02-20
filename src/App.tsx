@@ -1,7 +1,12 @@
-import { ComponentExample } from "@/components/component-example";
+import { I18nProvider } from "@/lib/i18n";
+import { NameCustomiser } from "@/components/name-customiser";
 
 export function App() {
-return <ComponentExample />;
+  return (
+    <I18nProvider>
+      <NameCustomiser />
+    </I18nProvider>
+  );
 }
 
 export default App;
