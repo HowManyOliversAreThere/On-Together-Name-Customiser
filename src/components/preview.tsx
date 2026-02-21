@@ -1,4 +1,4 @@
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/hooks/use-i18n";
 
 interface PreviewProps {
   name: string;
@@ -19,14 +19,14 @@ export function Preview({
 
   if (!name) {
     return (
-      <div className="rounded-xl bg-zinc-900 p-4 font-mono text-sm">
-        <span className="text-zinc-500 italic">{t("enterName")}</span>
+      <div className="rounded-xl bg-[#8B5C7B] p-4 text-sm">
+        <span className="text-white/50 italic">{t("enterName")}</span>
       </div>
     );
   }
 
   return (
-    <div className="rounded-xl bg-zinc-900 p-4 font-mono text-sm leading-relaxed">
+    <div className="rounded-xl bg-[#8B5C7B] p-4 text-sm leading-relaxed">
       {/* Name with colours */}
       <span>
         {name.split("").map((letter, index) => (

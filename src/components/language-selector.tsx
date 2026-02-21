@@ -1,4 +1,5 @@
-import { useI18n, LANGUAGE_NAMES, type Language } from "@/lib/i18n";
+import { useI18n } from "@/hooks/use-i18n";
+import { LANGUAGE_NAMES, type Language } from "@/lib/i18n";
 import { RTL_LANGUAGES } from "@/lib/translations";
 import {
   Select,

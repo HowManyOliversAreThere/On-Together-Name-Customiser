@@ -122,6 +122,24 @@
     }
   body {
     @apply font-sans bg-background text-foreground;
+    background-image: repeating-linear-gradient(
+      -15deg,
+      #8EA3D0 0px, #8EA3D0 160px,
+      #8B5C7B 160px, #8B5C7B 168px,
+      #AA91D0 168px, #AA91D0 328px,
+      #8B5C7B 328px, #8B5C7B 336px,
+      #ED8D7F 336px, #ED8D7F 496px,
+      #8B5C7B 496px, #8B5C7B 504px,
+      #ECB677 504px, #ECB677 664px,
+      #8B5C7B 664px, #8B5C7B 672px,
+      #B3D17F 672px, #B3D17F 832px,
+      #8B5C7B 832px, #8B5C7B 840px,
+      #81B7B9 840px, #81B7B9 1000px,
+      #8B5C7B 1000px, #8B5C7B 1008px,
+      #E799C0 1008px, #E799C0 1168px,
+      #8B5C7B 1168px, #8B5C7B 1176px
+    );
+    background-color: #8EA3D0;
     }
   html {
     @apply font-sans;

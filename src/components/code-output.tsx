@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/hooks/use-i18n";
 import { Button } from "@/components/ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
@@ -43,8 +43,8 @@ export function CodeOutput({ code }: CodeOutputProps) {
 
   return (
     <div className="space-y-2">
-      <div className="relative rounded-xl border border-border bg-zinc-900 p-4">
-        <pre className="overflow-x-auto whitespace-pre-wrap break-all font-mono text-sm text-zinc-200 pr-16">
+      <div className="relative rounded-xl border border-border bg-zinc-100 p-4">
+        <pre className="overflow-x-auto whitespace-pre-wrap break-all font-mono text-sm text-zinc-700 pr-16">
           {code}
         </pre>
         <Button

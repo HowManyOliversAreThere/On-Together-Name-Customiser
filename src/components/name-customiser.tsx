@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from "react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/hooks/use-i18n";
 import { generateGradient } from "@/lib/colour-utils";
 import { generateTags } from "@/lib/tag-generator";
 import { LanguageSelector } from "@/components/language-selector";
