@@ -29,7 +29,12 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
+import {
+  Copy01Icon,
+  GithubIcon,
+  KoFiIcon,
+  Tick02Icon,
+} from "@hugeicons/core-free-icons";
 
 const DEFAULT_COLOUR = "#ffffff";
 
@@ -487,7 +492,7 @@ export function NameCustomiser() {
         <p className="text-center text-xs text-muted-foreground">
           {t("footerFanCreation")}
         </p>
-        <p className="text-center text-xs text-muted-foreground">
+        <p className="text-center text-xs text-muted-foreground flex flex-row gap-1 justify-center">
           {t("footerInspired")}{" "}
           <a
             href="https://steamcommunity.com/sharedfiles/filedetails/?id=3651157970"
@@ -504,7 +509,14 @@ export function NameCustomiser() {
             rel="noopener noreferrer"
             className="underline hover:text-foreground"
           >
-            {t("footerSourceCode")}
+            <div className="flex flex=row gap-1">
+              <HugeiconsIcon
+                icon={GithubIcon}
+                strokeWidth={2}
+                className="h-5 -translate-y-0.5"
+              />
+              {t("footerSourceCode")}
+            </div>
           </a>
           {" · "}
           <a
@@ -513,7 +525,14 @@ export function NameCustomiser() {
             rel="noopener noreferrer"
             className="underline hover:text-foreground"
           >
-            {t("footerKofi")}
+            <div className="flex flex-row gap-1">
+              <HugeiconsIcon
+                icon={KoFiIcon}
+                strokeWidth={2}
+                className="h-6 -translate-y-1"
+              />
+              {t("footerKofi")}
+            </div>
           </a>
         </p>
       </footer>
