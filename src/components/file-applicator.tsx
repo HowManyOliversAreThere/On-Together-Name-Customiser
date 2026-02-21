@@ -1,0 +1,205 @@
+import { useState, useCallback, useRef, useEffect } from "react";
+import { useI18n } from "@/hooks/use-i18n";
+import { extractName, replaceName } from "@/lib/player-data";
+import { Button } from "@/components/ui/button";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { DownloadIcon, Tick02Icon } from "@hugeicons/core-free-icons";
+
+interface FileApplicatorProps {
+  generatedCode: string;
+}
+
+export function FileApplicator({ generatedCode }: FileApplicatorProps) {
+  const { t } = useI18n();
+  const [dragOver, setDragOver] = useState(false);
+  const [fileName, setFileName] = useState<string | null>(null);
+  const [oldName, setOldName] = useState<string | null>(null);
+  const [rawContent, setRawContent] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [downloaded, setDownloaded] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Recompute modified content whenever generatedCode or rawContent changes
+  const modifiedContent =
+    rawContent && generatedCode
+      ? replaceName(rawContent, generatedCode)
+      : null;
+
+  // Reset downloaded state when the generated code changes (name reconfigured)
+  useEffect(() => {
+    setDownloaded(false);
+  }, [generatedCode]);
+
+  const processFile = useCallback(
+    async (file: File) => {
+      setError(null);
+      setRawContent(null);
+      setOldName(null);
+      setDownloaded(false);
+
+      try {
+        const text = await file.text();
+        const extracted = extractName(text);
+
+        if (extracted === null) {
+          setError(t("fileApplyNoName"));
+          return;
+        }
+
+        setFileName(file.name);
+        setOldName(extracted);
+        setRawContent(text);
+      } catch {
+        setError(t("fileApplyReadError"));
+      }
+    },
+    [t]
+  );
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragOver(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragOver(false);
+  }, []);
+
+  const handleDrop = useCallback(
+    (e: React.DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setDragOver(false);
+
+      const file = e.dataTransfer.files[0];
+      if (file) processFile(file);
+    },
+    [processFile]
+  );
+
+  const handleFileInput = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (file) processFile(file);
+    },
+    [processFile]
+  );
+
+  const handleDownload = useCallback(() => {
+    if (!modifiedContent || !fileName) return;
+
+    const blob = new Blob([modifiedContent], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    setDownloaded(true);
+  }, [modifiedContent, fileName]);
+
+  const handleReset = useCallback(() => {
+    setFileName(null);
+    setOldName(null);
+    setRawContent(null);
+    setError(null);
+    setDownloaded(false);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  }, []);
+
+  // File has been loaded — show info and download/waiting state
+  if (rawContent && fileName) {
+    const canDownload = !!modifiedContent;
+
+    return (
+      <div className="space-y-3">
+        <div className="rounded-xl border border-border bg-muted/50 p-4 space-y-2">
+          <p className="text-sm">
+            <span className="font-medium">{t("fileApplyLoaded")}:</span>{" "}
+            <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">
+              {fileName}
+            </code>
+          </p>
+          {oldName && (
+            <p className="text-xs text-muted-foreground">
+              {t("fileApplyOldName")}:{" "}
+              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs break-all">
+                {oldName}
+              </code>
+            </p>
+          )}
+        </div>
+
+        {canDownload ? (
+          <>
+            <div className="flex gap-2">
+              <Button onClick={handleDownload} className="flex-1">
+                <HugeiconsIcon
+                  icon={downloaded ? Tick02Icon : DownloadIcon}
+                  className="size-4"
+                />
+                {downloaded
+                  ? t("fileApplyDownloaded")
+                  : t("fileApplyDownload")}
+              </Button>
+              <Button variant="outline" onClick={handleReset}>
+                {t("fileApplyReset")}
+              </Button>
+            </div>
+
+            {downloaded && (
+              <p className="text-xs text-muted-foreground">
+                {t("fileApplyDownloadHint")}
+              </p>
+            )}
+          </>
+        ) : (
+          <>
+            <p className="text-sm text-muted-foreground">
+              {t("fileApplyWaitingForName")}
+            </p>
+            <Button variant="outline" size="sm" onClick={handleReset}>
+              {t("fileApplyReset")}
+            </Button>
+          </>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-3">
+      <div
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+        onClick={() => fileInputRef.current?.click()}
+        className={`flex min-h-28 cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed p-4 text-center transition-colors ${
+          dragOver
+            ? "border-primary bg-primary/10"
+            : "border-border hover:border-primary/50 hover:bg-muted/50"
+        }`}
+      >
+        <p className="text-sm font-medium">{t("fileApplyDropZone")}</p>
+        <p className="text-xs text-muted-foreground">
+          {t("fileApplyDropHint")}
+        </p>
+      </div>
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".txt"
+        onChange={handleFileInput}
+        className="hidden"
+      />
+
+      {error && <p className="text-sm text-destructive">{error}</p>}
+    </div>
+  );
+}

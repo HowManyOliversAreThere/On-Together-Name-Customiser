@@ -25,20 +25,23 @@ function detectLanguage(): Language {
   const saved = localStorage.getItem("otNameLang");
   if (saved && saved in LANGUAGE_NAMES) return saved as Language;
 
-  const browserLang = navigator.language;
   const langs = Object.keys(LANGUAGE_NAMES) as Language[];
 
-  // Exact match first
-  const exact = langs.find(
-    (l) => browserLang.toLowerCase() === l.toLowerCase()
-  );
-  if (exact) return exact;
+  // Check all browser languages in priority order
+  for (const browserLang of navigator.languages ?? [navigator.language]) {
+    const normalised = browserLang.toLowerCase();
 
-  // Prefix match
-  const prefix = langs.find((l) =>
-    browserLang.toLowerCase().startsWith(l.split("-")[0].toLowerCase())
-  );
-  if (prefix) return prefix;
+    // Exact match (e.g. "en-US" → "en-US", "pt-BR" → "pt-BR")
+    const exact = langs.find((l) => normalised === l.toLowerCase());
+    if (exact) return exact;
+
+    // Region-specific match (e.g. browser "en-GB" → "en", "zh-Hans" → "zh-CN")
+    const prefix = normalised.split("-")[0];
+    const regionMatch = langs.find(
+      (l) => l.toLowerCase().split("-")[0] === prefix
+    );
+    if (regionMatch) return regionMatch;
+  }
 
   return "en";
 }

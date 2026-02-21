@@ -140,6 +140,7 @@
       #8B5C7B 1168px, #8B5C7B 1176px
     );
     background-color: #8EA3D0;
+    background-attachment: fixed;
     }
   html {
     @apply font-sans;

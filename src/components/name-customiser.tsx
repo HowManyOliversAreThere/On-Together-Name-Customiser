@@ -11,11 +11,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Card,
+  CardAction,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
 
 const DEFAULT_COLOUR = "#ffffff";
 
@@ -30,6 +34,25 @@ export function NameCustomiser() {
   const [colonColour, setColonColour] = useState("#ffffff");
   const [messageColour, setMessageColour] = useState("#ffffff");
   const [includeExtras, setIncludeExtras] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = useCallback(async (code: string) => {
+    if (!code) return;
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = code;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  }, []);
 
   const handleNameChange = useCallback((newName: string) => {
     setName(newName);
@@ -91,16 +114,18 @@ export function NameCustomiser() {
   return (
     <div className="mx-auto max-w-2xl space-y-6 p-4 pb-16">
       {/* Header */}
-      <header className="flex items-start justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">
-            {t("appTitle")}
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            {t("appSubtitle")}
-          </p>
+      <header className="-mx-4 -mt-4 bg-card/95 backdrop-blur-sm px-4 py-4 rounded-b-2xl border-b border-border/50">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">
+              {t("appTitle")}
+            </h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              {t("appSubtitle")}
+            </p>
+          </div>
+          <LanguageSelector />
         </div>
-        <LanguageSelector />
       </header>
 
       {/* Name Input */}
@@ -254,6 +279,21 @@ export function NameCustomiser() {
       <Card>
         <CardHeader>
           <CardTitle>{t("generatedCodeTitle")}</CardTitle>
+          {generatedCode && (
+            <CardAction>
+              <Button
+                size="sm"
+                variant={copied ? "default" : "outline"}
+                onClick={() => handleCopy(generatedCode)}
+              >
+                <HugeiconsIcon
+                  icon={copied ? Tick02Icon : Copy01Icon}
+                  className="size-3.5"
+                />
+                {copied ? t("copiedButton") : t("copyButton")}
+              </Button>
+            </CardAction>
+          )}
         </CardHeader>
         <CardContent>
           <CodeOutput code={generatedCode} />
@@ -266,13 +306,16 @@ export function NameCustomiser() {
           <CardTitle>{t("instructionsTitle")}</CardTitle>
         </CardHeader>
         <CardContent>
-          <Instructions />
+          <Instructions generatedCode={generatedCode} />
         </CardContent>
       </Card>
 
       {/* Footer */}
-      <footer className="text-center text-xs text-muted-foreground pt-4">
-        <p>
+      <footer className="-mx-4 -mb-16 bg-card/95 backdrop-blur-sm px-4 py-4 rounded-t-2xl border-t border-border/50 space-y-1">
+        <p className="text-center text-xs text-muted-foreground">
+          {t("footerFanCreation")}
+        </p>
+        <p className="text-center text-xs text-muted-foreground">
           <a
             href="https://gigapuff.co/"
             target="_blank"
@@ -281,14 +324,25 @@ export function NameCustomiser() {
           >
             On-Together: Virtual Co-Working
           </a>
-          {" — "}
+          {" · "}
+          {t("footerInspired")}{" "}
           <a
             href="https://steamcommunity.com/sharedfiles/filedetails/?id=3651157970"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-foreground"
           >
-            Guide by ranch
+            {t("footerGuideLink")}
+          </a>
+        </p>
+        <p className="text-center text-xs text-muted-foreground">
+          <a
+            href="https://github.com/HowManyOliversAreThere/On-Together-Name-Customiser"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            {t("footerSourceCode")}
           </a>
         </p>
       </footer>
