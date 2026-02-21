@@ -15,9 +15,13 @@ test("parseTmpName - full format with all features", () => {
   assert.is(result.letters.length, 2);
   assert.is(result.letters[0].char, "H");
   assert.is(result.letters[0].colour, "#FF0000");
+  assert.is(result.letters[0].bold, true);
+  assert.is(result.letters[0].italic, false);
   assert.is(result.letters[1].char, "i");
   assert.is(result.letters[1].colour, "#00FF00");
-  assert.is(result.bold, true);
+  assert.is(result.letters[1].bold, true);
+  assert.is(result.chatBold, true);
+  assert.is(result.chatItalic, false);
   assert.is(result.colonColour, "#AABBCC");
   assert.is(result.messageColour, "#DDEEFF");
 });
@@ -30,8 +34,12 @@ test("parseTmpName - grouped letters in single colour tag", () => {
   assert.is(result.letters.length, 5);
   assert.is(result.letters[0].char, "H");
   assert.is(result.letters[4].char, "o");
-  result.letters.forEach((l) => assert.is(l.colour, "#FFFFFF"));
-  assert.is(result.bold, false);
+  result.letters.forEach((l) => {
+    assert.is(l.colour, "#FFFFFF");
+    assert.is(l.bold, false);
+    assert.is(l.italic, false);
+  });
+  assert.is(result.chatBold, false);
   assert.is(result.colonColour, "#AAAAAA");
   assert.is(result.messageColour, "#BBBBBB");
 });
@@ -74,18 +82,20 @@ test("parseTmpName - 8-digit hex colours (with alpha)", () => {
   assert.is(result.messageColour, "#BBCCDDEE");
 });
 
-test("parseTmpName - bold wrapper detected", () => {
+test("parseTmpName - legacy bold wrapper detected (backward compat)", () => {
   const input = "</color><b><color=#FFFFFF>X</color></b>";
   const result = parseTmpName(input);
   assert.ok(result);
-  assert.is(result.bold, true);
+  assert.is(result.letters[0].bold, true);
+  assert.is(result.chatBold, true);
 });
 
 test("parseTmpName - no bold wrapper", () => {
   const input = "</color><color=#FFFFFF>X</color>";
   const result = parseTmpName(input);
   assert.ok(result);
-  assert.is(result.bold, false);
+  assert.is(result.letters[0].bold, false);
+  assert.is(result.chatBold, false);
 });
 
 // ---------------------------------------------------------------------------
@@ -100,9 +110,11 @@ test("parseTmpName - real-world multicolour gradient name", () => {
   assert.is(result.letters.length, 6);
   assert.is(result.letters[0].char, "F");
   assert.is(result.letters[0].colour, "#FFE3B3");
+  assert.is(result.letters[0].bold, true);
   assert.is(result.letters[5].char, "a");
   assert.is(result.letters[5].colour, "#FFC2CD");
-  assert.is(result.bold, true);
+  assert.is(result.letters[5].bold, true);
+  assert.is(result.chatBold, true);
   assert.is(result.colonColour, "#FFE3B3");
   assert.is(result.messageColour, "#EEEEEE");
 });
@@ -184,6 +196,132 @@ test("parseTmpName - case insensitive hex", () => {
 test("parseTmpName - short hex (3 or 5 digits) returns null", () => {
   assert.is(parseTmpName("<color=#F00>X</color>"), null);
   assert.is(parseTmpName("<color=#FF00F>X</color>"), null);
+});
+
+// ---------------------------------------------------------------------------
+// Italic and bold+italic support (legacy wrapper format)
+// ---------------------------------------------------------------------------
+
+test("parseTmpName - legacy italic wrapper", () => {
+  const input =
+    "</color><i><color=#FF0000>A</color><color=#00FF00>B</color></i>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.chatBold, false);
+  assert.is(result.chatItalic, true);
+  assert.is(result.letters.length, 2);
+  assert.is(result.letters[0].char, "A");
+  assert.is(result.letters[0].colour, "#FF0000");
+  assert.is(result.letters[0].bold, false);
+  assert.is(result.letters[0].italic, true);
+});
+
+test("parseTmpName - legacy bold+italic wrapper (bold outer)", () => {
+  const input = "</color><b><i><color=#AABBCC>X</color></i></b>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.chatBold, true);
+  assert.is(result.chatItalic, true);
+  assert.is(result.letters.length, 1);
+  assert.is(result.letters[0].char, "X");
+  assert.is(result.letters[0].bold, true);
+  assert.is(result.letters[0].italic, true);
+});
+
+test("parseTmpName - legacy bold+italic wrapper (italic outer)", () => {
+  const input = "</color><i><b><color=#112233>Y</color></b></i>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.chatBold, true);
+  assert.is(result.chatItalic, true);
+  assert.is(result.letters[0].bold, true);
+  assert.is(result.letters[0].italic, true);
+});
+
+test("parseTmpName - no bold or italic", () => {
+  const input = "</color><color=#FFFFFF>Z</color>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.chatBold, false);
+  assert.is(result.chatItalic, false);
+  assert.is(result.letters[0].bold, false);
+  assert.is(result.letters[0].italic, false);
+});
+
+// ---------------------------------------------------------------------------
+// New format: per-letter bold/italic + trailing unclosed chat formatting
+// ---------------------------------------------------------------------------
+
+test("parseTmpName - per-letter bold inside colour tag", () => {
+  const input =
+    "</color><color=#FF0000><b>A</b></color><color=#00FF00>B</color>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.letters[0].char, "A");
+  assert.is(result.letters[0].bold, true);
+  assert.is(result.letters[0].italic, false);
+  assert.is(result.letters[1].char, "B");
+  assert.is(result.letters[1].bold, false);
+  assert.is(result.letters[1].italic, false);
+  assert.is(result.chatBold, false);
+});
+
+test("parseTmpName - per-letter italic inside colour tag", () => {
+  const input =
+    "</color><color=#FF0000>A</color><color=#00FF00><i>B</i></color>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.letters[0].italic, false);
+  assert.is(result.letters[1].italic, true);
+  assert.is(result.chatItalic, false);
+});
+
+test("parseTmpName - per-letter bold+italic inside colour tag", () => {
+  const input = "</color><color=#AABBCC><b><i>XY</i></b></color>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.letters.length, 2);
+  assert.is(result.letters[0].bold, true);
+  assert.is(result.letters[0].italic, true);
+  assert.is(result.letters[1].bold, true);
+  assert.is(result.letters[1].italic, true);
+  assert.is(result.chatBold, false);
+  assert.is(result.chatItalic, false);
+});
+
+test("parseTmpName - trailing unclosed chat bold", () => {
+  const input =
+    "</color><color=#FF0000>A</color><color=#AABBCC><color=#DDEEFF><b>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.letters[0].bold, false);
+  assert.is(result.chatBold, true);
+  assert.is(result.chatItalic, false);
+  assert.is(result.colonColour, "#AABBCC");
+  assert.is(result.messageColour, "#DDEEFF");
+});
+
+test("parseTmpName - trailing unclosed chat bold+italic", () => {
+  const input =
+    "</color><color=#FF0000>A</color><color=#AABBCC><color=#DDEEFF><b><i>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.letters[0].bold, false);
+  assert.is(result.letters[0].italic, false);
+  assert.is(result.chatBold, true);
+  assert.is(result.chatItalic, true);
+});
+
+test("parseTmpName - mixed per-letter bold + chat italic", () => {
+  const input =
+    "</color><color=#FF0000><b>A</b></color><color=#00FF00>B</color><color=#AABBCC><color=#DDEEFF><i>";
+  const result = parseTmpName(input);
+  assert.ok(result);
+  assert.is(result.letters[0].bold, true);
+  assert.is(result.letters[0].italic, false);
+  assert.is(result.letters[1].bold, false);
+  assert.is(result.chatBold, false);
+  assert.is(result.chatItalic, true);
 });
 
 test.run();

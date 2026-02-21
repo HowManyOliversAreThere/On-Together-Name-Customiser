@@ -8,9 +8,22 @@ import { DownloadIcon, Tick02Icon } from "@hugeicons/core-free-icons";
 
 interface FileApplicatorProps {
   generatedCode: string;
+  onNameLoaded?: (data: {
+    name: string;
+    letterColours: string[];
+    letterBold: boolean[];
+    letterItalic: boolean[];
+    chatBold: boolean;
+    chatItalic: boolean;
+    colonColour: string | null;
+    messageColour: string | null;
+  }) => void;
 }
 
-export function FileApplicator({ generatedCode }: FileApplicatorProps) {
+export function FileApplicator({
+  generatedCode,
+  onNameLoaded,
+}: FileApplicatorProps) {
   const { t } = useI18n();
   const [dragOver, setDragOver] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
@@ -51,11 +64,28 @@ export function FileApplicator({ generatedCode }: FileApplicatorProps) {
         setFileName(file.name);
         setOldName(extracted);
         setRawContent(text);
+
+        // Notify parent about loaded name for backfill
+        if (onNameLoaded) {
+          const parsed = parseTmpName(extracted);
+          if (parsed) {
+            onNameLoaded({
+              name: parsed.letters.map((l) => l.char).join(""),
+              letterColours: parsed.letters.map((l) => l.colour),
+              letterBold: parsed.letters.map((l) => l.bold),
+              letterItalic: parsed.letters.map((l) => l.italic),
+              chatBold: parsed.chatBold,
+              chatItalic: parsed.chatItalic,
+              colonColour: parsed.colonColour,
+              messageColour: parsed.messageColour,
+            });
+          }
+        }
       } catch {
         setError(t("fileApplyReadError"));
       }
     },
-    [t]
+    [t, onNameLoaded]
   );
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -131,16 +161,30 @@ export function FileApplicator({ generatedCode }: FileApplicatorProps) {
             <>
               <div className="rounded-lg bg-[#8B5C7B] px-3 py-2 text-sm leading-relaxed">
                 {/* Name with colours */}
-                <span className={parsedOldName.bold ? "font-bold" : undefined}>
+                <span>
                   {parsedOldName.letters.map((l, i) => (
-                    <span key={i} style={{ color: l.colour }}>
+                    <span
+                      key={i}
+                      className={[
+                        l.bold ? "font-bold" : undefined,
+                        l.italic ? "italic" : undefined,
+                      ]
+                        .filter(Boolean)
+                        .join(" ")}
+                      style={{ color: l.colour }}
+                    >
                       {l.char}
                     </span>
                   ))}
                 </span>
                 {/* Colon */}
                 <span
-                  className={parsedOldName.bold ? "font-bold" : undefined}
+                  className={[
+                    parsedOldName.chatBold ? "font-bold" : undefined,
+                    parsedOldName.chatItalic ? "italic" : undefined,
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
                   style={{
                     color:
                       parsedOldName.colonColour ??

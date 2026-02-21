@@ -7,19 +7,27 @@ import { cn } from "@/lib/utils";
 interface LetterEditorProps {
   name: string;
   letterColours: string[];
+  letterBold: boolean[];
+  letterItalic: boolean[];
   selectedIndices: Set<number>;
   onSelectionChange: (indices: Set<number>) => void;
   onApplyColour: (colour: string) => void;
   onApplyGradient: (start: string, end: string) => void;
+  onToggleBold: () => void;
+  onToggleItalic: () => void;
 }
 
 export function LetterEditor({
   name,
   letterColours,
+  letterBold,
+  letterItalic,
   selectedIndices,
   onSelectionChange,
   onApplyColour,
   onApplyGradient,
+  onToggleBold,
+  onToggleItalic,
 }: LetterEditorProps) {
   const { t } = useI18n();
   const [pickerColour, setPickerColour] = useState("#ffffff");
@@ -117,8 +125,10 @@ export function LetterEditor({
               onMouseDown={(e) => handleLetterMouseDown(index, e)}
               onMouseEnter={() => handleLetterMouseEnter(index)}
               className={cn(
-                "relative flex h-10 w-10 items-center justify-center rounded-lg text-base font-bold transition-all cursor-pointer",
+                "relative flex h-10 w-10 items-center justify-center rounded-lg text-base transition-all cursor-pointer",
                 "ring-1 ring-inset",
+                letterBold[index] ? "font-bold" : "font-normal",
+                letterItalic[index] ? "italic" : "",
                 isSelected
                   ? "ring-2 ring-primary scale-110 shadow-lg z-10"
                   : "ring-border hover:ring-foreground/30"
@@ -151,6 +161,32 @@ export function LetterEditor({
         </p>
       ) : (
         <div className="space-y-4">
+          {/* Bold / Italic toggles */}
+          <div className="flex flex-wrap gap-2">
+            <Button
+              size="sm"
+              variant={
+                [...selectedIndices].every((i) => letterBold[i])
+                  ? "default"
+                  : "outline"
+              }
+              onClick={onToggleBold}
+            >
+              <span className="font-bold">{t("boldLabel")}</span>
+            </Button>
+            <Button
+              size="sm"
+              variant={
+                [...selectedIndices].every((i) => letterItalic[i])
+                  ? "default"
+                  : "outline"
+              }
+              onClick={onToggleItalic}
+            >
+              <span className="italic">{t("italicLabel")}</span>
+            </Button>
+          </div>
+
           {/* Single colour */}
           <div className="flex flex-wrap items-end gap-3">
             <div className="space-y-1.5">

@@ -17,6 +17,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
@@ -34,7 +44,22 @@ export function NameCustomiser() {
   const [colonColour, setColonColour] = useState("#ffffff");
   const [messageColour, setMessageColour] = useState("#ffffff");
   const [includeExtras, setIncludeExtras] = useState(true);
+  const [letterBold, setLetterBold] = useState<boolean[]>([]);
+  const [letterItalic, setLetterItalic] = useState<boolean[]>([]);
+  const [chatBold, setChatBold] = useState(false);
+  const [chatItalic, setChatItalic] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [overrideDialogOpen, setOverrideDialogOpen] = useState(false);
+  const [pendingNameData, setPendingNameData] = useState<{
+    name: string;
+    letterColours: string[];
+    letterBold: boolean[];
+    letterItalic: boolean[];
+    chatBold: boolean;
+    chatItalic: boolean;
+    colonColour: string | null;
+    messageColour: string | null;
+  } | null>(null);
 
   const handleCopy = useCallback(async (code: string) => {
     if (!code) return;
@@ -60,6 +85,20 @@ export function NameCustomiser() {
       const next = [...prev];
       while (next.length < newName.length) {
         next.push(DEFAULT_COLOUR);
+      }
+      return next.slice(0, newName.length);
+    });
+    setLetterBold((prev) => {
+      const next = [...prev];
+      while (next.length < newName.length) {
+        next.push(false);
+      }
+      return next.slice(0, newName.length);
+    });
+    setLetterItalic((prev) => {
+      const next = [...prev];
+      while (next.length < newName.length) {
+        next.push(false);
       }
       return next.slice(0, newName.length);
     });
@@ -102,14 +141,98 @@ export function NameCustomiser() {
     [selectedIndices, handleApplyColour]
   );
 
+  const handleToggleBold = useCallback(() => {
+    const allBold = [...selectedIndices].every((i) => letterBold[i]);
+    setLetterBold((prev) => {
+      const next = [...prev];
+      for (const i of selectedIndices) {
+        next[i] = !allBold;
+      }
+      return next;
+    });
+  }, [selectedIndices, letterBold]);
+
+  const handleToggleItalic = useCallback(() => {
+    const allItalic = [...selectedIndices].every((i) => letterItalic[i]);
+    setLetterItalic((prev) => {
+      const next = [...prev];
+      for (const i of selectedIndices) {
+        next[i] = !allItalic;
+      }
+      return next;
+    });
+  }, [selectedIndices, letterItalic]);
+
+  const applyParsedName = useCallback(
+    (data: {
+      name: string;
+      letterColours: string[];
+      letterBold: boolean[];
+      letterItalic: boolean[];
+      chatBold: boolean;
+      chatItalic: boolean;
+      colonColour: string | null;
+      messageColour: string | null;
+    }) => {
+      setName(data.name);
+      setLetterColours(data.letterColours);
+      setLetterBold(data.letterBold);
+      setLetterItalic(data.letterItalic);
+      setSelectedIndices(new Set());
+      setChatBold(data.chatBold);
+      setChatItalic(data.chatItalic);
+      if (data.colonColour || data.messageColour) {
+        setIncludeExtras(true);
+        if (data.colonColour) setColonColour(data.colonColour);
+        if (data.messageColour) setMessageColour(data.messageColour);
+      }
+    },
+    []
+  );
+
+  const handleNameLoaded = useCallback(
+    (data: {
+      name: string;
+      letterColours: string[];
+      letterBold: boolean[];
+      letterItalic: boolean[];
+      chatBold: boolean;
+      chatItalic: boolean;
+      colonColour: string | null;
+      messageColour: string | null;
+    }) => {
+      if (!name) {
+        applyParsedName(data);
+      } else {
+        setPendingNameData(data);
+        setOverrideDialogOpen(true);
+      }
+    },
+    [name, applyParsedName]
+  );
+
   const generatedCode = useMemo(() => {
     return generateTags({
       name,
       letterColours,
+      letterBold,
+      letterItalic,
       colonColour: includeExtras ? colonColour : null,
       messageColour: includeExtras ? messageColour : null,
+      chatBold,
+      chatItalic,
     });
-  }, [name, letterColours, colonColour, messageColour, includeExtras]);
+  }, [
+    name,
+    letterColours,
+    letterBold,
+    letterItalic,
+    colonColour,
+    messageColour,
+    includeExtras,
+    chatBold,
+    chatItalic,
+  ]);
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 p-4 pb-16">
@@ -147,6 +270,7 @@ export function NameCustomiser() {
       <Card>
         <CardHeader>
           <CardTitle>{t("nameLabel")}</CardTitle>
+          <CardDescription>{t("nameLoadHint")}</CardDescription>
         </CardHeader>
         <CardContent>
           <Input
@@ -160,20 +284,24 @@ export function NameCustomiser() {
         </CardContent>
       </Card>
 
-      {/* Letter Colours */}
+      {/* Letter Styling */}
       <Card>
         <CardHeader>
-          <CardTitle>{t("letterColoursTitle")}</CardTitle>
-          {name && <CardDescription>{t("letterColoursHint")}</CardDescription>}
+          <CardTitle>{t("letterStylingTitle")}</CardTitle>
+          {name && <CardDescription>{t("letterStylingHint")}</CardDescription>}
         </CardHeader>
         <CardContent>
           <LetterEditor
             name={name}
             letterColours={letterColours}
+            letterBold={letterBold}
+            letterItalic={letterItalic}
             selectedIndices={selectedIndices}
             onSelectionChange={setSelectedIndices}
             onApplyColour={handleApplyColour}
             onApplyGradient={handleApplyGradient}
+            onToggleBold={handleToggleBold}
+            onToggleItalic={handleToggleItalic}
           />
         </CardContent>
       </Card>
@@ -181,21 +309,45 @@ export function NameCustomiser() {
       {/* Chat Colours */}
       <Card>
         <CardHeader>
-          <CardTitle>{t("chatColoursTitle")}</CardTitle>
+          <CardTitle>{t("chatStylingTitle")}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={includeExtras}
-                onChange={(e) => setIncludeExtras(e.target.checked)}
-                className="size-4 rounded border-border accent-primary"
-              />
-              <span className="text-sm font-medium">
-                {t("enableChatColours")}
-              </span>
-            </label>
+            <div className="flex gap-4">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={includeExtras}
+                  onChange={(e) => setIncludeExtras(e.target.checked)}
+                  className="size-4 rounded border-border accent-primary"
+                />
+                <span className="text-sm font-medium">
+                  {t("enableChatColours")}
+                </span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={chatBold}
+                  onChange={(e) => setChatBold(e.target.checked)}
+                  className="size-4 rounded border-border accent-primary"
+                />
+                <span className="text-sm font-medium">
+                  {t("chatBoldLabel")}
+                </span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={chatItalic}
+                  onChange={(e) => setChatItalic(e.target.checked)}
+                  className="size-4 rounded border-border accent-primary"
+                />
+                <span className="text-sm font-medium">
+                  {t("chatItalicLabel")}
+                </span>
+              </label>
+            </div>
 
             {includeExtras && (
               <div className="grid gap-4 sm:grid-cols-2">
@@ -281,9 +433,13 @@ export function NameCustomiser() {
           <Preview
             name={name}
             letterColours={letterColours}
+            letterBold={letterBold}
+            letterItalic={letterItalic}
             colonColour={colonColour}
             messageColour={messageColour}
             showExtras={includeExtras}
+            chatBold={chatBold}
+            chatItalic={chatItalic}
           />
         </CardContent>
       </Card>
@@ -319,7 +475,10 @@ export function NameCustomiser() {
           <CardTitle>{t("instructionsTitle")}</CardTitle>
         </CardHeader>
         <CardContent>
-          <Instructions generatedCode={generatedCode} />
+          <Instructions
+            generatedCode={generatedCode}
+            onNameLoaded={handleNameLoaded}
+          />
         </CardContent>
       </Card>
 
@@ -347,8 +506,51 @@ export function NameCustomiser() {
           >
             {t("footerSourceCode")}
           </a>
+          {" · "}
+          <a
+            href="https://ko-fi.com/F1F21UNYHM"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            {t("footerKofi")}
+          </a>
         </p>
       </footer>
+
+      {/* Override Name Dialog */}
+      <AlertDialog
+        open={overrideDialogOpen}
+        onOpenChange={setOverrideDialogOpen}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t("nameOverrideTitle")}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t("nameOverrideDesc")}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel
+              onClick={() => {
+                setPendingNameData(null);
+                setOverrideDialogOpen(false);
+              }}
+            >
+              {t("nameOverrideCancel")}
+            </AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() => {
+                if (pendingNameData) applyParsedName(pendingNameData);
+                setPendingNameData(null);
+                setOverrideDialogOpen(false);
+              }}
+            >
+              {t("nameOverrideConfirm")}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }

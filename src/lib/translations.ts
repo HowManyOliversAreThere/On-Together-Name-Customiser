@@ -52,8 +52,8 @@ export const translations: Record<Language, Translations> = {
       "Customise your display name colours for On-Together: Virtual Co-Working",
     nameLabel: "Display Name",
     namePlaceholder: "Enter your display name...",
-    letterColoursTitle: "Letter Colours",
-    letterColoursHint:
+    letterStylingTitle: "Letter Styling",
+    letterStylingHint:
       "Click letters to select them, then apply a colour or gradient. Use Shift+Click for range, Ctrl/Cmd+Click to toggle.",
     selectAll: "Select All",
     deselectAll: "Deselect All",
@@ -63,7 +63,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Start",
     gradientEnd: "End",
     applyGradient: "Apply Gradient",
-    chatColoursTitle: "Chat Colours",
+    chatStylingTitle: "Chat Styling",
     colonColourLabel: "Colon Colour",
     colonColourHint:
       "The colour of the colon (:) shown after your name in chat",
@@ -86,7 +86,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Open the file in a text editor and find the "Name" field. It will look something like this:',
     step3Example: '"Name":"YourCurrentName"',
-    step4: "Replace the value with the generated code above.",
+    step4:
+      'Replace the value (e.g. YourCurrentName in the example above) with the code from the "Generated Code" section.',
     step5: "Save the file and start the game.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -130,6 +131,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Source Code",
     fileApplyWaitingForName:
       "Set your name colours above, then come back to download the updated file.",
+    boldLabel: "Bold",
+    chatBoldLabel: "Chat Bold",
+    italicLabel: "Italic",
+    chatItalicLabel: "Chat Italic",
+    nameLoadHint:
+      'You can load your existing display name by dropping your PlayerData file into the Auto Applicator in the "How to Apply" section below.',
+    nameOverrideTitle: "Override current name?",
+    nameOverrideDesc:
+      "You already have a name entered. Would you like to replace it with the name from your PlayerData file?",
+    nameOverrideConfirm: "Replace",
+    nameOverrideCancel: "Keep current",
+    footerKofi: "Support on Ko-fi",
   },
 
   "en-US": {
@@ -138,8 +151,8 @@ export const translations: Record<Language, Translations> = {
       "Customize your display name colors for On-Together: Virtual Co-Working",
     nameLabel: "Display Name",
     namePlaceholder: "Enter your display name...",
-    letterColoursTitle: "Letter Colors",
-    letterColoursHint:
+    letterStylingTitle: "Letter Styling",
+    letterStylingHint:
       "Click letters to select them, then apply a color or gradient. Use Shift+Click for range, Ctrl/Cmd+Click to toggle.",
     selectAll: "Select All",
     deselectAll: "Deselect All",
@@ -149,7 +162,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Start",
     gradientEnd: "End",
     applyGradient: "Apply Gradient",
-    chatColoursTitle: "Chat Colors",
+    chatStylingTitle: "Chat Styling",
     colonColourLabel: "Colon Color",
     colonColourHint: "The color of the colon (:) shown after your name in chat",
     messageColourLabel: "Message Color",
@@ -171,7 +184,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Open the file in a text editor and find the "Name" field. It will look something like this:',
     step3Example: '"Name":"YourCurrentName"',
-    step4: "Replace the value with the generated code above.",
+    step4:
+      'Replace the value (e.g. YourCurrentName in the example above) with the code from the "Generated Code" section.',
     step5: "Save the file and start the game.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -215,6 +229,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Source Code",
     fileApplyWaitingForName:
       "Set your name colors above, then come back to download the updated file.",
+    boldLabel: "Bold",
+    chatBoldLabel: "Chat Bold",
+    italicLabel: "Italic",
+    chatItalicLabel: "Chat Italic",
+    nameLoadHint:
+      'You can load your existing display name by dropping your PlayerData file into the Auto Applicator in the "How to Apply" section below.',
+    nameOverrideTitle: "Override current name?",
+    nameOverrideDesc:
+      "You already have a name entered. Would you like to replace it with the name from your PlayerData file?",
+    nameOverrideConfirm: "Replace",
+    nameOverrideCancel: "Keep current",
+    footerKofi: "Support on Ko-fi",
   },
 
   ja: {
@@ -222,8 +248,8 @@ export const translations: Record<Language, Translations> = {
     appSubtitle: "On-Together: Virtual Co-Working の表示名の色をカスタマイズ",
     nameLabel: "表示名",
     namePlaceholder: "表示名を入力...",
-    letterColoursTitle: "文字の色",
-    letterColoursHint:
+    letterStylingTitle: "文字のスタイル",
+    letterStylingHint:
       "文字をクリックして選択し、色やグラデーションを適用。Shift+クリックで範囲選択、Ctrl/Cmd+クリックで個別切替。",
     selectAll: "すべて選択",
     deselectAll: "選択解除",
@@ -233,7 +259,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "開始",
     gradientEnd: "終了",
     applyGradient: "グラデーションを適用",
-    chatColoursTitle: "チャットの色",
+    chatStylingTitle: "チャットスタイル",
     colonColourLabel: "コロンの色",
     colonColourHint: "チャットで名前の後に表示されるコロン（:）の色",
     messageColourLabel: "メッセージの色",
@@ -255,7 +281,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       "テキストエディタでファイルを開き、「Name」項目を見つけます。以下のようになっています：",
     step3Example: '"Name":"現在の名前"',
-    step4: "値を上で生成されたコードに置き換えます。",
+    step4:
+      "値（例：上の例の YourCurrentName）を「生成されたコード」セクションのコードに置き換えます。",
     step5: "ファイルを保存してゲームを起動します。",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -300,6 +327,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "ソースコード",
     fileApplyWaitingForName:
       "上で名前の色を設定してから、更新されたファイルをダウンロードしてください。",
+    boldLabel: "太字",
+    chatBoldLabel: "チャット太字",
+    italicLabel: "斜体",
+    chatItalicLabel: "チャット斜体",
+    nameLoadHint:
+      "PlayerDataファイルを下の「適用方法」セクションのオートアプリケーターにドロップして、既存の表示名を読み込めます。",
+    nameOverrideTitle: "現在の名前を上書きしますか？",
+    nameOverrideDesc:
+      "既に名前が入力されています。PlayerDataファイルの名前で置き換えますか？",
+    nameOverrideConfirm: "置き換え",
+    nameOverrideCancel: "現在のまま",
+    footerKofi: "Ko-fiで応援する",
   },
 
   ko: {
@@ -307,8 +346,8 @@ export const translations: Record<Language, Translations> = {
     appSubtitle: "On-Together: Virtual Co-Working 표시 이름 색상 커스터마이즈",
     nameLabel: "표시 이름",
     namePlaceholder: "표시 이름을 입력하세요...",
-    letterColoursTitle: "글자 색상",
-    letterColoursHint:
+    letterStylingTitle: "글자 스타일",
+    letterStylingHint:
       "글자를 클릭하여 선택한 후 색상이나 그라데이션을 적용하세요. Shift+클릭으로 범위 선택, Ctrl/Cmd+클릭으로 토글.",
     selectAll: "모두 선택",
     deselectAll: "선택 해제",
@@ -318,7 +357,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "시작",
     gradientEnd: "끝",
     applyGradient: "그라데이션 적용",
-    chatColoursTitle: "채팅 색상",
+    chatStylingTitle: "채팅 스타일",
     colonColourLabel: "콜론 색상",
     colonColourHint: "채팅에서 이름 뒤에 표시되는 콜론(:)의 색상",
     messageColourLabel: "메시지 색상",
@@ -339,7 +378,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       '텍스트 편집기에서 파일을 열고 "Name" 항목을 찾습니다. 다음과 같이 보일 것입니다:',
     step3Example: '"Name":"현재이름"',
-    step4: "값을 위에서 생성된 코드로 교체합니다.",
+    step4:
+      '값(예: 위 예시의 YourCurrentName)을 "생성된 코드" 섹션의 코드로 교체합니다.',
     step5: "파일을 저장하고 게임을 시작합니다.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -383,6 +423,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "소스 코드",
     fileApplyWaitingForName:
       "위에서 이름 색상을 설정한 후 업데이트된 파일을 다운로드하세요.",
+    boldLabel: "굵게",
+    chatBoldLabel: "채팅 굵게",
+    italicLabel: "기울임",
+    chatItalicLabel: "채팅 기울임",
+    nameLoadHint:
+      'PlayerData 파일을 아래 "적용 방법" 섹션의 자동 적용기에 끌어다 놓으면 기존 표시 이름을 불러올 수 있습니다.',
+    nameOverrideTitle: "현재 이름을 바꾸시겠습니까?",
+    nameOverrideDesc:
+      "이미 이름이 입력되어 있습니다. PlayerData 파일의 이름으로 교체하시겠습니까?",
+    nameOverrideConfirm: "교체",
+    nameOverrideCancel: "현재 유지",
+    footerKofi: "Ko-fi에서 후원하기",
   },
 
   "zh-CN": {
@@ -390,8 +442,8 @@ export const translations: Record<Language, Translations> = {
     appSubtitle: "自定义你在 On-Together: Virtual Co-Working 中的显示名称颜色",
     nameLabel: "显示名称",
     namePlaceholder: "输入你的显示名称...",
-    letterColoursTitle: "字母颜色",
-    letterColoursHint:
+    letterStylingTitle: "字母样式",
+    letterStylingHint:
       "点击字母选择，然后应用颜色或渐变。Shift+点击选择范围，Ctrl/Cmd+点击切换选择。",
     selectAll: "全选",
     deselectAll: "取消选择",
@@ -401,7 +453,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "起始",
     gradientEnd: "结束",
     applyGradient: "应用渐变",
-    chatColoursTitle: "聊天颜色",
+    chatStylingTitle: "聊天样式",
     colonColourLabel: "冒号颜色",
     colonColourHint: "聊天中显示在名称后面的冒号（:）的颜色",
     messageColourLabel: "消息颜色",
@@ -419,7 +471,8 @@ export const translations: Record<Language, Translations> = {
     stepBackup: "备份文件（例如复制为PlayerData-backup.txt）。",
     step3: '用文本编辑器打开文件，找到"Name"字段。它看起来类似这样：',
     step3Example: '"Name":"你当前的名称"',
-    step4: "将值替换为上面生成的代码。",
+    step4:
+      '将值（例如上面示例中的 YourCurrentName）替换为"生成的代码"部分中的代码。',
     step5: "保存文件并启动游戏。",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -459,6 +512,17 @@ export const translations: Record<Language, Translations> = {
     footerGuideLink: "Ranch 的指南",
     footerSourceCode: "源代码",
     fileApplyWaitingForName: "请在上方设置名称颜色，然后回来下载更新的文件。",
+    boldLabel: "粗体",
+    chatBoldLabel: "聊天粗体",
+    italicLabel: "斜体",
+    chatItalicLabel: "聊天斜体",
+    nameLoadHint:
+      "您可以将 PlayerData 文件拖放到下方“如何应用”部分的自动应用器中来加载您现有的显示名称。",
+    nameOverrideTitle: "覆盖当前名称？",
+    nameOverrideDesc: "您已输入名称。是否要用 PlayerData 文件中的名称替换？",
+    nameOverrideConfirm: "替换",
+    nameOverrideCancel: "保留当前",
+    footerKofi: "在 Ko-fi 上支持",
   },
 
   "zh-TW": {
@@ -466,8 +530,8 @@ export const translations: Record<Language, Translations> = {
     appSubtitle: "自訂你在 On-Together: Virtual Co-Working 中的顯示名稱顏色",
     nameLabel: "顯示名稱",
     namePlaceholder: "輸入你的顯示名稱...",
-    letterColoursTitle: "字母顏色",
-    letterColoursHint:
+    letterStylingTitle: "字母樣式",
+    letterStylingHint:
       "點擊字母選擇，然後套用顏色或漸層。Shift+點擊選擇範圍，Ctrl/Cmd+點擊切換選擇。",
     selectAll: "全選",
     deselectAll: "取消選擇",
@@ -477,7 +541,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "起始",
     gradientEnd: "結束",
     applyGradient: "套用漸層",
-    chatColoursTitle: "聊天顏色",
+    chatStylingTitle: "聊天樣式",
     colonColourLabel: "冒號顏色",
     colonColourHint: "聊天中顯示在名稱後面的冒號（:）的顏色",
     messageColourLabel: "訊息顏色",
@@ -495,7 +559,8 @@ export const translations: Record<Language, Translations> = {
     stepBackup: "備份檔案（例如複製為PlayerData-backup.txt）。",
     step3: "用文字編輯器開啟檔案，找到「Name」欄位。它看起來類似這樣：",
     step3Example: '"Name":"你目前的名稱"',
-    step4: "將值替換為上方產生的代碼。",
+    step4:
+      "將值（例如上方範例中的 YourCurrentName）替換為「產生的代碼」部分中的代碼。",
     step5: "儲存檔案並啟動遊戲。",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -534,6 +599,17 @@ export const translations: Record<Language, Translations> = {
     footerGuideLink: "Ranch 的指南",
     footerSourceCode: "原始碼",
     fileApplyWaitingForName: "請在上方設定名稱顏色，然後回來下載更新的檔案。",
+    boldLabel: "粗體",
+    chatBoldLabel: "聊天粗體",
+    italicLabel: "斜體",
+    chatItalicLabel: "聊天斜體",
+    nameLoadHint:
+      "您可以將 PlayerData 檔案拖放到下方「如何套用」部分的自動套用器中來載入您現有的顯示名稱。",
+    nameOverrideTitle: "覆蓋目前名稱？",
+    nameOverrideDesc: "您已輸入名稱。是否要用 PlayerData 檔案中的名稱取代？",
+    nameOverrideConfirm: "取代",
+    nameOverrideCancel: "保留目前",
+    footerKofi: "在 Ko-fi 上支持",
   },
 
   fr: {
@@ -542,8 +618,8 @@ export const translations: Record<Language, Translations> = {
       "Personnalisez les couleurs de votre nom dans On-Together : Virtual Co-Working",
     nameLabel: "Nom d'affichage",
     namePlaceholder: "Entrez votre nom...",
-    letterColoursTitle: "Couleurs des lettres",
-    letterColoursHint:
+    letterStylingTitle: "Style des lettres",
+    letterStylingHint:
       "Cliquez sur les lettres pour les sélectionner, puis appliquez une couleur ou un dégradé. Maj+Clic pour une plage, Ctrl/Cmd+Clic pour basculer.",
     selectAll: "Tout sélectionner",
     deselectAll: "Tout désélectionner",
@@ -553,7 +629,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Début",
     gradientEnd: "Fin",
     applyGradient: "Appliquer le dégradé",
-    chatColoursTitle: "Couleurs du chat",
+    chatStylingTitle: "Style du chat",
     colonColourLabel: "Couleur des deux-points",
     colonColourHint:
       "La couleur des deux-points (:) affichés après votre nom dans le chat",
@@ -576,7 +652,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Ouvrez le fichier dans un éditeur de texte et trouvez le champ "Name". Il ressemble à ceci :',
     step3Example: '"Name":"VotreNomActuel"',
-    step4: "Remplacez la valeur par le code généré ci-dessus.",
+    step4:
+      'Remplacez la valeur (par ex. YourCurrentName dans l\'exemple ci-dessus) par le code de la section "Code généré".',
     step5: "Enregistrez le fichier et lancez le jeu.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -623,6 +700,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Code source",
     fileApplyWaitingForName:
       "Configurez les couleurs de votre nom ci-dessus, puis revenez télécharger le fichier mis à jour.",
+    boldLabel: "Gras",
+    chatBoldLabel: "Gras du chat",
+    italicLabel: "Italique",
+    chatItalicLabel: "Italique du chat",
+    nameLoadHint:
+      "Vous pouvez charger votre nom d'affichage existant en déposant votre fichier PlayerData dans l'Applicateur automatique dans la section \"Comment appliquer\" ci-dessous.",
+    nameOverrideTitle: "Remplacer le nom actuel ?",
+    nameOverrideDesc:
+      "Un nom est déjà saisi. Voulez-vous le remplacer par le nom de votre fichier PlayerData ?",
+    nameOverrideConfirm: "Remplacer",
+    nameOverrideCancel: "Garder l'actuel",
+    footerKofi: "Soutenir sur Ko-fi",
   },
 
   de: {
@@ -631,8 +720,8 @@ export const translations: Record<Language, Translations> = {
       "Passe die Farben deines Anzeigenamens in On-Together: Virtual Co-Working an",
     nameLabel: "Anzeigename",
     namePlaceholder: "Gib deinen Anzeigenamen ein...",
-    letterColoursTitle: "Buchstabenfarben",
-    letterColoursHint:
+    letterStylingTitle: "Buchstabenstil",
+    letterStylingHint:
       "Klicke auf Buchstaben, um sie auszuwählen, dann wende eine Farbe oder einen Verlauf an. Shift+Klick für Bereich, Strg/Cmd+Klick zum Umschalten.",
     selectAll: "Alle auswählen",
     deselectAll: "Auswahl aufheben",
@@ -642,7 +731,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Anfang",
     gradientEnd: "Ende",
     applyGradient: "Verlauf anwenden",
-    chatColoursTitle: "Chat-Farben",
+    chatStylingTitle: "Chat-Stil",
     colonColourLabel: "Doppelpunkt-Farbe",
     colonColourHint: "Die Farbe des Doppelpunkts (:) nach deinem Namen im Chat",
     messageColourLabel: "Nachrichtenfarbe",
@@ -664,7 +753,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Öffne die Datei in einem Texteditor und finde das "Name"-Feld. Es sieht ungefähr so aus:',
     step3Example: '"Name":"DeinAktuellerName"',
-    step4: "Ersetze den Wert durch den oben generierten Code.",
+    step4:
+      'Ersetze den Wert (z.B. YourCurrentName im Beispiel oben) durch den Code aus dem Abschnitt "Generierter Code".',
     step5: "Speichere die Datei und starte das Spiel.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -712,6 +802,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Quellcode",
     fileApplyWaitingForName:
       "Stellen Sie oben Ihre Namensfarben ein und kommen Sie dann zurück, um die aktualisierte Datei herunterzuladen.",
+    boldLabel: "Fett",
+    chatBoldLabel: "Chat Fett",
+    italicLabel: "Kursiv",
+    chatItalicLabel: "Chat Kursiv",
+    nameLoadHint:
+      'Sie können Ihren bestehenden Anzeigenamen laden, indem Sie Ihre PlayerData-Datei in den Auto-Applikator im Abschnitt "So wenden Sie es an" unten ziehen.',
+    nameOverrideTitle: "Aktuellen Namen überschreiben?",
+    nameOverrideDesc:
+      "Es ist bereits ein Name eingegeben. Möchten Sie ihn durch den Namen aus Ihrer PlayerData-Datei ersetzen?",
+    nameOverrideConfirm: "Ersetzen",
+    nameOverrideCancel: "Beibehalten",
+    footerKofi: "Auf Ko-fi unterstützen",
   },
 
   es: {
@@ -720,8 +822,8 @@ export const translations: Record<Language, Translations> = {
       "Personaliza los colores de tu nombre en On-Together: Virtual Co-Working",
     nameLabel: "Nombre para mostrar",
     namePlaceholder: "Ingresa tu nombre...",
-    letterColoursTitle: "Colores de letras",
-    letterColoursHint:
+    letterStylingTitle: "Estilo de letras",
+    letterStylingHint:
       "Haz clic en las letras para seleccionarlas, luego aplica un color o degradado. Shift+Clic para rango, Ctrl/Cmd+Clic para alternar.",
     selectAll: "Seleccionar todo",
     deselectAll: "Deseleccionar todo",
@@ -731,7 +833,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Inicio",
     gradientEnd: "Final",
     applyGradient: "Aplicar degradado",
-    chatColoursTitle: "Colores del chat",
+    chatStylingTitle: "Estilo del chat",
     colonColourLabel: "Color de los dos puntos",
     colonColourHint:
       "El color de los dos puntos (:) que aparecen después de tu nombre en el chat",
@@ -754,7 +856,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Abre el archivo en un editor de texto y encuentra el campo "Name". Se verá algo así:',
     step3Example: '"Name":"TuNombreActual"',
-    step4: "Reemplaza el valor con el código generado arriba.",
+    step4:
+      'Reemplaza el valor (p. ej. YourCurrentName en el ejemplo anterior) con el código de la sección "Código generado".',
     step5: "Guarda el archivo e inicia el juego.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -801,6 +904,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Código fuente",
     fileApplyWaitingForName:
       "Configura los colores de tu nombre arriba y luego vuelve para descargar el archivo actualizado.",
+    boldLabel: "Negrita",
+    chatBoldLabel: "Negrita del chat",
+    italicLabel: "Cursiva",
+    chatItalicLabel: "Cursiva del chat",
+    nameLoadHint:
+      'Puedes cargar tu nombre de pantalla existente arrastrando tu archivo PlayerData al Aplicador automático en la sección "Cómo aplicar" a continuación.',
+    nameOverrideTitle: "¿Reemplazar el nombre actual?",
+    nameOverrideDesc:
+      "Ya tienes un nombre ingresado. ¿Quieres reemplazarlo con el nombre de tu archivo PlayerData?",
+    nameOverrideConfirm: "Reemplazar",
+    nameOverrideCancel: "Mantener actual",
+    footerKofi: "Apoyar en Ko-fi",
   },
 
   "pt-BR": {
@@ -809,8 +924,8 @@ export const translations: Record<Language, Translations> = {
       "Personalize as cores do seu nome no On-Together: Virtual Co-Working",
     nameLabel: "Nome de exibição",
     namePlaceholder: "Digite seu nome...",
-    letterColoursTitle: "Cores das letras",
-    letterColoursHint:
+    letterStylingTitle: "Estilo das letras",
+    letterStylingHint:
       "Clique nas letras para selecioná-las, então aplique uma cor ou gradiente. Shift+Clique para intervalo, Ctrl/Cmd+Clique para alternar.",
     selectAll: "Selecionar tudo",
     deselectAll: "Desmarcar tudo",
@@ -820,7 +935,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Início",
     gradientEnd: "Fim",
     applyGradient: "Aplicar gradiente",
-    chatColoursTitle: "Cores do chat",
+    chatStylingTitle: "Estilo do chat",
     colonColourLabel: "Cor dos dois pontos",
     colonColourHint: "A cor dos dois pontos (:) exibidos após seu nome no chat",
     messageColourLabel: "Cor da mensagem",
@@ -842,7 +957,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Abra o arquivo em um editor de texto e encontre o campo "Name". Ele se parecerá com isto:',
     step3Example: '"Name":"SeuNomeAtual"',
-    step4: "Substitua o valor pelo código gerado acima.",
+    step4:
+      'Substitua o valor (ex.: YourCurrentName no exemplo acima) pelo código da seção "Código gerado".',
     step5: "Salve o arquivo e inicie o jogo.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -888,6 +1004,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Código-fonte",
     fileApplyWaitingForName:
       "Configure as cores do seu nome acima e depois volte para baixar o arquivo atualizado.",
+    boldLabel: "Negrito",
+    chatBoldLabel: "Negrito do chat",
+    italicLabel: "Itálico",
+    chatItalicLabel: "Itálico do chat",
+    nameLoadHint:
+      'Você pode carregar seu nome de exibição existente arrastando seu arquivo PlayerData para o Aplicador automático na seção "Como aplicar" abaixo.',
+    nameOverrideTitle: "Substituir nome atual?",
+    nameOverrideDesc:
+      "Você já tem um nome digitado. Deseja substituí-lo pelo nome do seu arquivo PlayerData?",
+    nameOverrideConfirm: "Substituir",
+    nameOverrideCancel: "Manter atual",
+    footerKofi: "Apoiar no Ko-fi",
   },
 
   ru: {
@@ -896,8 +1024,8 @@ export const translations: Record<Language, Translations> = {
       "Настройте цвета отображаемого имени в On-Together: Virtual Co-Working",
     nameLabel: "Отображаемое имя",
     namePlaceholder: "Введите имя...",
-    letterColoursTitle: "Цвета букв",
-    letterColoursHint:
+    letterStylingTitle: "Стиль букв",
+    letterStylingHint:
       "Нажмите на буквы для выбора, затем примените цвет или градиент. Shift+Клик для диапазона, Ctrl/Cmd+Клик для переключения.",
     selectAll: "Выбрать все",
     deselectAll: "Снять выделение",
@@ -907,7 +1035,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Начало",
     gradientEnd: "Конец",
     applyGradient: "Применить градиент",
-    chatColoursTitle: "Цвета чата",
+    chatStylingTitle: "Стиль чата",
     colonColourLabel: "Цвет двоеточия",
     colonColourHint: "Цвет двоеточия (:) после вашего имени в чате",
     messageColourLabel: "Цвет сообщения",
@@ -929,7 +1057,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Откройте файл в текстовом редакторе и найдите поле "Name". Оно выглядит примерно так:',
     step3Example: '"Name":"ВашеТекущееИмя"',
-    step4: "Замените значение на сгенерированный код выше.",
+    step4:
+      'Замените значение (например, YourCurrentName в примере выше) на код из раздела "Сгенерированный код".',
     step5: "Сохраните файл и запустите игру.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -975,6 +1104,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Исходный код",
     fileApplyWaitingForName:
       "Настройте цвета имени выше, затем вернитесь, чтобы скачать обновлённый файл.",
+    boldLabel: "Жирный",
+    chatBoldLabel: "Жирный в чате",
+    italicLabel: "Курсив",
+    chatItalicLabel: "Курсив в чате",
+    nameLoadHint:
+      'Вы можете загрузить своё текущее отображаемое имя, перетащив файл PlayerData в Авто-аппликатор в разделе "Как применить" ниже.',
+    nameOverrideTitle: "Заменить текущее имя?",
+    nameOverrideDesc:
+      "У вас уже введено имя. Хотите заменить его именем из файла PlayerData?",
+    nameOverrideConfirm: "Заменить",
+    nameOverrideCancel: "Оставить текущее",
+    footerKofi: "Поддержать на Ko-fi",
   },
 
   it: {
@@ -983,8 +1124,8 @@ export const translations: Record<Language, Translations> = {
       "Personalizza i colori del tuo nome visualizzato in On-Together: Virtual Co-Working",
     nameLabel: "Nome visualizzato",
     namePlaceholder: "Inserisci il tuo nome...",
-    letterColoursTitle: "Colori delle lettere",
-    letterColoursHint:
+    letterStylingTitle: "Stile delle lettere",
+    letterStylingHint:
       "Clicca sulle lettere per selezionarle, poi applica un colore o sfumatura. Shift+Clic per intervallo, Ctrl/Cmd+Clic per alternare.",
     selectAll: "Seleziona tutto",
     deselectAll: "Deseleziona tutto",
@@ -994,7 +1135,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Inizio",
     gradientEnd: "Fine",
     applyGradient: "Applica sfumatura",
-    chatColoursTitle: "Colori della chat",
+    chatStylingTitle: "Stile della chat",
     colonColourLabel: "Colore dei due punti",
     colonColourHint:
       "Il colore dei due punti (:) mostrati dopo il tuo nome nella chat",
@@ -1017,7 +1158,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Apri il file in un editor di testo e trova il campo "Name". Apparirà più o meno così:',
     step3Example: '"Name":"IlTuoNomeAttuale"',
-    step4: "Sostituisci il valore con il codice generato sopra.",
+    step4:
+      'Sostituisci il valore (es. YourCurrentName nell\'esempio sopra) con il codice della sezione "Codice generato".',
     step5: "Salva il file e avvia il gioco.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -1063,6 +1205,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Codice sorgente",
     fileApplyWaitingForName:
       "Imposta i colori del tuo nome sopra, poi torna per scaricare il file aggiornato.",
+    boldLabel: "Grassetto",
+    chatBoldLabel: "Grassetto chat",
+    italicLabel: "Corsivo",
+    chatItalicLabel: "Corsivo chat",
+    nameLoadHint:
+      'Puoi caricare il tuo nome visualizzato esistente trascinando il file PlayerData nell\'Applicatore automatico nella sezione "Come applicare" qui sotto.',
+    nameOverrideTitle: "Sostituire il nome attuale?",
+    nameOverrideDesc:
+      "Hai già un nome inserito. Vuoi sostituirlo con il nome dal tuo file PlayerData?",
+    nameOverrideConfirm: "Sostituisci",
+    nameOverrideCancel: "Mantieni attuale",
+    footerKofi: "Supporta su Ko-fi",
   },
 
   tr: {
@@ -1071,8 +1225,8 @@ export const translations: Record<Language, Translations> = {
       "On-Together: Virtual Co-Working'deki görünen adınızın renklerini özelleştirin",
     nameLabel: "Görünen Ad",
     namePlaceholder: "Adınızı girin...",
-    letterColoursTitle: "Harf Renkleri",
-    letterColoursHint:
+    letterStylingTitle: "Harf Stili",
+    letterStylingHint:
       "Harflere tıklayarak seçin, sonra renk veya gradyan uygulayın. Shift+Tık aralık seçimi, Ctrl/Cmd+Tık değiştirme.",
     selectAll: "Tümünü Seç",
     deselectAll: "Seçimi Kaldır",
@@ -1082,7 +1236,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Başlangıç",
     gradientEnd: "Bitiş",
     applyGradient: "Gradyan Uygula",
-    chatColoursTitle: "Sohbet Renkleri",
+    chatStylingTitle: "Sohbet Stili",
     colonColourLabel: "İki Nokta Rengi",
     colonColourHint:
       "Sohbette adınızdan sonra gösterilen iki nokta (:) üst üste rengi",
@@ -1105,7 +1259,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Dosyayı bir metin düzenleyicide açın ve "Name" alanını bulun. Şuna benzer görünecektir:',
     step3Example: '"Name":"MevcutAdınız"',
-    step4: "Değeri yukarıda oluşturulan kodla değiştirin.",
+    step4:
+      'Değeri (ör. yukarıdaki örnekteki YourCurrentName) "Oluşturulan Kod" bölümündeki kodla değiştirin.',
     step5: "Dosyayı kaydedin ve oyunu başlatın.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -1152,6 +1307,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Kaynak Kodu",
     fileApplyWaitingForName:
       "Yukarıda isim renklerinizi ayarlayın, sonra güncellenmiş dosyayı indirmek için geri dönün.",
+    boldLabel: "Kalın",
+    chatBoldLabel: "Sohbet Kalın",
+    italicLabel: "İtalik",
+    chatItalicLabel: "Sohbet İtalik",
+    nameLoadHint:
+      'Mevcut görünen adınızı PlayerData dosyanızı aşağıdaki "Nasıl Uygulanır" bölümündeki Otomatik Uygulayıcıya bırakarak yükleyebilirsiniz.',
+    nameOverrideTitle: "Mevcut ad değiştirilsin mi?",
+    nameOverrideDesc:
+      "Zaten bir ad girilmiş. PlayerData dosyanızdaki adla değiştirmek ister misiniz?",
+    nameOverrideConfirm: "Değiştir",
+    nameOverrideCancel: "Mevcut olanı koru",
+    footerKofi: "Ko-fi'de destekle",
   },
 
   pl: {
@@ -1160,8 +1327,8 @@ export const translations: Record<Language, Translations> = {
       "Dostosuj kolory wyświetlanej nazwy w On-Together: Virtual Co-Working",
     nameLabel: "Nazwa wyświetlana",
     namePlaceholder: "Wpisz swoją nazwę...",
-    letterColoursTitle: "Kolory liter",
-    letterColoursHint:
+    letterStylingTitle: "Styl liter",
+    letterStylingHint:
       "Kliknij litery, aby je wybrać, następnie zastosuj kolor lub gradient. Shift+Klik dla zakresu, Ctrl/Cmd+Klik do przełączania.",
     selectAll: "Zaznacz wszystko",
     deselectAll: "Odznacz wszystko",
@@ -1171,7 +1338,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Początek",
     gradientEnd: "Koniec",
     applyGradient: "Zastosuj gradient",
-    chatColoursTitle: "Kolory czatu",
+    chatStylingTitle: "Styl czatu",
     colonColourLabel: "Kolor dwukropka",
     colonColourHint: "Kolor dwukropka (:) wyświetlanego po nazwie w czacie",
     messageColourLabel: "Kolor wiadomości",
@@ -1192,7 +1359,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Otwórz plik w edytorze tekstu i znajdź pole "Name". Będzie wyglądać mniej więcej tak:',
     step3Example: '"Name":"TwojaBieżącaNazwa"',
-    step4: "Zamień wartość na wygenerowany powyżej kod.",
+    step4:
+      'Zamień wartość (np. YourCurrentName w powyższym przykładzie) na kod z sekcji "Wygenerowany kod".',
     step5: "Zapisz plik i uruchom grę.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -1236,6 +1404,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Kod źródłowy",
     fileApplyWaitingForName:
       "Ustaw kolory nazwy powyżej, a następnie wróć, aby pobrać zaktualizowany plik.",
+    boldLabel: "Pogrubienie",
+    chatBoldLabel: "Pogrubienie czatu",
+    italicLabel: "Kursywa",
+    chatItalicLabel: "Kursywa czatu",
+    nameLoadHint:
+      'Możesz załadować swoją obecną wyświetlaną nazwę, upuszczając plik PlayerData do Automatycznego aplikatora w sekcji "Jak zastosować" poniżej.',
+    nameOverrideTitle: "Nadpisać aktualną nazwę?",
+    nameOverrideDesc:
+      "Masz już wpisaną nazwę. Czy chcesz ją zastąpić nazwą z pliku PlayerData?",
+    nameOverrideConfirm: "Zastąp",
+    nameOverrideCancel: "Zachowaj aktualną",
+    footerKofi: "Wesprzyj na Ko-fi",
   },
 
   uk: {
@@ -1244,8 +1424,8 @@ export const translations: Record<Language, Translations> = {
       "Налаштуйте кольори відображуваного імені в On-Together: Virtual Co-Working",
     nameLabel: "Відображуване ім'я",
     namePlaceholder: "Введіть ім'я...",
-    letterColoursTitle: "Кольори літер",
-    letterColoursHint:
+    letterStylingTitle: "Стиль літер",
+    letterStylingHint:
       "Натисніть на літери для вибору, потім застосуйте колір або градієнт. Shift+Клік для діапазону, Ctrl/Cmd+Клік для перемикання.",
     selectAll: "Вибрати все",
     deselectAll: "Зняти виділення",
@@ -1255,7 +1435,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Початок",
     gradientEnd: "Кінець",
     applyGradient: "Застосувати градієнт",
-    chatColoursTitle: "Кольори чату",
+    chatStylingTitle: "Стиль чату",
     colonColourLabel: "Колір двокрапки",
     colonColourHint: "Колір двокрапки (:) після вашого імені в чаті",
     messageColourLabel: "Колір повідомлення",
@@ -1277,7 +1457,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Відкрийте файл у текстовому редакторі та знайдіть поле "Name". Воно виглядає приблизно так:',
     step3Example: '"Name":"ВашеПоточнеІмя"',
-    step4: "Замініть значення на згенерований код вище.",
+    step4:
+      'Замініть значення (наприклад, YourCurrentName у прикладі вище) на код з розділу "Згенерований код".',
     step5: "Збережіть файл та запустіть гру.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -1325,6 +1506,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Вихідний код",
     fileApplyWaitingForName:
       "Налаштуйте кольори імені вище, потім поверніться, щоб завантажити оновлений файл.",
+    boldLabel: "Жирний",
+    chatBoldLabel: "Жирний у чаті",
+    italicLabel: "Курсив",
+    chatItalicLabel: "Курсив у чаті",
+    nameLoadHint:
+      'Ви можете завантажити своє поточне відображуване ім\'я, перетягнувши файл PlayerData в Авто-аплікатор у розділі "Як застосувати" нижче.',
+    nameOverrideTitle: "Замінити поточне ім'я?",
+    nameOverrideDesc:
+      "У вас вже введено ім'я. Бажаєте замінити його іменем з файлу PlayerData?",
+    nameOverrideConfirm: "Замінити",
+    nameOverrideCancel: "Залишити поточне",
+    footerKofi: "Підтримати на Ko-fi",
   },
 
   ar: {
@@ -1332,8 +1525,8 @@ export const translations: Record<Language, Translations> = {
     appSubtitle: "خصّص ألوان اسمك المعروض في On-Together: Virtual Co-Working",
     nameLabel: "الاسم المعروض",
     namePlaceholder: "أدخل اسمك...",
-    letterColoursTitle: "ألوان الحروف",
-    letterColoursHint:
+    letterStylingTitle: "نمط الحروف",
+    letterStylingHint:
       "انقر على الحروف لتحديدها، ثم طبّق لوناً أو تدرجاً. Shift+نقر للنطاق، Ctrl/Cmd+نقر للتبديل.",
     selectAll: "تحديد الكل",
     deselectAll: "إلغاء التحديد",
@@ -1343,7 +1536,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "البداية",
     gradientEnd: "النهاية",
     applyGradient: "تطبيق التدرج",
-    chatColoursTitle: "ألوان الدردشة",
+    chatStylingTitle: "نمط الدردشة",
     colonColourLabel: "لون النقطتين",
     colonColourHint: "لون النقطتين (:) المعروضتين بعد اسمك في الدردشة",
     messageColourLabel: "لون الرسالة",
@@ -1362,7 +1555,8 @@ export const translations: Record<Language, Translations> = {
       "قم بعمل نسخة احتياطية من الملف (مثلاً انسخه كـ PlayerData-backup.txt).",
     step3: 'افتح الملف في محرر نصوص وابحث عن حقل "Name". سيبدو بهذا الشكل:',
     step3Example: '"Name":"اسمك_الحالي"',
-    step4: "استبدل القيمة بالكود المُنشأ أعلاه.",
+    step4:
+      'استبدل القيمة (مثلاً YourCurrentName في المثال أعلاه) بالكود من قسم "الكود المُنشأ".',
     step5: "احفظ الملف وابدأ اللعبة.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -1406,6 +1600,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "الكود المصدري",
     fileApplyWaitingForName:
       "قم بتعيين ألوان اسمك أعلاه، ثم عد لتنزيل الملف المحدث.",
+    boldLabel: "غامق",
+    chatBoldLabel: "غامق في الدردشة",
+    italicLabel: "مائل",
+    chatItalicLabel: "مائل في الدردشة",
+    nameLoadHint:
+      'يمكنك تحميل اسم العرض الحالي عن طريق إسقاط ملف PlayerData في المطبّق التلقائي في قسم "كيفية التطبيق" أدناه.',
+    nameOverrideTitle: "استبدال الاسم الحالي؟",
+    nameOverrideDesc:
+      "لديك اسم مُدخل بالفعل. هل تريد استبداله بالاسم من ملف PlayerData؟",
+    nameOverrideConfirm: "استبدال",
+    nameOverrideCancel: "الإبقاء على الحالي",
+    footerKofi: "ادعم على Ko-fi",
   },
 
   id: {
@@ -1414,8 +1620,8 @@ export const translations: Record<Language, Translations> = {
       "Kustomisasi warna nama tampilan Anda di On-Together: Virtual Co-Working",
     nameLabel: "Nama Tampilan",
     namePlaceholder: "Masukkan nama Anda...",
-    letterColoursTitle: "Warna Huruf",
-    letterColoursHint:
+    letterStylingTitle: "Gaya Huruf",
+    letterStylingHint:
       "Klik huruf untuk memilih, lalu terapkan warna atau gradien. Shift+Klik untuk rentang, Ctrl/Cmd+Klik untuk beralih.",
     selectAll: "Pilih Semua",
     deselectAll: "Batalkan Pilihan",
@@ -1425,7 +1631,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Mulai",
     gradientEnd: "Akhir",
     applyGradient: "Terapkan Gradien",
-    chatColoursTitle: "Warna Chat",
+    chatStylingTitle: "Gaya Chat",
     colonColourLabel: "Warna Titik Dua",
     colonColourHint:
       "Warna titik dua (:) yang ditampilkan setelah nama Anda di chat",
@@ -1448,7 +1654,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Buka file di editor teks dan temukan kolom "Name". Tampilannya akan seperti ini:',
     step3Example: '"Name":"NamaAndaSaatIni"',
-    step4: "Ganti nilainya dengan kode yang dihasilkan di atas.",
+    step4:
+      'Ganti nilainya (mis. YourCurrentName pada contoh di atas) dengan kode dari bagian "Kode yang Dihasilkan".',
     step5: "Simpan file dan mulai game.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -1493,6 +1700,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Kode Sumber",
     fileApplyWaitingForName:
       "Atur warna nama Anda di atas, lalu kembali untuk mengunduh file yang diperbarui.",
+    boldLabel: "Tebal",
+    chatBoldLabel: "Tebal Chat",
+    italicLabel: "Miring",
+    chatItalicLabel: "Miring Chat",
+    nameLoadHint:
+      'Anda dapat memuat nama tampilan yang ada dengan menjatuhkan file PlayerData Anda ke Aplikator Otomatis di bagian "Cara Menerapkan" di bawah.',
+    nameOverrideTitle: "Ganti nama saat ini?",
+    nameOverrideDesc:
+      "Anda sudah memasukkan nama. Apakah Anda ingin menggantinya dengan nama dari file PlayerData?",
+    nameOverrideConfirm: "Ganti",
+    nameOverrideCancel: "Pertahankan saat ini",
+    footerKofi: "Dukung di Ko-fi",
   },
 
   th: {
@@ -1500,8 +1719,8 @@ export const translations: Record<Language, Translations> = {
     appSubtitle: "ปรับแต่งสีชื่อแสดงผลของคุณใน On-Together: Virtual Co-Working",
     nameLabel: "ชื่อที่แสดง",
     namePlaceholder: "ป้อนชื่อของคุณ...",
-    letterColoursTitle: "สีตัวอักษร",
-    letterColoursHint:
+    letterStylingTitle: "สไตล์ตัวอักษร",
+    letterStylingHint:
       "คลิกตัวอักษรเพื่อเลือก แล้วใช้สีหรือไล่สี Shift+คลิกเพื่อเลือกช่วง Ctrl/Cmd+คลิกเพื่อสลับ",
     selectAll: "เลือกทั้งหมด",
     deselectAll: "ยกเลิกการเลือก",
@@ -1511,7 +1730,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "เริ่ม",
     gradientEnd: "สิ้นสุด",
     applyGradient: "ใช้ไล่สี",
-    chatColoursTitle: "สีแชท",
+    chatStylingTitle: "สไตล์แชท",
     colonColourLabel: "สีจุดคู่",
     colonColourHint: "สีของจุดคู่ (:) ที่แสดงหลังชื่อของคุณในแชท",
     messageColourLabel: "สีข้อความ",
@@ -1530,7 +1749,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'เปิดไฟล์ในโปรแกรมแก้ไขข้อความและค้นหาฟิลด์ "Name" จะมีลักษณะดังนี้:',
     step3Example: '"Name":"ชื่อปัจจุบันของคุณ"',
-    step4: "แทนที่ค่าด้วยโค้ดที่สร้างด้านบน",
+    step4:
+      'แทนที่ค่า (เช่น YourCurrentName ในตัวอย่างด้านบน) ด้วยโค้ดจากส่วน "โค้ดที่สร้าง"',
     step5: "บันทึกไฟล์และเริ่มเกม",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -1574,6 +1794,18 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "ซอร์สโค้ด",
     fileApplyWaitingForName:
       "ตั้งค่าสีชื่อของคุณด้านบน แล้วกลับมาดาวน์โหลดไฟล์ที่อัปเดต",
+    boldLabel: "ตัวหนา",
+    chatBoldLabel: "ตัวหนาแชท",
+    italicLabel: "ตัวเอียง",
+    chatItalicLabel: "ตัวเอียงแชท",
+    nameLoadHint:
+      'คุณสามารถโหลดชื่อที่แสดงปัจจุบันได้โดยลากไฟล์ PlayerData ไปยังตัวปรับใช้อัตโนมัติในส่วน "วิธีการใช้งาน" ด้านล่าง',
+    nameOverrideTitle: "แทนที่ชื่อปัจจุบัน?",
+    nameOverrideDesc:
+      "คุณมีชื่อที่กรอกไว้แล้ว ต้องการแทนที่ด้วยชื่อจากไฟล์ PlayerData หรือไม่?",
+    nameOverrideConfirm: "แทนที่",
+    nameOverrideCancel: "เก็บปัจจุบัน",
+    footerKofi: "สนับสนุนบน Ko-fi",
   },
 
   vi: {
@@ -1582,8 +1814,8 @@ export const translations: Record<Language, Translations> = {
       "Tùy chỉnh màu sắc tên hiển thị trong On-Together: Virtual Co-Working",
     nameLabel: "Tên hiển thị",
     namePlaceholder: "Nhập tên của bạn...",
-    letterColoursTitle: "Màu chữ cái",
-    letterColoursHint:
+    letterStylingTitle: "Kiểu chữ cái",
+    letterStylingHint:
       "Nhấp vào chữ cái để chọn, sau đó áp dụng màu hoặc gradient. Shift+Nhấp cho phạm vi, Ctrl/Cmd+Nhấp để chuyển đổi.",
     selectAll: "Chọn tất cả",
     deselectAll: "Bỏ chọn",
@@ -1593,7 +1825,7 @@ export const translations: Record<Language, Translations> = {
     gradientStart: "Bắt đầu",
     gradientEnd: "Kết thúc",
     applyGradient: "Áp dụng gradient",
-    chatColoursTitle: "Màu chat",
+    chatStylingTitle: "Kiểu chat",
     colonColourLabel: "Màu dấu hai chấm",
     colonColourHint: "Màu của dấu hai chấm (:) hiển thị sau tên bạn trong chat",
     messageColourLabel: "Màu tin nhắn",
@@ -1614,7 +1846,8 @@ export const translations: Record<Language, Translations> = {
     step3:
       'Mở tệp trong trình soạn thảo văn bản và tìm trường "Name". Nó sẽ trông như thế này:',
     step3Example: '"Name":"TênHiệnTạiCủaBạn"',
-    step4: "Thay thế giá trị bằng mã được tạo ở trên.",
+    step4:
+      'Thay thế giá trị (ví dụ: YourCurrentName trong ví dụ ở trên) bằng mã từ phần "Mã được tạo".',
     step5: "Lưu tệp và khởi động trò chơi.",
     windowsLabel: "Windows",
     macLabel: "Mac",
@@ -1658,5 +1891,17 @@ export const translations: Record<Language, Translations> = {
     footerSourceCode: "Mã nguồn",
     fileApplyWaitingForName:
       "Đặt màu tên của bạn ở trên, sau đó quay lại để tải xuống file đã cập nhật.",
+    boldLabel: "Đậm",
+    chatBoldLabel: "Đậm trò chuyện",
+    italicLabel: "Nghiêng",
+    chatItalicLabel: "Nghiêng trò chuyện",
+    nameLoadHint:
+      'Bạn có thể tải tên hiển thị hiện tại bằng cách kéo thả tệp PlayerData vào Trình áp dụng tự động trong phần "Cách áp dụng" bên dưới.',
+    nameOverrideTitle: "Ghi đè tên hiện tại?",
+    nameOverrideDesc:
+      "Bạn đã nhập tên. Bạn có muốn thay thế bằng tên từ file PlayerData không?",
+    nameOverrideConfirm: "Thay thế",
+    nameOverrideCancel: "Giữ hiện tại",
+    footerKofi: "Hỗ trợ trên Ko-fi",
   },
 };

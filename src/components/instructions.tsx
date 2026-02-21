@@ -12,9 +12,22 @@ const STATUS_MANAGER_URL =
 
 interface InstructionsProps {
   generatedCode: string;
+  onNameLoaded?: (data: {
+    name: string;
+    letterColours: string[];
+    letterBold: boolean[];
+    letterItalic: boolean[];
+    chatBold: boolean;
+    chatItalic: boolean;
+    colonColour: string | null;
+    messageColour: string | null;
+  }) => void;
 }
 
-export function Instructions({ generatedCode }: InstructionsProps) {
+export function Instructions({
+  generatedCode,
+  onNameLoaded,
+}: InstructionsProps) {
   const { t } = useI18n();
 
   return (
@@ -31,7 +44,10 @@ export function Instructions({ generatedCode }: InstructionsProps) {
               <p className="text-muted-foreground text-xs italic">
                 {t("autoApplyPrivacy")}
               </p>
-              <FileApplicator generatedCode={generatedCode} />
+              <FileApplicator
+                generatedCode={generatedCode}
+                onNameLoaded={onNameLoaded}
+              />
             </div>
           </AccordionContent>
         </AccordionItem>
