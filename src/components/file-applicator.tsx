@@ -1,6 +1,7 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useMemo } from "react";
 import { useI18n } from "@/hooks/use-i18n";
 import { extractName, replaceName } from "@/lib/player-data";
+import { parseTmpName } from "@/lib/tmp-parser";
 import { Button } from "@/components/ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { DownloadIcon, Tick02Icon } from "@hugeicons/core-free-icons";
@@ -16,26 +17,27 @@ export function FileApplicator({ generatedCode }: FileApplicatorProps) {
   const [oldName, setOldName] = useState<string | null>(null);
   const [rawContent, setRawContent] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [downloaded, setDownloaded] = useState(false);
+  const [downloadedCode, setDownloadedCode] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const downloaded = downloadedCode === generatedCode && generatedCode !== "";
 
   // Recompute modified content whenever generatedCode or rawContent changes
   const modifiedContent =
-    rawContent && generatedCode
-      ? replaceName(rawContent, generatedCode)
-      : null;
+    rawContent && generatedCode ? replaceName(rawContent, generatedCode) : null;
 
-  // Reset downloaded state when the generated code changes (name reconfigured)
-  useEffect(() => {
-    setDownloaded(false);
-  }, [generatedCode]);
+  // Parse old name TMP tags for visual preview
+  const parsedOldName = useMemo(
+    () => (oldName ? parseTmpName(oldName) : null),
+    [oldName]
+  );
 
   const processFile = useCallback(
     async (file: File) => {
       setError(null);
       setRawContent(null);
       setOldName(null);
-      setDownloaded(false);
+      setDownloadedCode(null);
 
       try {
         const text = await file.text();
@@ -100,15 +102,15 @@ export function FileApplicator({ generatedCode }: FileApplicatorProps) {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    setDownloaded(true);
-  }, [modifiedContent, fileName]);
+    setDownloadedCode(generatedCode);
+  }, [modifiedContent, fileName, generatedCode]);
 
   const handleReset = useCallback(() => {
     setFileName(null);
     setOldName(null);
     setRawContent(null);
     setError(null);
-    setDownloaded(false);
+    setDownloadedCode(null);
     if (fileInputRef.current) fileInputRef.current.value = "";
   }, []);
 
@@ -125,6 +127,42 @@ export function FileApplicator({ generatedCode }: FileApplicatorProps) {
               {fileName}
             </code>
           </p>
+          {oldName && parsedOldName && (
+            <>
+              <div className="rounded-lg bg-[#8B5C7B] px-3 py-2 text-sm leading-relaxed">
+                {/* Name with colours */}
+                <span className={parsedOldName.bold ? "font-bold" : undefined}>
+                  {parsedOldName.letters.map((l, i) => (
+                    <span key={i} style={{ color: l.colour }}>
+                      {l.char}
+                    </span>
+                  ))}
+                </span>
+                {/* Colon */}
+                <span
+                  className={parsedOldName.bold ? "font-bold" : undefined}
+                  style={{
+                    color:
+                      parsedOldName.colonColour ??
+                      parsedOldName.letters[parsedOldName.letters.length - 1]
+                        ?.colour ??
+                      "#FFFFFF",
+                  }}
+                >
+                  :
+                </span>
+                {/* Sample message */}
+                <span
+                  style={{
+                    color: parsedOldName.messageColour ?? "#FFFFFF",
+                  }}
+                >
+                  {" "}
+                  {t("previewSampleMessage")}
+                </span>
+              </div>
+            </>
+          )}
           {oldName && (
             <p className="text-xs text-muted-foreground">
               {t("fileApplyOldName")}:{" "}
@@ -143,9 +181,7 @@ export function FileApplicator({ generatedCode }: FileApplicatorProps) {
                   icon={downloaded ? Tick02Icon : DownloadIcon}
                   className="size-4"
                 />
-                {downloaded
-                  ? t("fileApplyDownloaded")
-                  : t("fileApplyDownload")}
+                {downloaded ? t("fileApplyDownloaded") : t("fileApplyDownload")}
               </Button>
               <Button variant="outline" onClick={handleReset}>
                 {t("fileApplyReset")}

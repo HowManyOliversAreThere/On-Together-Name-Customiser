@@ -28,6 +28,9 @@ export function Instructions({ generatedCode }: InstructionsProps) {
           <AccordionContent>
             <div className="space-y-3">
               <p className="text-muted-foreground">{t("autoApplyDesc")}</p>
+              <p className="text-muted-foreground text-xs italic">
+                {t("autoApplyPrivacy")}
+              </p>
               <FileApplicator generatedCode={generatedCode} />
             </div>
           </AccordionContent>

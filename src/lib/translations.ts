@@ -81,15 +81,18 @@ export const translations: Record<Language, Translations> = {
       "To apply your custom name, edit the PlayerData.txt file:",
     step1: "Close the game completely.",
     step2: "Navigate to the PlayerData.txt file located at:",
-    stepBackup: "Back up the file by copying it (e.g. to PlayerData-backup.txt).",
-    step3: 'Open the file in a text editor and find the "Name" field. It will look something like this:',
+    stepBackup:
+      "Back up the file by copying it (e.g. to PlayerData-backup.txt).",
+    step3:
+      'Open the file in a text editor and find the "Name" field. It will look something like this:',
     step3Example: '"Name":"YourCurrentName"',
     step4: "Replace the value with the generated code above.",
     step5: "Save the file and start the game.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "You can also use the StatusManager mod and the /setname command in-game.",
+    altMethodDesc:
+      "You can also use the StatusManager mod and the /setname command in-game.",
     altMethodLink: "StatusManager mod",
     tipTitle: "Tips",
     tip40Char:
@@ -102,24 +105,31 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "Language",
     enableChatColours: "Enable chat colours",
     autoApplyTitle: "Auto Applicator",
-    autoApplyDesc: "Drag your PlayerData.txt file here and download the modified version with your new name applied. Back up your existing PlayerData.txt first, then replace it with the downloaded file.",
+    autoApplyDesc:
+      "Drag your PlayerData.txt file here and download the modified version with your new name applied. Back up your existing PlayerData.txt first, then replace it with the downloaded file.",
+    autoApplyPrivacy:
+      "Everything runs locally in your browser — your data never leaves your computer.",
     manualMethodTitle: "Manual File Editing",
     fileApplyDropZone: "Drop your PlayerData.txt file here",
     fileApplyDropHint: "or click to browse",
     fileApplyNoCode: "Configure your name colours first, then come back here.",
-    fileApplyNoName: "Could not find the Name field in this file. Make sure it's a valid PlayerData.txt file.",
+    fileApplyNoName:
+      "Could not find the Name field in this file. Make sure it's a valid PlayerData.txt file.",
     fileApplyReadError: "Could not read the file. Please try again.",
     fileApplyLoaded: "File loaded",
     fileApplyOldName: "Current name",
     fileApplyDownload: "Download Modified File",
     fileApplyDownloaded: "Downloaded!",
-    fileApplyDownloadHint: "Replace your original PlayerData.txt with the downloaded file, then start the game.",
+    fileApplyDownloadHint:
+      "Replace your original PlayerData.txt with the downloaded file, then start the game.",
     fileApplyReset: "Reset",
-    footerFanCreation: "This is a fan creation and is not officially associated with On-Together or GigaPuff.",
+    footerFanCreation:
+      "This is a fan creation and is not officially associated with On-Together or GigaPuff.",
     footerInspired: "Inspired by the",
     footerGuideLink: "Guide by Ranch",
     footerSourceCode: "Source Code",
-    fileApplyWaitingForName: "Set your name colours above, then come back to download the updated file.",
+    fileApplyWaitingForName:
+      "Set your name colours above, then come back to download the updated file.",
   },
 
   "en-US": {
@@ -141,8 +151,7 @@ export const translations: Record<Language, Translations> = {
     applyGradient: "Apply Gradient",
     chatColoursTitle: "Chat Colors",
     colonColourLabel: "Colon Color",
-    colonColourHint:
-      "The color of the colon (:) shown after your name in chat",
+    colonColourHint: "The color of the colon (:) shown after your name in chat",
     messageColourLabel: "Message Color",
     messageColourHint: "The color of your chat messages",
     previewTitle: "Preview",
@@ -157,15 +166,18 @@ export const translations: Record<Language, Translations> = {
       "To apply your custom name, edit the PlayerData.txt file:",
     step1: "Close the game completely.",
     step2: "Navigate to the PlayerData.txt file located at:",
-    stepBackup: "Back up the file by copying it (e.g. to PlayerData-backup.txt).",
-    step3: 'Open the file in a text editor and find the "Name" field. It will look something like this:',
+    stepBackup:
+      "Back up the file by copying it (e.g. to PlayerData-backup.txt).",
+    step3:
+      'Open the file in a text editor and find the "Name" field. It will look something like this:',
     step3Example: '"Name":"YourCurrentName"',
     step4: "Replace the value with the generated code above.",
     step5: "Save the file and start the game.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "You can also use the StatusManager mod and the /setname command in-game.",
+    altMethodDesc:
+      "You can also use the StatusManager mod and the /setname command in-game.",
     altMethodLink: "StatusManager mod",
     tipTitle: "Tips",
     tip40Char:
@@ -178,30 +190,36 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "Language",
     enableChatColours: "Enable chat colors",
     autoApplyTitle: "Auto Applicator",
-    autoApplyDesc: "Drag your PlayerData.txt file here and download the modified version with your new name applied. Back up your existing PlayerData.txt first, then replace it with the downloaded file.",
+    autoApplyDesc:
+      "Drag your PlayerData.txt file here and download the modified version with your new name applied. Back up your existing PlayerData.txt first, then replace it with the downloaded file.",
+    autoApplyPrivacy:
+      "Everything runs locally in your browser — your data never leaves your computer.",
     manualMethodTitle: "Manual File Editing",
     fileApplyDropZone: "Drop your PlayerData.txt file here",
     fileApplyDropHint: "or click to browse",
     fileApplyNoCode: "Configure your name colours first, then come back here.",
-    fileApplyNoName: "Could not find the Name field in this file. Make sure it's a valid PlayerData.txt file.",
+    fileApplyNoName:
+      "Could not find the Name field in this file. Make sure it's a valid PlayerData.txt file.",
     fileApplyReadError: "Could not read the file. Please try again.",
     fileApplyLoaded: "File loaded",
     fileApplyOldName: "Current name",
     fileApplyDownload: "Download Modified File",
     fileApplyDownloaded: "Downloaded!",
-    fileApplyDownloadHint: "Replace your original PlayerData.txt with the downloaded file, then start the game.",
+    fileApplyDownloadHint:
+      "Replace your original PlayerData.txt with the downloaded file, then start the game.",
     fileApplyReset: "Reset",
-    footerFanCreation: "This is a fan creation and is not officially associated with On-Together or GigaPuff.",
+    footerFanCreation:
+      "This is a fan creation and is not officially associated with On-Together or GigaPuff.",
     footerInspired: "Inspired by the",
     footerGuideLink: "Guide by Ranch",
     footerSourceCode: "Source Code",
-    fileApplyWaitingForName: "Set your name colors above, then come back to download the updated file.",
+    fileApplyWaitingForName:
+      "Set your name colors above, then come back to download the updated file.",
   },
 
   ja: {
     appTitle: "On-Together 名前カスタマイザー",
-    appSubtitle:
-      "On-Together: Virtual Co-Working の表示名の色をカスタマイズ",
+    appSubtitle: "On-Together: Virtual Co-Working の表示名の色をカスタマイズ",
     nameLabel: "表示名",
     namePlaceholder: "表示名を入力...",
     letterColoursTitle: "文字の色",
@@ -232,15 +250,18 @@ export const translations: Record<Language, Translations> = {
       "カスタム名を適用するにはPlayerData.txtファイルを編集します：",
     step1: "ゲームを完全に終了します。",
     step2: "以下の場所にあるPlayerData.txtファイルに移動します：",
-    stepBackup: "ファイルをコピーしてバックアップします（例：PlayerData-backup.txt）。",
-    step3: 'テキストエディタでファイルを開き、「Name」項目を見つけます。以下のようになっています：',
+    stepBackup:
+      "ファイルをコピーしてバックアップします（例：PlayerData-backup.txt）。",
+    step3:
+      "テキストエディタでファイルを開き、「Name」項目を見つけます。以下のようになっています：",
     step3Example: '"Name":"現在の名前"',
     step4: "値を上で生成されたコードに置き換えます。",
     step5: "ファイルを保存してゲームを起動します。",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "StatusManagerモッドを使用して、ゲーム内で/setnameコマンドを使うこともできます。",
+    altMethodDesc:
+      "StatusManagerモッドを使用して、ゲーム内で/setnameコマンドを使うこともできます。",
     altMethodLink: "StatusManagerモッド",
     tipTitle: "ヒント",
     tip40Char:
@@ -253,30 +274,37 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "言語",
     enableChatColours: "チャットの色を有効にする",
     autoApplyTitle: "自動適用",
-    autoApplyDesc: "PlayerData.txtファイルをここにドラッグして、新しい名前が適用された修正版をダウンロードします。既存のPlayerData.txtをバックアップしてから、ダウンロードしたファイルと置き換えてください。",
+    autoApplyDesc:
+      "PlayerData.txtファイルをここにドラッグして、新しい名前が適用された修正版をダウンロードします。既存のPlayerData.txtをバックアップしてから、ダウンロードしたファイルと置き換えてください。",
+    autoApplyPrivacy:
+      "すべてブラウザ内でローカルに処理されます — データがコンピュータの外に出ることはありません。",
     manualMethodTitle: "手動ファイル編集",
     fileApplyDropZone: "PlayerData.txtファイルをここにドロップ",
     fileApplyDropHint: "またはクリックして参照",
     fileApplyNoCode: "まず名前の色を設定してから、ここに戻ってください。",
-    fileApplyNoName: "このファイルにNameフィールドが見つかりません。有効なPlayerData.txtファイルか確認してください。",
-    fileApplyReadError: "ファイルを読み取れませんでした。もう一度お試しください。",
+    fileApplyNoName:
+      "このファイルにNameフィールドが見つかりません。有効なPlayerData.txtファイルか確認してください。",
+    fileApplyReadError:
+      "ファイルを読み取れませんでした。もう一度お試しください。",
     fileApplyLoaded: "ファイル読み込み完了",
     fileApplyOldName: "現在の名前",
     fileApplyDownload: "修正ファイルをダウンロード",
     fileApplyDownloaded: "ダウンロード完了！",
-    fileApplyDownloadHint: "ダウンロードしたファイルで元のPlayerData.txtを置き換えて、ゲームを起動してください。",
+    fileApplyDownloadHint:
+      "ダウンロードしたファイルで元のPlayerData.txtを置き換えて、ゲームを起動してください。",
     fileApplyReset: "リセット",
-    footerFanCreation: "これはファン作品であり、On-TogetherやGigaPuffとは公式に関連していません。",
+    footerFanCreation:
+      "これはファン作品であり、On-TogetherやGigaPuffとは公式に関連していません。",
     footerInspired: "インスピレーション：",
     footerGuideLink: "Ranchのガイド",
     footerSourceCode: "ソースコード",
-    fileApplyWaitingForName: "上で名前の色を設定してから、更新されたファイルをダウンロードしてください。",
+    fileApplyWaitingForName:
+      "上で名前の色を設定してから、更新されたファイルをダウンロードしてください。",
   },
 
   ko: {
     appTitle: "On-Together 이름 커스터마이저",
-    appSubtitle:
-      "On-Together: Virtual Co-Working 표시 이름 색상 커스터마이즈",
+    appSubtitle: "On-Together: Virtual Co-Working 표시 이름 색상 커스터마이즈",
     nameLabel: "표시 이름",
     namePlaceholder: "표시 이름을 입력하세요...",
     letterColoursTitle: "글자 색상",
@@ -308,14 +336,16 @@ export const translations: Record<Language, Translations> = {
     step1: "게임을 완전히 종료합니다.",
     step2: "다음 위치에 있는 PlayerData.txt 파일로 이동합니다:",
     stepBackup: "파일을 복사하여 백업합니다 (예: PlayerData-backup.txt).",
-    step3: '텍스트 편집기에서 파일을 열고 "Name" 항목을 찾습니다. 다음과 같이 보일 것입니다:',
+    step3:
+      '텍스트 편집기에서 파일을 열고 "Name" 항목을 찾습니다. 다음과 같이 보일 것입니다:',
     step3Example: '"Name":"현재이름"',
     step4: "값을 위에서 생성된 코드로 교체합니다.",
     step5: "파일을 저장하고 게임을 시작합니다.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "StatusManager 모드를 사용하여 게임 내에서 /setname 명령을 사용할 수도 있습니다.",
+    altMethodDesc:
+      "StatusManager 모드를 사용하여 게임 내에서 /setname 명령을 사용할 수도 있습니다.",
     altMethodLink: "StatusManager 모드",
     tipTitle: "팁",
     tip40Char:
@@ -328,24 +358,31 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "언어",
     enableChatColours: "채팅 색상 활성화",
     autoApplyTitle: "자동 적용",
-    autoApplyDesc: "PlayerData.txt 파일을 여기에 드래그하여 새 이름이 적용된 수정된 버전을 다운로드하세요. 기존 PlayerData.txt를 먼저 백업한 다음 다운로드한 파일로 교체하세요.",
+    autoApplyDesc:
+      "PlayerData.txt 파일을 여기에 드래그하여 새 이름이 적용된 수정된 버전을 다운로드하세요. 기존 PlayerData.txt를 먼저 백업한 다음 다운로드한 파일로 교체하세요.",
+    autoApplyPrivacy:
+      "모든 처리는 브라우저에서 로컬로 실행됩니다 — 데이터가 컴퓨터 밖으로 나가지 않습니다.",
     manualMethodTitle: "수동 파일 편집",
     fileApplyDropZone: "PlayerData.txt 파일을 여기에 드롭하세요",
     fileApplyDropHint: "또는 클릭하여 찾아보기",
     fileApplyNoCode: "먼저 이름 색상을 설정한 후 여기로 돌아오세요.",
-    fileApplyNoName: "이 파일에서 Name 필드를 찾을 수 없습니다. 유효한 PlayerData.txt 파일인지 확인하세요.",
+    fileApplyNoName:
+      "이 파일에서 Name 필드를 찾을 수 없습니다. 유효한 PlayerData.txt 파일인지 확인하세요.",
     fileApplyReadError: "파일을 읽을 수 없습니다. 다시 시도해 주세요.",
     fileApplyLoaded: "파일 로드됨",
     fileApplyOldName: "현재 이름",
     fileApplyDownload: "수정된 파일 다운로드",
     fileApplyDownloaded: "다운로드 완료!",
-    fileApplyDownloadHint: "다운로드한 파일로 원본 PlayerData.txt를 교체한 후 게임을 실행하세요.",
+    fileApplyDownloadHint:
+      "다운로드한 파일로 원본 PlayerData.txt를 교체한 후 게임을 실행하세요.",
     fileApplyReset: "초기화",
-    footerFanCreation: "이것은 팬 창작물이며 On-Together 또는 GigaPuff와 공식적으로 관련이 없습니다.",
+    footerFanCreation:
+      "이것은 팬 창작물이며 On-Together 또는 GigaPuff와 공식적으로 관련이 없습니다.",
     footerInspired: "영감을 받은 곳:",
     footerGuideLink: "Ranch의 가이드",
     footerSourceCode: "소스 코드",
-    fileApplyWaitingForName: "위에서 이름 색상을 설정한 후 업데이트된 파일을 다운로드하세요.",
+    fileApplyWaitingForName:
+      "위에서 이름 색상을 설정한 후 업데이트된 파일을 다운로드하세요.",
   },
 
   "zh-CN": {
@@ -393,25 +430,29 @@ export const translations: Record<Language, Translations> = {
     tip40Char:
       "游戏内名称字段有40个字符的限制，但编辑PlayerData.txt可以绕过此限制。",
     tipBackup: "编辑前请务必备份你的PlayerData.txt。",
-    tipEscapeQuotes:
-      '如果名称包含引号，请在JSON文件中使用反斜杠转义（\\"）。',
+    tipEscapeQuotes: '如果名称包含引号，请在JSON文件中使用反斜杠转义（\\"）。',
     enterName: "在上方输入名称以开始",
     noLettersSelected: "选择一个或多个字母来设置颜色",
     languageLabel: "语言",
     enableChatColours: "启用聊天颜色",
     autoApplyTitle: "自动应用",
-    autoApplyDesc: "将您的 PlayerData.txt 文件拖到此处，下载已应用新名称的修改版本。请先备份现有的 PlayerData.txt，然后用下载的文件替换它。",
+    autoApplyDesc:
+      "将您的 PlayerData.txt 文件拖到此处，下载已应用新名称的修改版本。请先备份现有的 PlayerData.txt，然后用下载的文件替换它。",
+    autoApplyPrivacy:
+      "所有处理均在浏览器本地运行——您的数据不会离开您的计算机。",
     manualMethodTitle: "手动编辑文件",
     fileApplyDropZone: "将 PlayerData.txt 文件拖到此处",
     fileApplyDropHint: "或点击浏览",
     fileApplyNoCode: "请先配置您的名称颜色，然后再回到这里。",
-    fileApplyNoName: "在此文件中找不到 Name 字段。请确保它是有效的 PlayerData.txt 文件。",
+    fileApplyNoName:
+      "在此文件中找不到 Name 字段。请确保它是有效的 PlayerData.txt 文件。",
     fileApplyReadError: "无法读取文件，请重试。",
     fileApplyLoaded: "文件已载入",
     fileApplyOldName: "当前名称",
     fileApplyDownload: "下载修改后的文件",
     fileApplyDownloaded: "已下载！",
-    fileApplyDownloadHint: "用下载的文件替换原始的 PlayerData.txt，然后启动游戏。",
+    fileApplyDownloadHint:
+      "用下载的文件替换原始的 PlayerData.txt，然后启动游戏。",
     fileApplyReset: "重置",
     footerFanCreation: "这是粉丝作品，与 On-Together 或 GigaPuff 无官方关联。",
     footerInspired: "灵感来自",
@@ -444,7 +485,7 @@ export const translations: Record<Language, Translations> = {
     previewTitle: "預覽",
     previewSampleMessage: "大家好！",
     generatedCodeTitle: "產生的代碼",
-    generatedCodeHint: '複製此代碼並貼上為PlayerData.txt中「Name」的值',
+    generatedCodeHint: "複製此代碼並貼上為PlayerData.txt中「Name」的值",
     copyButton: "複製",
     copiedButton: "已複製！",
     instructionsTitle: "如何套用",
@@ -452,7 +493,7 @@ export const translations: Record<Language, Translations> = {
     step1: "完全關閉遊戲。",
     step2: "導航到以下路徑的PlayerData.txt檔案：",
     stepBackup: "備份檔案（例如複製為PlayerData-backup.txt）。",
-    step3: '用文字編輯器開啟檔案，找到「Name」欄位。它看起來類似這樣：',
+    step3: "用文字編輯器開啟檔案，找到「Name」欄位。它看起來類似這樣：",
     step3Example: '"Name":"你目前的名稱"',
     step4: "將值替換為上方產生的代碼。",
     step5: "儲存檔案並啟動遊戲。",
@@ -465,25 +506,28 @@ export const translations: Record<Language, Translations> = {
     tip40Char:
       "遊戲內名稱欄位有40個字元的限制，但編輯PlayerData.txt可以繞過此限制。",
     tipBackup: "編輯前請務必備份你的PlayerData.txt。",
-    tipEscapeQuotes:
-      '如果名稱包含引號，請在JSON檔案中使用反斜線轉義（\\"）。',
+    tipEscapeQuotes: '如果名稱包含引號，請在JSON檔案中使用反斜線轉義（\\"）。',
     enterName: "在上方輸入名稱以開始",
     noLettersSelected: "選擇一個或多個字母來設定顏色",
     languageLabel: "語言",
     enableChatColours: "啟用聊天顏色",
     autoApplyTitle: "自動套用",
-    autoApplyDesc: "將您的 PlayerData.txt 檔案拖到此處，下載已套用新名稱的修改版本。請先備份現有的 PlayerData.txt，然後用下載的檔案替換它。",
+    autoApplyDesc:
+      "將您的 PlayerData.txt 檔案拖到此處，下載已套用新名稱的修改版本。請先備份現有的 PlayerData.txt，然後用下載的檔案替換它。",
+    autoApplyPrivacy: "所有處理均在瀏覽器本地執行——您的資料不會離開您的電腦。",
     manualMethodTitle: "手動編輯檔案",
     fileApplyDropZone: "將 PlayerData.txt 檔案拖到此處",
     fileApplyDropHint: "或點擊瀏覽",
     fileApplyNoCode: "請先設定您的名稱顏色，然後再回到這裡。",
-    fileApplyNoName: "在此檔案中找不到 Name 欄位。請確保它是有效的 PlayerData.txt 檔案。",
+    fileApplyNoName:
+      "在此檔案中找不到 Name 欄位。請確保它是有效的 PlayerData.txt 檔案。",
     fileApplyReadError: "無法讀取檔案，請重試。",
     fileApplyLoaded: "檔案已載入",
     fileApplyOldName: "目前名稱",
     fileApplyDownload: "下載修改後的檔案",
     fileApplyDownloaded: "已下載！",
-    fileApplyDownloadHint: "用下載的檔案取代原始的 PlayerData.txt，然後啟動遊戲。",
+    fileApplyDownloadHint:
+      "用下載的檔案取代原始的 PlayerData.txt，然後啟動遊戲。",
     fileApplyReset: "重設",
     footerFanCreation: "這是粉絲作品，與 On-Together 或 GigaPuff 無官方關聯。",
     footerInspired: "靈感來自",
@@ -527,15 +571,18 @@ export const translations: Record<Language, Translations> = {
       "Pour appliquer votre nom personnalisé, éditez le fichier PlayerData.txt :",
     step1: "Fermez complètement le jeu.",
     step2: "Naviguez vers le fichier PlayerData.txt situé à :",
-    stepBackup: "Sauvegardez le fichier en le copiant (ex : PlayerData-backup.txt).",
-    step3: 'Ouvrez le fichier dans un éditeur de texte et trouvez le champ "Name". Il ressemble à ceci :',
+    stepBackup:
+      "Sauvegardez le fichier en le copiant (ex : PlayerData-backup.txt).",
+    step3:
+      'Ouvrez le fichier dans un éditeur de texte et trouvez le champ "Name". Il ressemble à ceci :',
     step3Example: '"Name":"VotreNomActuel"',
     step4: "Remplacez la valeur par le code généré ci-dessus.",
     step5: "Enregistrez le fichier et lancez le jeu.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Vous pouvez aussi utiliser le mod StatusManager et la commande /setname en jeu.",
+    altMethodDesc:
+      "Vous pouvez aussi utiliser le mod StatusManager et la commande /setname en jeu.",
     altMethodLink: "mod StatusManager",
     tipTitle: "Conseils",
     tip40Char:
@@ -550,24 +597,32 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "Langue",
     enableChatColours: "Activer les couleurs du chat",
     autoApplyTitle: "Application automatique",
-    autoApplyDesc: "Glissez votre fichier PlayerData.txt ici et téléchargez la version modifiée avec votre nouveau nom appliqué. Sauvegardez d'abord votre PlayerData.txt existant, puis remplacez-le par le fichier téléchargé.",
+    autoApplyDesc:
+      "Glissez votre fichier PlayerData.txt ici et téléchargez la version modifiée avec votre nouveau nom appliqué. Sauvegardez d'abord votre PlayerData.txt existant, puis remplacez-le par le fichier téléchargé.",
+    autoApplyPrivacy:
+      "Tout fonctionne localement dans votre navigateur — vos données ne quittent jamais votre ordinateur.",
     manualMethodTitle: "Édition manuelle du fichier",
     fileApplyDropZone: "Déposez votre fichier PlayerData.txt ici",
     fileApplyDropHint: "ou cliquez pour parcourir",
-    fileApplyNoCode: "Configurez d'abord les couleurs de votre nom, puis revenez ici.",
-    fileApplyNoName: "Impossible de trouver le champ Name dans ce fichier. Assurez-vous qu'il s'agit d'un fichier PlayerData.txt valide.",
+    fileApplyNoCode:
+      "Configurez d'abord les couleurs de votre nom, puis revenez ici.",
+    fileApplyNoName:
+      "Impossible de trouver le champ Name dans ce fichier. Assurez-vous qu'il s'agit d'un fichier PlayerData.txt valide.",
     fileApplyReadError: "Impossible de lire le fichier. Veuillez réessayer.",
     fileApplyLoaded: "Fichier chargé",
     fileApplyOldName: "Nom actuel",
     fileApplyDownload: "Télécharger le fichier modifié",
     fileApplyDownloaded: "Téléchargé !",
-    fileApplyDownloadHint: "Remplacez votre PlayerData.txt original par le fichier téléchargé, puis lancez le jeu.",
+    fileApplyDownloadHint:
+      "Remplacez votre PlayerData.txt original par le fichier téléchargé, puis lancez le jeu.",
     fileApplyReset: "Réinitialiser",
-    footerFanCreation: "Ceci est une création de fan et n'est pas officiellement associé à On-Together ou GigaPuff.",
+    footerFanCreation:
+      "Ceci est une création de fan et n'est pas officiellement associé à On-Together ou GigaPuff.",
     footerInspired: "Inspiré par le",
     footerGuideLink: "Guide de Ranch",
     footerSourceCode: "Code source",
-    fileApplyWaitingForName: "Configurez les couleurs de votre nom ci-dessus, puis revenez télécharger le fichier mis à jour.",
+    fileApplyWaitingForName:
+      "Configurez les couleurs de votre nom ci-dessus, puis revenez télécharger le fichier mis à jour.",
   },
 
   de: {
@@ -589,8 +644,7 @@ export const translations: Record<Language, Translations> = {
     applyGradient: "Verlauf anwenden",
     chatColoursTitle: "Chat-Farben",
     colonColourLabel: "Doppelpunkt-Farbe",
-    colonColourHint:
-      "Die Farbe des Doppelpunkts (:) nach deinem Namen im Chat",
+    colonColourHint: "Die Farbe des Doppelpunkts (:) nach deinem Namen im Chat",
     messageColourLabel: "Nachrichtenfarbe",
     messageColourHint: "Die Farbe deiner Chat-Nachrichten",
     previewTitle: "Vorschau",
@@ -605,15 +659,18 @@ export const translations: Record<Language, Translations> = {
       "Um deinen benutzerdefinierten Namen anzuwenden, bearbeite die PlayerData.txt:",
     step1: "Schließe das Spiel vollständig.",
     step2: "Navigiere zur PlayerData.txt unter:",
-    stepBackup: "Erstelle eine Sicherungskopie der Datei (z.B. als PlayerData-backup.txt).",
-    step3: 'Öffne die Datei in einem Texteditor und finde das "Name"-Feld. Es sieht ungefähr so aus:',
+    stepBackup:
+      "Erstelle eine Sicherungskopie der Datei (z.B. als PlayerData-backup.txt).",
+    step3:
+      'Öffne die Datei in einem Texteditor und finde das "Name"-Feld. Es sieht ungefähr so aus:',
     step3Example: '"Name":"DeinAktuellerName"',
     step4: "Ersetze den Wert durch den oben generierten Code.",
     step5: "Speichere die Datei und starte das Spiel.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Du kannst auch den StatusManager-Mod verwenden und den /setname-Befehl im Spiel nutzen.",
+    altMethodDesc:
+      "Du kannst auch den StatusManager-Mod verwenden und den /setname-Befehl im Spiel nutzen.",
     altMethodLink: "StatusManager-Mod",
     tipTitle: "Tipps",
     tip40Char:
@@ -628,24 +685,33 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "Sprache",
     enableChatColours: "Chat-Farben aktivieren",
     autoApplyTitle: "Automatisch anwenden",
-    autoApplyDesc: "Ziehen Sie Ihre PlayerData.txt-Datei hierher und laden Sie die geänderte Version mit Ihrem neuen Namen herunter. Sichern Sie zuerst Ihre vorhandene PlayerData.txt und ersetzen Sie sie dann durch die heruntergeladene Datei.",
+    autoApplyDesc:
+      "Ziehen Sie Ihre PlayerData.txt-Datei hierher und laden Sie die geänderte Version mit Ihrem neuen Namen herunter. Sichern Sie zuerst Ihre vorhandene PlayerData.txt und ersetzen Sie sie dann durch die heruntergeladene Datei.",
+    autoApplyPrivacy:
+      "Alles läuft lokal in Ihrem Browser — Ihre Daten verlassen niemals Ihren Computer.",
     manualMethodTitle: "Manuelle Dateibearbeitung",
     fileApplyDropZone: "PlayerData.txt-Datei hier ablegen",
     fileApplyDropHint: "oder klicken zum Durchsuchen",
-    fileApplyNoCode: "Konfigurieren Sie zuerst Ihre Namensfarben und kommen Sie dann hierher zurück.",
-    fileApplyNoName: "Das Name-Feld konnte in dieser Datei nicht gefunden werden. Stellen Sie sicher, dass es eine gültige PlayerData.txt-Datei ist.",
-    fileApplyReadError: "Die Datei konnte nicht gelesen werden. Bitte versuchen Sie es erneut.",
+    fileApplyNoCode:
+      "Konfigurieren Sie zuerst Ihre Namensfarben und kommen Sie dann hierher zurück.",
+    fileApplyNoName:
+      "Das Name-Feld konnte in dieser Datei nicht gefunden werden. Stellen Sie sicher, dass es eine gültige PlayerData.txt-Datei ist.",
+    fileApplyReadError:
+      "Die Datei konnte nicht gelesen werden. Bitte versuchen Sie es erneut.",
     fileApplyLoaded: "Datei geladen",
     fileApplyOldName: "Aktueller Name",
     fileApplyDownload: "Geänderte Datei herunterladen",
     fileApplyDownloaded: "Heruntergeladen!",
-    fileApplyDownloadHint: "Ersetzen Sie Ihre originale PlayerData.txt durch die heruntergeladene Datei und starten Sie das Spiel.",
+    fileApplyDownloadHint:
+      "Ersetzen Sie Ihre originale PlayerData.txt durch die heruntergeladene Datei und starten Sie das Spiel.",
     fileApplyReset: "Zurücksetzen",
-    footerFanCreation: "Dies ist eine Fan-Kreation und steht in keiner offiziellen Verbindung zu On-Together oder GigaPuff.",
+    footerFanCreation:
+      "Dies ist eine Fan-Kreation und steht in keiner offiziellen Verbindung zu On-Together oder GigaPuff.",
     footerInspired: "Inspiriert vom",
     footerGuideLink: "Guide von Ranch",
     footerSourceCode: "Quellcode",
-    fileApplyWaitingForName: "Stellen Sie oben Ihre Namensfarben ein und kommen Sie dann zurück, um die aktualisierte Datei herunterzuladen.",
+    fileApplyWaitingForName:
+      "Stellen Sie oben Ihre Namensfarben ein und kommen Sie dann zurück, um die aktualisierte Datei herunterzuladen.",
   },
 
   es: {
@@ -683,15 +749,18 @@ export const translations: Record<Language, Translations> = {
       "Para aplicar tu nombre personalizado, edita el archivo PlayerData.txt:",
     step1: "Cierra el juego completamente.",
     step2: "Navega al archivo PlayerData.txt ubicado en:",
-    stepBackup: "Haz una copia de seguridad del archivo (ej. como PlayerData-backup.txt).",
-    step3: 'Abre el archivo en un editor de texto y encuentra el campo "Name". Se verá algo así:',
+    stepBackup:
+      "Haz una copia de seguridad del archivo (ej. como PlayerData-backup.txt).",
+    step3:
+      'Abre el archivo en un editor de texto y encuentra el campo "Name". Se verá algo así:',
     step3Example: '"Name":"TuNombreActual"',
     step4: "Reemplaza el valor con el código generado arriba.",
     step5: "Guarda el archivo e inicia el juego.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "También puedes usar el mod StatusManager y el comando /setname en el juego.",
+    altMethodDesc:
+      "También puedes usar el mod StatusManager y el comando /setname en el juego.",
     altMethodLink: "mod StatusManager",
     tipTitle: "Consejos",
     tip40Char:
@@ -701,29 +770,37 @@ export const translations: Record<Language, Translations> = {
     tipEscapeQuotes:
       'Si tu nombre contiene comillas, escápalas con una barra invertida (\\") en el archivo JSON.',
     enterName: "Ingresa un nombre arriba para comenzar",
-    noLettersSelected:
-      "Selecciona una o más letras para establecer su color",
+    noLettersSelected: "Selecciona una o más letras para establecer su color",
     languageLabel: "Idioma",
     enableChatColours: "Activar colores del chat",
     autoApplyTitle: "Aplicación automática",
-    autoApplyDesc: "Arrastra tu archivo PlayerData.txt aquí y descarga la versión modificada con tu nuevo nombre aplicado. Haz una copia de seguridad de tu PlayerData.txt existente primero, luego reemplázalo con el archivo descargado.",
+    autoApplyDesc:
+      "Arrastra tu archivo PlayerData.txt aquí y descarga la versión modificada con tu nuevo nombre aplicado. Haz una copia de seguridad de tu PlayerData.txt existente primero, luego reemplázalo con el archivo descargado.",
+    autoApplyPrivacy:
+      "Todo se ejecuta localmente en tu navegador — tus datos nunca salen de tu computadora.",
     manualMethodTitle: "Edición manual del archivo",
     fileApplyDropZone: "Suelta tu archivo PlayerData.txt aquí",
     fileApplyDropHint: "o haz clic para buscar",
-    fileApplyNoCode: "Primero configura los colores de tu nombre y luego vuelve aquí.",
-    fileApplyNoName: "No se pudo encontrar el campo Name en este archivo. Asegúrate de que sea un archivo PlayerData.txt válido.",
-    fileApplyReadError: "No se pudo leer el archivo. Por favor, inténtalo de nuevo.",
+    fileApplyNoCode:
+      "Primero configura los colores de tu nombre y luego vuelve aquí.",
+    fileApplyNoName:
+      "No se pudo encontrar el campo Name en este archivo. Asegúrate de que sea un archivo PlayerData.txt válido.",
+    fileApplyReadError:
+      "No se pudo leer el archivo. Por favor, inténtalo de nuevo.",
     fileApplyLoaded: "Archivo cargado",
     fileApplyOldName: "Nombre actual",
     fileApplyDownload: "Descargar archivo modificado",
     fileApplyDownloaded: "¡Descargado!",
-    fileApplyDownloadHint: "Reemplaza tu PlayerData.txt original con el archivo descargado y luego inicia el juego.",
+    fileApplyDownloadHint:
+      "Reemplaza tu PlayerData.txt original con el archivo descargado y luego inicia el juego.",
     fileApplyReset: "Restablecer",
-    footerFanCreation: "Esta es una creación de fans y no está oficialmente asociada con On-Together o GigaPuff.",
+    footerFanCreation:
+      "Esta es una creación de fans y no está oficialmente asociada con On-Together o GigaPuff.",
     footerInspired: "Inspirado por la",
     footerGuideLink: "Guía de Ranch",
     footerSourceCode: "Código fuente",
-    fileApplyWaitingForName: "Configura los colores de tu nombre arriba y luego vuelve para descargar el archivo actualizado.",
+    fileApplyWaitingForName:
+      "Configura los colores de tu nombre arriba y luego vuelve para descargar el archivo actualizado.",
   },
 
   "pt-BR": {
@@ -745,8 +822,7 @@ export const translations: Record<Language, Translations> = {
     applyGradient: "Aplicar gradiente",
     chatColoursTitle: "Cores do chat",
     colonColourLabel: "Cor dos dois pontos",
-    colonColourHint:
-      "A cor dos dois pontos (:) exibidos após seu nome no chat",
+    colonColourHint: "A cor dos dois pontos (:) exibidos após seu nome no chat",
     messageColourLabel: "Cor da mensagem",
     messageColourHint: "A cor das suas mensagens no chat",
     previewTitle: "Pré-visualização",
@@ -761,47 +837,57 @@ export const translations: Record<Language, Translations> = {
       "Para aplicar seu nome personalizado, edite o arquivo PlayerData.txt:",
     step1: "Feche o jogo completamente.",
     step2: "Navegue até o arquivo PlayerData.txt localizado em:",
-    stepBackup: "Faça uma cópia de segurança do arquivo (ex: PlayerData-backup.txt).",
-    step3: 'Abra o arquivo em um editor de texto e encontre o campo "Name". Ele se parecerá com isto:',
+    stepBackup:
+      "Faça uma cópia de segurança do arquivo (ex: PlayerData-backup.txt).",
+    step3:
+      'Abra o arquivo em um editor de texto e encontre o campo "Name". Ele se parecerá com isto:',
     step3Example: '"Name":"SeuNomeAtual"',
     step4: "Substitua o valor pelo código gerado acima.",
     step5: "Salve o arquivo e inicie o jogo.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Você também pode usar o mod StatusManager e o comando /setname no jogo.",
+    altMethodDesc:
+      "Você também pode usar o mod StatusManager e o comando /setname no jogo.",
     altMethodLink: "mod StatusManager",
     tipTitle: "Dicas",
     tip40Char:
       "O campo de nome no jogo tem um limite de 40 caracteres, mas editar o PlayerData.txt contorna isso.",
-    tipBackup:
-      "Sempre faça backup do seu PlayerData.txt antes de editar.",
+    tipBackup: "Sempre faça backup do seu PlayerData.txt antes de editar.",
     tipEscapeQuotes:
       'Se seu nome contém aspas, escape-as com uma barra invertida (\\") no arquivo JSON.',
     enterName: "Digite um nome acima para começar",
-    noLettersSelected:
-      "Selecione uma ou mais letras para definir sua cor",
+    noLettersSelected: "Selecione uma ou mais letras para definir sua cor",
     languageLabel: "Idioma",
     enableChatColours: "Ativar cores do chat",
     autoApplyTitle: "Aplicação automática",
-    autoApplyDesc: "Arraste seu arquivo PlayerData.txt aqui e baixe a versão modificada com seu novo nome aplicado. Faça backup do seu PlayerData.txt existente primeiro, depois substitua-o pelo arquivo baixado.",
+    autoApplyDesc:
+      "Arraste seu arquivo PlayerData.txt aqui e baixe a versão modificada com seu novo nome aplicado. Faça backup do seu PlayerData.txt existente primeiro, depois substitua-o pelo arquivo baixado.",
+    autoApplyPrivacy:
+      "Tudo é executado localmente no seu navegador — seus dados nunca saem do seu computador.",
     manualMethodTitle: "Edição manual do arquivo",
     fileApplyDropZone: "Solte seu arquivo PlayerData.txt aqui",
     fileApplyDropHint: "ou clique para procurar",
-    fileApplyNoCode: "Configure as cores do seu nome primeiro e depois volte aqui.",
-    fileApplyNoName: "Não foi possível encontrar o campo Name neste arquivo. Certifique-se de que é um arquivo PlayerData.txt válido.",
-    fileApplyReadError: "Não foi possível ler o arquivo. Por favor, tente novamente.",
+    fileApplyNoCode:
+      "Configure as cores do seu nome primeiro e depois volte aqui.",
+    fileApplyNoName:
+      "Não foi possível encontrar o campo Name neste arquivo. Certifique-se de que é um arquivo PlayerData.txt válido.",
+    fileApplyReadError:
+      "Não foi possível ler o arquivo. Por favor, tente novamente.",
     fileApplyLoaded: "Arquivo carregado",
     fileApplyOldName: "Nome atual",
     fileApplyDownload: "Baixar arquivo modificado",
     fileApplyDownloaded: "Baixado!",
-    fileApplyDownloadHint: "Substitua seu PlayerData.txt original pelo arquivo baixado e inicie o jogo.",
+    fileApplyDownloadHint:
+      "Substitua seu PlayerData.txt original pelo arquivo baixado e inicie o jogo.",
     fileApplyReset: "Redefinir",
-    footerFanCreation: "Esta é uma criação de fã e não está oficialmente associada ao On-Together ou GigaPuff.",
+    footerFanCreation:
+      "Esta é uma criação de fã e não está oficialmente associada ao On-Together ou GigaPuff.",
     footerInspired: "Inspirado pelo",
     footerGuideLink: "Guia do Ranch",
     footerSourceCode: "Código-fonte",
-    fileApplyWaitingForName: "Configure as cores do seu nome acima e depois volte para baixar o arquivo atualizado.",
+    fileApplyWaitingForName:
+      "Configure as cores do seu nome acima e depois volte para baixar o arquivo atualizado.",
   },
 
   ru: {
@@ -823,8 +909,7 @@ export const translations: Record<Language, Translations> = {
     applyGradient: "Применить градиент",
     chatColoursTitle: "Цвета чата",
     colonColourLabel: "Цвет двоеточия",
-    colonColourHint:
-      "Цвет двоеточия (:) после вашего имени в чате",
+    colonColourHint: "Цвет двоеточия (:) после вашего имени в чате",
     messageColourLabel: "Цвет сообщения",
     messageColourHint: "Цвет ваших сообщений в чате",
     previewTitle: "Предпросмотр",
@@ -839,15 +924,18 @@ export const translations: Record<Language, Translations> = {
       "Чтобы применить своё имя, отредактируйте файл PlayerData.txt:",
     step1: "Полностью закройте игру.",
     step2: "Перейдите к файлу PlayerData.txt по адресу:",
-    stepBackup: "Сделайте резервную копию файла (например, скопируйте как PlayerData-backup.txt).",
-    step3: 'Откройте файл в текстовом редакторе и найдите поле "Name". Оно выглядит примерно так:',
+    stepBackup:
+      "Сделайте резервную копию файла (например, скопируйте как PlayerData-backup.txt).",
+    step3:
+      'Откройте файл в текстовом редакторе и найдите поле "Name". Оно выглядит примерно так:',
     step3Example: '"Name":"ВашеТекущееИмя"',
     step4: "Замените значение на сгенерированный код выше.",
     step5: "Сохраните файл и запустите игру.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Вы также можете использовать мод StatusManager и команду /setname в игре.",
+    altMethodDesc:
+      "Вы также можете использовать мод StatusManager и команду /setname в игре.",
     altMethodLink: "мод StatusManager",
     tipTitle: "Советы",
     tip40Char:
@@ -857,29 +945,36 @@ export const translations: Record<Language, Translations> = {
     tipEscapeQuotes:
       'Если имя содержит кавычки, экранируйте их обратным слэшем (\\") в JSON-файле.',
     enterName: "Введите имя выше, чтобы начать",
-    noLettersSelected:
-      "Выберите одну или несколько букв для установки цвета",
+    noLettersSelected: "Выберите одну или несколько букв для установки цвета",
     languageLabel: "Язык",
     enableChatColours: "Включить цвета чата",
     autoApplyTitle: "Автоматическое применение",
-    autoApplyDesc: "Перетащите файл PlayerData.txt сюда и скачайте изменённую версию с вашим новым именем. Сначала сделайте резервную копию существующего PlayerData.txt, затем замените его скачанным файлом.",
+    autoApplyDesc:
+      "Перетащите файл PlayerData.txt сюда и скачайте изменённую версию с вашим новым именем. Сначала сделайте резервную копию существующего PlayerData.txt, затем замените его скачанным файлом.",
+    autoApplyPrivacy:
+      "Всё работает локально в вашем браузере — ваши данные никогда не покидают ваш компьютер.",
     manualMethodTitle: "Ручное редактирование файла",
     fileApplyDropZone: "Перетащите файл PlayerData.txt сюда",
     fileApplyDropHint: "или нажмите для выбора",
     fileApplyNoCode: "Сначала настройте цвета имени, затем вернитесь сюда.",
-    fileApplyNoName: "Не удалось найти поле Name в этом файле. Убедитесь, что это действительный файл PlayerData.txt.",
-    fileApplyReadError: "Не удалось прочитать файл. Пожалуйста, попробуйте снова.",
+    fileApplyNoName:
+      "Не удалось найти поле Name в этом файле. Убедитесь, что это действительный файл PlayerData.txt.",
+    fileApplyReadError:
+      "Не удалось прочитать файл. Пожалуйста, попробуйте снова.",
     fileApplyLoaded: "Файл загружен",
     fileApplyOldName: "Текущее имя",
     fileApplyDownload: "Скачать изменённый файл",
     fileApplyDownloaded: "Скачано!",
-    fileApplyDownloadHint: "Замените оригинальный PlayerData.txt скачанным файлом и запустите игру.",
+    fileApplyDownloadHint:
+      "Замените оригинальный PlayerData.txt скачанным файлом и запустите игру.",
     fileApplyReset: "Сбросить",
-    footerFanCreation: "Это фанатское творение, не связанное официально с On-Together или GigaPuff.",
+    footerFanCreation:
+      "Это фанатское творение, не связанное официально с On-Together или GigaPuff.",
     footerInspired: "Вдохновлено",
     footerGuideLink: "гайдом Ranch",
     footerSourceCode: "Исходный код",
-    fileApplyWaitingForName: "Настройте цвета имени выше, затем вернитесь, чтобы скачать обновлённый файл.",
+    fileApplyWaitingForName:
+      "Настройте цвета имени выше, затем вернитесь, чтобы скачать обновлённый файл.",
   },
 
   it: {
@@ -917,15 +1012,18 @@ export const translations: Record<Language, Translations> = {
       "Per applicare il tuo nome personalizzato, modifica il file PlayerData.txt:",
     step1: "Chiudi completamente il gioco.",
     step2: "Vai al file PlayerData.txt che si trova in:",
-    stepBackup: "Fai un backup del file (es. copialo come PlayerData-backup.txt).",
-    step3: 'Apri il file in un editor di testo e trova il campo "Name". Apparirà più o meno così:',
+    stepBackup:
+      "Fai un backup del file (es. copialo come PlayerData-backup.txt).",
+    step3:
+      'Apri il file in un editor di testo e trova il campo "Name". Apparirà più o meno così:',
     step3Example: '"Name":"IlTuoNomeAttuale"',
     step4: "Sostituisci il valore con il codice generato sopra.",
     step5: "Salva il file e avvia il gioco.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Puoi anche usare il mod StatusManager e il comando /setname nel gioco.",
+    altMethodDesc:
+      "Puoi anche usare il mod StatusManager e il comando /setname nel gioco.",
     altMethodLink: "mod StatusManager",
     tipTitle: "Suggerimenti",
     tip40Char:
@@ -940,24 +1038,31 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "Lingua",
     enableChatColours: "Attiva colori della chat",
     autoApplyTitle: "Applicazione automatica",
-    autoApplyDesc: "Trascina il tuo file PlayerData.txt qui e scarica la versione modificata con il tuo nuovo nome applicato. Esegui prima il backup del tuo PlayerData.txt esistente, poi sostituiscilo con il file scaricato.",
+    autoApplyDesc:
+      "Trascina il tuo file PlayerData.txt qui e scarica la versione modificata con il tuo nuovo nome applicato. Esegui prima il backup del tuo PlayerData.txt esistente, poi sostituiscilo con il file scaricato.",
+    autoApplyPrivacy:
+      "Tutto viene eseguito localmente nel tuo browser — i tuoi dati non lasciano mai il tuo computer.",
     manualMethodTitle: "Modifica manuale del file",
     fileApplyDropZone: "Rilascia il tuo file PlayerData.txt qui",
     fileApplyDropHint: "o clicca per sfogliare",
     fileApplyNoCode: "Prima configura i colori del tuo nome, poi torna qui.",
-    fileApplyNoName: "Impossibile trovare il campo Name in questo file. Assicurati che sia un file PlayerData.txt valido.",
+    fileApplyNoName:
+      "Impossibile trovare il campo Name in questo file. Assicurati che sia un file PlayerData.txt valido.",
     fileApplyReadError: "Impossibile leggere il file. Riprova.",
     fileApplyLoaded: "File caricato",
     fileApplyOldName: "Nome attuale",
     fileApplyDownload: "Scarica file modificato",
     fileApplyDownloaded: "Scaricato!",
-    fileApplyDownloadHint: "Sostituisci il tuo PlayerData.txt originale con il file scaricato, poi avvia il gioco.",
+    fileApplyDownloadHint:
+      "Sostituisci il tuo PlayerData.txt originale con il file scaricato, poi avvia il gioco.",
     fileApplyReset: "Reimposta",
-    footerFanCreation: "Questa è una creazione dei fan e non è ufficialmente associata a On-Together o GigaPuff.",
+    footerFanCreation:
+      "Questa è una creazione dei fan e non è ufficialmente associata a On-Together o GigaPuff.",
     footerInspired: "Ispirato dalla",
     footerGuideLink: "Guida di Ranch",
     footerSourceCode: "Codice sorgente",
-    fileApplyWaitingForName: "Imposta i colori del tuo nome sopra, poi torna per scaricare il file aggiornato.",
+    fileApplyWaitingForName:
+      "Imposta i colori del tuo nome sopra, poi torna per scaricare il file aggiornato.",
   },
 
   tr: {
@@ -995,15 +1100,18 @@ export const translations: Record<Language, Translations> = {
       "Özel adınızı uygulamak için PlayerData.txt dosyasını düzenleyin:",
     step1: "Oyunu tamamen kapatın.",
     step2: "Şu konumdaki PlayerData.txt dosyasına gidin:",
-    stepBackup: "Dosyanın yedeğini alın (ör. PlayerData-backup.txt olarak kopyalayın).",
-    step3: 'Dosyayı bir metin düzenleyicide açın ve "Name" alanını bulun. Şuna benzer görünecektir:',
+    stepBackup:
+      "Dosyanın yedeğini alın (ör. PlayerData-backup.txt olarak kopyalayın).",
+    step3:
+      'Dosyayı bir metin düzenleyicide açın ve "Name" alanını bulun. Şuna benzer görünecektir:',
     step3Example: '"Name":"MevcutAdınız"',
     step4: "Değeri yukarıda oluşturulan kodla değiştirin.",
     step5: "Dosyayı kaydedin ve oyunu başlatın.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "StatusManager modunu kullanarak oyun içinde /setname komutunu da kullanabilirsiniz.",
+    altMethodDesc:
+      "StatusManager modunu kullanarak oyun içinde /setname komutunu da kullanabilirsiniz.",
     altMethodLink: "StatusManager modu",
     tipTitle: "İpuçları",
     tip40Char:
@@ -1018,24 +1126,32 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "Dil",
     enableChatColours: "Sohbet renklerini etkinleştir",
     autoApplyTitle: "Otomatik Uygulama",
-    autoApplyDesc: "PlayerData.txt dosyanızı buraya sürükleyin ve yeni adınız uygulanmış değiştirilmiş sürümü indirin. Önce mevcut PlayerData.txt dosyanızı yedekleyin, ardından indirilen dosyayla değiştirin.",
+    autoApplyDesc:
+      "PlayerData.txt dosyanızı buraya sürükleyin ve yeni adınız uygulanmış değiştirilmiş sürümü indirin. Önce mevcut PlayerData.txt dosyanızı yedekleyin, ardından indirilen dosyayla değiştirin.",
+    autoApplyPrivacy:
+      "Her şey tarayıcınızda yerel olarak çalışır — verileriniz asla bilgisayarınızdan çıkmaz.",
     manualMethodTitle: "Manuel Dosya Düzenleme",
     fileApplyDropZone: "PlayerData.txt dosyanızı buraya bırakın",
     fileApplyDropHint: "veya göz atmak için tıklayın",
-    fileApplyNoCode: "Önce isim renklerinizi yapılandırın, sonra buraya geri dönün.",
-    fileApplyNoName: "Bu dosyada Name alanı bulunamadı. Geçerli bir PlayerData.txt dosyası olduğundan emin olun.",
+    fileApplyNoCode:
+      "Önce isim renklerinizi yapılandırın, sonra buraya geri dönün.",
+    fileApplyNoName:
+      "Bu dosyada Name alanı bulunamadı. Geçerli bir PlayerData.txt dosyası olduğundan emin olun.",
     fileApplyReadError: "Dosya okunamadı. Lütfen tekrar deneyin.",
     fileApplyLoaded: "Dosya yüklendi",
     fileApplyOldName: "Mevcut isim",
     fileApplyDownload: "Değiştirilmiş dosyayı indir",
     fileApplyDownloaded: "İndirildi!",
-    fileApplyDownloadHint: "Orijinal PlayerData.txt dosyanızı indirilen dosyayla değiştirin ve oyunu başlatın.",
+    fileApplyDownloadHint:
+      "Orijinal PlayerData.txt dosyanızı indirilen dosyayla değiştirin ve oyunu başlatın.",
     fileApplyReset: "Sıfırla",
-    footerFanCreation: "Bu bir hayran yapımıdır ve On-Together veya GigaPuff ile resmi olarak ilişkili değildir.",
+    footerFanCreation:
+      "Bu bir hayran yapımıdır ve On-Together veya GigaPuff ile resmi olarak ilişkili değildir.",
     footerInspired: "İlham kaynağı:",
     footerGuideLink: "Ranch'in Rehberi",
     footerSourceCode: "Kaynak Kodu",
-    fileApplyWaitingForName: "Yukarıda isim renklerinizi ayarlayın, sonra güncellenmiş dosyayı indirmek için geri dönün.",
+    fileApplyWaitingForName:
+      "Yukarıda isim renklerinizi ayarlayın, sonra güncellenmiş dosyayı indirmek için geri dönün.",
   },
 
   pl: {
@@ -1057,8 +1173,7 @@ export const translations: Record<Language, Translations> = {
     applyGradient: "Zastosuj gradient",
     chatColoursTitle: "Kolory czatu",
     colonColourLabel: "Kolor dwukropka",
-    colonColourHint:
-      "Kolor dwukropka (:) wyświetlanego po nazwie w czacie",
+    colonColourHint: "Kolor dwukropka (:) wyświetlanego po nazwie w czacie",
     messageColourLabel: "Kolor wiadomości",
     messageColourHint: "Kolor twoich wiadomości na czacie",
     previewTitle: "Podgląd",
@@ -1074,46 +1189,53 @@ export const translations: Record<Language, Translations> = {
     step1: "Całkowicie zamknij grę.",
     step2: "Przejdź do pliku PlayerData.txt znajdującego się w:",
     stepBackup: "Zrób kopię zapasową pliku (np. jako PlayerData-backup.txt).",
-    step3: 'Otwórz plik w edytorze tekstu i znajdź pole "Name". Będzie wyglądać mniej więcej tak:',
+    step3:
+      'Otwórz plik w edytorze tekstu i znajdź pole "Name". Będzie wyglądać mniej więcej tak:',
     step3Example: '"Name":"TwojaBieżącaNazwa"',
     step4: "Zamień wartość na wygenerowany powyżej kod.",
     step5: "Zapisz plik i uruchom grę.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Możesz też użyć moda StatusManager i komendy /setname w grze.",
+    altMethodDesc:
+      "Możesz też użyć moda StatusManager i komendy /setname w grze.",
     altMethodLink: "mod StatusManager",
     tipTitle: "Wskazówki",
     tip40Char:
       "Pole nazwy w grze ma limit 40 znaków, ale edycja PlayerData.txt omija to.",
-    tipBackup:
-      "Zawsze rób kopię zapasową PlayerData.txt przed edycją.",
+    tipBackup: "Zawsze rób kopię zapasową PlayerData.txt przed edycją.",
     tipEscapeQuotes:
       'Jeśli nazwa zawiera cudzysłowy, ucieczka je odwrotnym ukośnikiem (\\") w pliku JSON.',
     enterName: "Wpisz nazwę powyżej, aby rozpocząć",
-    noLettersSelected:
-      "Wybierz jedną lub więcej liter, aby ustawić ich kolor",
+    noLettersSelected: "Wybierz jedną lub więcej liter, aby ustawić ich kolor",
     languageLabel: "Język",
     enableChatColours: "Włącz kolory czatu",
     autoApplyTitle: "Automatyczne zastosowanie",
-    autoApplyDesc: "Przeciągnij plik PlayerData.txt tutaj i pobierz zmodyfikowaną wersję z nową nazwą. Najpierw wykonaj kopię zapasową istniejącego pliku PlayerData.txt, a następnie zastąp go pobranym plikiem.",
+    autoApplyDesc:
+      "Przeciągnij plik PlayerData.txt tutaj i pobierz zmodyfikowaną wersję z nową nazwą. Najpierw wykonaj kopię zapasową istniejącego pliku PlayerData.txt, a następnie zastąp go pobranym plikiem.",
+    autoApplyPrivacy:
+      "Wszystko działa lokalnie w przeglądarce — Twoje dane nigdy nie opuszczają komputera.",
     manualMethodTitle: "Ręczna edycja pliku",
     fileApplyDropZone: "Upuść plik PlayerData.txt tutaj",
     fileApplyDropHint: "lub kliknij, aby przeglądać",
     fileApplyNoCode: "Najpierw skonfiguruj kolory nazwy, a potem wróć tutaj.",
-    fileApplyNoName: "Nie znaleziono pola Name w tym pliku. Upewnij się, że to prawidłowy plik PlayerData.txt.",
+    fileApplyNoName:
+      "Nie znaleziono pola Name w tym pliku. Upewnij się, że to prawidłowy plik PlayerData.txt.",
     fileApplyReadError: "Nie udało się odczytać pliku. Spróbuj ponownie.",
     fileApplyLoaded: "Plik załadowany",
     fileApplyOldName: "Obecna nazwa",
     fileApplyDownload: "Pobierz zmodyfikowany plik",
     fileApplyDownloaded: "Pobrano!",
-    fileApplyDownloadHint: "Zastąp oryginalny PlayerData.txt pobranym plikiem i uruchom grę.",
+    fileApplyDownloadHint:
+      "Zastąp oryginalny PlayerData.txt pobranym plikiem i uruchom grę.",
     fileApplyReset: "Resetuj",
-    footerFanCreation: "To jest twórczość fanów i nie jest oficjalnie powiązana z On-Together ani GigaPuff.",
+    footerFanCreation:
+      "To jest twórczość fanów i nie jest oficjalnie powiązana z On-Together ani GigaPuff.",
     footerInspired: "Inspirowane",
     footerGuideLink: "poradnikiem Ranch",
     footerSourceCode: "Kod źródłowy",
-    fileApplyWaitingForName: "Ustaw kolory nazwy powyżej, a następnie wróć, aby pobrać zaktualizowany plik.",
+    fileApplyWaitingForName:
+      "Ustaw kolory nazwy powyżej, a następnie wróć, aby pobrać zaktualizowany plik.",
   },
 
   uk: {
@@ -1135,8 +1257,7 @@ export const translations: Record<Language, Translations> = {
     applyGradient: "Застосувати градієнт",
     chatColoursTitle: "Кольори чату",
     colonColourLabel: "Колір двокрапки",
-    colonColourHint:
-      "Колір двокрапки (:) після вашого імені в чаті",
+    colonColourHint: "Колір двокрапки (:) після вашого імені в чаті",
     messageColourLabel: "Колір повідомлення",
     messageColourHint: "Колір ваших повідомлень у чаті",
     previewTitle: "Попередній перегляд",
@@ -1151,15 +1272,18 @@ export const translations: Record<Language, Translations> = {
       "Щоб застосувати власне ім'я, відредагуйте файл PlayerData.txt:",
     step1: "Повністю закрийте гру.",
     step2: "Перейдіть до файлу PlayerData.txt за адресою:",
-    stepBackup: "Зробіть резервну копію файлу (наприклад, скопіюйте як PlayerData-backup.txt).",
-    step3: 'Відкрийте файл у текстовому редакторі та знайдіть поле "Name". Воно виглядає приблизно так:',
+    stepBackup:
+      "Зробіть резервну копію файлу (наприклад, скопіюйте як PlayerData-backup.txt).",
+    step3:
+      'Відкрийте файл у текстовому редакторі та знайдіть поле "Name". Воно виглядає приблизно так:',
     step3Example: '"Name":"ВашеПоточнеІмя"',
     step4: "Замініть значення на згенерований код вище.",
     step5: "Збережіть файл та запустіть гру.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Ви також можете використати мод StatusManager та команду /setname у грі.",
+    altMethodDesc:
+      "Ви також можете використати мод StatusManager та команду /setname у грі.",
     altMethodLink: "мод StatusManager",
     tipTitle: "Поради",
     tip40Char:
@@ -1167,37 +1291,45 @@ export const translations: Record<Language, Translations> = {
     tipBackup:
       "Завжди робіть резервну копію PlayerData.txt перед редагуванням.",
     tipEscapeQuotes:
-      'Якщо ім\'я містить лапки, екрануйте їх зворотним слешем (\\") у JSON-файлі.',
+      "Якщо ім'я містить лапки, екрануйте їх зворотним слешем (\\\") у JSON-файлі.",
     enterName: "Введіть ім'я вище, щоб почати",
     noLettersSelected:
       "Виберіть одну або кілька літер для встановлення кольору",
     languageLabel: "Мова",
     enableChatColours: "Увімкнути кольори чату",
     autoApplyTitle: "Автоматичне застосування",
-    autoApplyDesc: "Перетягніть файл PlayerData.txt сюди та завантажте змінену версію з вашим новим ім'ям. Спочатку створіть резервну копію наявного PlayerData.txt, потім замініть його завантаженим файлом.",
+    autoApplyDesc:
+      "Перетягніть файл PlayerData.txt сюди та завантажте змінену версію з вашим новим ім'ям. Спочатку створіть резервну копію наявного PlayerData.txt, потім замініть його завантаженим файлом.",
+    autoApplyPrivacy:
+      "Усе працює локально у вашому браузері — ваші дані ніколи не залишають ваш комп'ютер.",
     manualMethodTitle: "Ручне редагування файлу",
     fileApplyDropZone: "Перетягніть файл PlayerData.txt сюди",
     fileApplyDropHint: "або натисніть для вибору",
-    fileApplyNoCode: "Спочатку налаштуйте кольори імені, потім поверніться сюди.",
-    fileApplyNoName: "Не вдалося знайти поле Name у цьому файлі. Переконайтеся, що це дійсний файл PlayerData.txt.",
-    fileApplyReadError: "Не вдалося прочитати файл. Будь ласка, спробуйте ще раз.",
+    fileApplyNoCode:
+      "Спочатку налаштуйте кольори імені, потім поверніться сюди.",
+    fileApplyNoName:
+      "Не вдалося знайти поле Name у цьому файлі. Переконайтеся, що це дійсний файл PlayerData.txt.",
+    fileApplyReadError:
+      "Не вдалося прочитати файл. Будь ласка, спробуйте ще раз.",
     fileApplyLoaded: "Файл завантажено",
     fileApplyOldName: "Поточне ім'я",
     fileApplyDownload: "Завантажити змінений файл",
     fileApplyDownloaded: "Завантажено!",
-    fileApplyDownloadHint: "Замініть оригінальний PlayerData.txt завантаженим файлом та запустіть гру.",
+    fileApplyDownloadHint:
+      "Замініть оригінальний PlayerData.txt завантаженим файлом та запустіть гру.",
     fileApplyReset: "Скинути",
-    footerFanCreation: "Це фанатський проект, який не пов'язаний офіційно з On-Together або GigaPuff.",
+    footerFanCreation:
+      "Це фанатський проект, який не пов'язаний офіційно з On-Together або GigaPuff.",
     footerInspired: "Натхнення:",
     footerGuideLink: "гайд Ranch",
     footerSourceCode: "Вихідний код",
-    fileApplyWaitingForName: "Налаштуйте кольори імені вище, потім поверніться, щоб завантажити оновлений файл.",
+    fileApplyWaitingForName:
+      "Налаштуйте кольори імені вище, потім поверніться, щоб завантажити оновлений файл.",
   },
 
   ar: {
     appTitle: "أداة تخصيص الاسم - On-Together",
-    appSubtitle:
-      "خصّص ألوان اسمك المعروض في On-Together: Virtual Co-Working",
+    appSubtitle: "خصّص ألوان اسمك المعروض في On-Together: Virtual Co-Working",
     nameLabel: "الاسم المعروض",
     namePlaceholder: "أدخل اسمك...",
     letterColoursTitle: "ألوان الحروف",
@@ -1219,16 +1351,15 @@ export const translations: Record<Language, Translations> = {
     previewTitle: "معاينة",
     previewSampleMessage: "مرحباً بالجميع!",
     generatedCodeTitle: "الكود المُنشأ",
-    generatedCodeHint:
-      'انسخ هذا والصقه كقيمة "Name" في ملف PlayerData.txt',
+    generatedCodeHint: 'انسخ هذا والصقه كقيمة "Name" في ملف PlayerData.txt',
     copyButton: "نسخ",
     copiedButton: "تم النسخ!",
     instructionsTitle: "كيفية التطبيق",
-    instructionIntro:
-      "لتطبيق اسمك المخصص، عدّل ملف PlayerData.txt:",
+    instructionIntro: "لتطبيق اسمك المخصص، عدّل ملف PlayerData.txt:",
     step1: "أغلق اللعبة تماماً.",
     step2: "انتقل إلى ملف PlayerData.txt الموجود في:",
-    stepBackup: "قم بعمل نسخة احتياطية من الملف (مثلاً انسخه كـ PlayerData-backup.txt).",
+    stepBackup:
+      "قم بعمل نسخة احتياطية من الملف (مثلاً انسخه كـ PlayerData-backup.txt).",
     step3: 'افتح الملف في محرر نصوص وابحث عن حقل "Name". سيبدو بهذا الشكل:',
     step3Example: '"Name":"اسمك_الحالي"',
     step4: "استبدل القيمة بالكود المُنشأ أعلاه.",
@@ -1236,7 +1367,8 @@ export const translations: Record<Language, Translations> = {
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "يمكنك أيضاً استخدام مود StatusManager واستخدام أمر /setname في اللعبة.",
+    altMethodDesc:
+      "يمكنك أيضاً استخدام مود StatusManager واستخدام أمر /setname في اللعبة.",
     altMethodLink: "مود StatusManager",
     tipTitle: "نصائح",
     tip40Char:
@@ -1249,24 +1381,31 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "اللغة",
     enableChatColours: "تفعيل ألوان الدردشة",
     autoApplyTitle: "التطبيق التلقائي",
-    autoApplyDesc: "اسحب ملف PlayerData.txt هنا وقم بتنزيل النسخة المعدلة مع اسمك الجديد. قم بعمل نسخة احتياطية من ملف PlayerData.txt الحالي أولاً، ثم استبدله بالملف الذي تم تنزيله.",
+    autoApplyDesc:
+      "اسحب ملف PlayerData.txt هنا وقم بتنزيل النسخة المعدلة مع اسمك الجديد. قم بعمل نسخة احتياطية من ملف PlayerData.txt الحالي أولاً، ثم استبدله بالملف الذي تم تنزيله.",
+    autoApplyPrivacy:
+      "كل شيء يعمل محلياً في متصفحك — بياناتك لا تغادر جهازك أبداً.",
     manualMethodTitle: "تحرير الملف يدوياً",
     fileApplyDropZone: "أفلت ملف PlayerData.txt هنا",
     fileApplyDropHint: "أو انقر للاستعراض",
     fileApplyNoCode: "قم بتكوين ألوان اسمك أولاً، ثم عد إلى هنا.",
-    fileApplyNoName: "تعذر العثور على حقل Name في هذا الملف. تأكد من أنه ملف PlayerData.txt صالح.",
+    fileApplyNoName:
+      "تعذر العثور على حقل Name في هذا الملف. تأكد من أنه ملف PlayerData.txt صالح.",
     fileApplyReadError: "تعذرت قراءة الملف. يرجى المحاولة مرة أخرى.",
     fileApplyLoaded: "تم تحميل الملف",
     fileApplyOldName: "الاسم الحالي",
     fileApplyDownload: "تنزيل الملف المعدل",
     fileApplyDownloaded: "تم التنزيل!",
-    fileApplyDownloadHint: "استبدل ملف PlayerData.txt الأصلي بالملف الذي تم تنزيله، ثم ابدأ اللعبة.",
+    fileApplyDownloadHint:
+      "استبدل ملف PlayerData.txt الأصلي بالملف الذي تم تنزيله، ثم ابدأ اللعبة.",
     fileApplyReset: "إعادة تعيين",
-    footerFanCreation: "هذا إنشاء معجبين وليس مرتبطًا رسميًا بـ On-Together أو GigaPuff.",
+    footerFanCreation:
+      "هذا إنشاء معجبين وليس مرتبطًا رسميًا بـ On-Together أو GigaPuff.",
     footerInspired: "مستوحى من",
     footerGuideLink: "دليل Ranch",
     footerSourceCode: "الكود المصدري",
-    fileApplyWaitingForName: "قم بتعيين ألوان اسمك أعلاه، ثم عد لتنزيل الملف المحدث.",
+    fileApplyWaitingForName:
+      "قم بتعيين ألوان اسمك أعلاه، ثم عد لتنزيل الملف المحدث.",
   },
 
   id: {
@@ -1304,15 +1443,18 @@ export const translations: Record<Language, Translations> = {
       "Untuk menerapkan nama kustom Anda, edit file PlayerData.txt:",
     step1: "Tutup game sepenuhnya.",
     step2: "Buka lokasi file PlayerData.txt yang terletak di:",
-    stepBackup: "Buat cadangan file (misal salin sebagai PlayerData-backup.txt).",
-    step3: 'Buka file di editor teks dan temukan kolom "Name". Tampilannya akan seperti ini:',
+    stepBackup:
+      "Buat cadangan file (misal salin sebagai PlayerData-backup.txt).",
+    step3:
+      'Buka file di editor teks dan temukan kolom "Name". Tampilannya akan seperti ini:',
     step3Example: '"Name":"NamaAndaSaatIni"',
     step4: "Ganti nilainya dengan kode yang dihasilkan di atas.",
     step5: "Simpan file dan mulai game.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Anda juga bisa menggunakan mod StatusManager dan perintah /setname di dalam game.",
+    altMethodDesc:
+      "Anda juga bisa menggunakan mod StatusManager dan perintah /setname di dalam game.",
     altMethodLink: "mod StatusManager",
     tipTitle: "Tips",
     tip40Char:
@@ -1321,35 +1463,41 @@ export const translations: Record<Language, Translations> = {
     tipEscapeQuotes:
       'Jika nama Anda mengandung tanda kutip, escape dengan backslash (\\") di file JSON.',
     enterName: "Masukkan nama di atas untuk memulai",
-    noLettersSelected:
-      "Pilih satu atau lebih huruf untuk mengatur warnanya",
+    noLettersSelected: "Pilih satu atau lebih huruf untuk mengatur warnanya",
     languageLabel: "Bahasa",
     enableChatColours: "Aktifkan warna chat",
     autoApplyTitle: "Aplikasi Otomatis",
-    autoApplyDesc: "Seret file PlayerData.txt Anda ke sini dan unduh versi yang dimodifikasi dengan nama baru Anda. Cadangkan file PlayerData.txt yang ada terlebih dahulu, lalu ganti dengan file yang diunduh.",
+    autoApplyDesc:
+      "Seret file PlayerData.txt Anda ke sini dan unduh versi yang dimodifikasi dengan nama baru Anda. Cadangkan file PlayerData.txt yang ada terlebih dahulu, lalu ganti dengan file yang diunduh.",
+    autoApplyPrivacy:
+      "Semuanya berjalan secara lokal di browser Anda — data Anda tidak pernah meninggalkan komputer Anda.",
     manualMethodTitle: "Pengeditan File Manual",
     fileApplyDropZone: "Lepaskan file PlayerData.txt Anda di sini",
     fileApplyDropHint: "atau klik untuk menelusuri",
-    fileApplyNoCode: "Konfigurasikan warna nama Anda terlebih dahulu, lalu kembali ke sini.",
-    fileApplyNoName: "Tidak dapat menemukan field Name di file ini. Pastikan ini adalah file PlayerData.txt yang valid.",
+    fileApplyNoCode:
+      "Konfigurasikan warna nama Anda terlebih dahulu, lalu kembali ke sini.",
+    fileApplyNoName:
+      "Tidak dapat menemukan field Name di file ini. Pastikan ini adalah file PlayerData.txt yang valid.",
     fileApplyReadError: "Tidak dapat membaca file. Silakan coba lagi.",
     fileApplyLoaded: "File dimuat",
     fileApplyOldName: "Nama saat ini",
     fileApplyDownload: "Unduh file yang dimodifikasi",
     fileApplyDownloaded: "Terunduh!",
-    fileApplyDownloadHint: "Ganti PlayerData.txt asli Anda dengan file yang diunduh, lalu mulai permainan.",
+    fileApplyDownloadHint:
+      "Ganti PlayerData.txt asli Anda dengan file yang diunduh, lalu mulai permainan.",
     fileApplyReset: "Reset",
-    footerFanCreation: "Ini adalah kreasi penggemar dan tidak terkait secara resmi dengan On-Together atau GigaPuff.",
+    footerFanCreation:
+      "Ini adalah kreasi penggemar dan tidak terkait secara resmi dengan On-Together atau GigaPuff.",
     footerInspired: "Terinspirasi oleh",
     footerGuideLink: "Panduan oleh Ranch",
     footerSourceCode: "Kode Sumber",
-    fileApplyWaitingForName: "Atur warna nama Anda di atas, lalu kembali untuk mengunduh file yang diperbarui.",
+    fileApplyWaitingForName:
+      "Atur warna nama Anda di atas, lalu kembali untuk mengunduh file yang diperbarui.",
   },
 
   th: {
     appTitle: "On-Together เครื่องมือปรับแต่งชื่อ",
-    appSubtitle:
-      "ปรับแต่งสีชื่อแสดงผลของคุณใน On-Together: Virtual Co-Working",
+    appSubtitle: "ปรับแต่งสีชื่อแสดงผลของคุณใน On-Together: Virtual Co-Working",
     nameLabel: "ชื่อที่แสดง",
     namePlaceholder: "ป้อนชื่อของคุณ...",
     letterColoursTitle: "สีตัวอักษร",
@@ -1371,24 +1519,24 @@ export const translations: Record<Language, Translations> = {
     previewTitle: "ตัวอย่าง",
     previewSampleMessage: "สวัสดีทุกคน!",
     generatedCodeTitle: "โค้ดที่สร้าง",
-    generatedCodeHint:
-      'คัดลอกนี้และวางเป็นค่าของ "Name" ในไฟล์ PlayerData.txt',
+    generatedCodeHint: 'คัดลอกนี้และวางเป็นค่าของ "Name" ในไฟล์ PlayerData.txt',
     copyButton: "คัดลอก",
     copiedButton: "คัดลอกแล้ว!",
     instructionsTitle: "วิธีใช้งาน",
-    instructionIntro:
-      "เพื่อใช้ชื่อแบบกำหนดเอง ให้แก้ไขไฟล์ PlayerData.txt:",
+    instructionIntro: "เพื่อใช้ชื่อแบบกำหนดเอง ให้แก้ไขไฟล์ PlayerData.txt:",
     step1: "ปิดเกมทั้งหมด",
     step2: "ไปที่ไฟล์ PlayerData.txt ที่ตั้งอยู่ที่:",
     stepBackup: "สำรองไฟล์โดยคัดลอก (เช่น เป็น PlayerData-backup.txt)",
-    step3: 'เปิดไฟล์ในโปรแกรมแก้ไขข้อความและค้นหาฟิลด์ "Name" จะมีลักษณะดังนี้:',
+    step3:
+      'เปิดไฟล์ในโปรแกรมแก้ไขข้อความและค้นหาฟิลด์ "Name" จะมีลักษณะดังนี้:',
     step3Example: '"Name":"ชื่อปัจจุบันของคุณ"',
     step4: "แทนที่ค่าด้วยโค้ดที่สร้างด้านบน",
     step5: "บันทึกไฟล์และเริ่มเกม",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "คุณยังสามารถใช้ม็อด StatusManager และใช้คำสั่ง /setname ในเกม",
+    altMethodDesc:
+      "คุณยังสามารถใช้ม็อด StatusManager และใช้คำสั่ง /setname ในเกม",
     altMethodLink: "ม็อด StatusManager",
     tipTitle: "เคล็ดลับ",
     tip40Char:
@@ -1401,24 +1549,31 @@ export const translations: Record<Language, Translations> = {
     languageLabel: "ภาษา",
     enableChatColours: "เปิดใช้สีแชท",
     autoApplyTitle: "ใช้งานอัตโนมัติ",
-    autoApplyDesc: "ลากไฟล์ PlayerData.txt ของคุณมาที่นี่แล้วดาวน์โหลดเวอร์ชันที่แก้ไขพร้อมชื่อใหม่ของคุณ สำรองไฟล์ PlayerData.txt ที่มีอยู่ก่อน จากนั้นแทนที่ด้วยไฟล์ที่ดาวน์โหลด",
+    autoApplyDesc:
+      "ลากไฟล์ PlayerData.txt ของคุณมาที่นี่แล้วดาวน์โหลดเวอร์ชันที่แก้ไขพร้อมชื่อใหม่ของคุณ สำรองไฟล์ PlayerData.txt ที่มีอยู่ก่อน จากนั้นแทนที่ด้วยไฟล์ที่ดาวน์โหลด",
+    autoApplyPrivacy:
+      "ทุกอย่างทำงานในเครื่องผ่านเบราว์เซอร์ของคุณ — ข้อมูลของคุณจะไม่ออกจากคอมพิวเตอร์ของคุณ",
     manualMethodTitle: "แก้ไขไฟล์ด้วยตนเอง",
     fileApplyDropZone: "วางไฟล์ PlayerData.txt ของคุณที่นี่",
     fileApplyDropHint: "หรือคลิกเพื่อเรียกดู",
     fileApplyNoCode: "กำหนดสีชื่อของคุณก่อน แล้วกลับมาที่นี่",
-    fileApplyNoName: "ไม่พบฟิลด์ Name ในไฟล์นี้ ตรวจสอบให้แน่ใจว่าเป็นไฟล์ PlayerData.txt ที่ถูกต้อง",
+    fileApplyNoName:
+      "ไม่พบฟิลด์ Name ในไฟล์นี้ ตรวจสอบให้แน่ใจว่าเป็นไฟล์ PlayerData.txt ที่ถูกต้อง",
     fileApplyReadError: "ไม่สามารถอ่านไฟล์ได้ กรุณาลองอีกครั้ง",
     fileApplyLoaded: "โหลดไฟล์แล้ว",
     fileApplyOldName: "ชื่อปัจจุบัน",
     fileApplyDownload: "ดาวน์โหลดไฟล์ที่แก้ไข",
     fileApplyDownloaded: "ดาวน์โหลดแล้ว!",
-    fileApplyDownloadHint: "แทนที่ PlayerData.txt ต้นฉบับด้วยไฟล์ที่ดาวน์โหลด จากนั้นเริ่มเกม",
+    fileApplyDownloadHint:
+      "แทนที่ PlayerData.txt ต้นฉบับด้วยไฟล์ที่ดาวน์โหลด จากนั้นเริ่มเกม",
     fileApplyReset: "รีเซ็ต",
-    footerFanCreation: "นี่คือผลงานของแฟน ไม่ได้เกี่ยวข้องอย่างเป็นทางการกับ On-Together หรือ GigaPuff",
+    footerFanCreation:
+      "นี่คือผลงานของแฟน ไม่ได้เกี่ยวข้องอย่างเป็นทางการกับ On-Together หรือ GigaPuff",
     footerInspired: "ได้รับแรงบันดาลใจจาก",
     footerGuideLink: "คู่มือโดย Ranch",
     footerSourceCode: "ซอร์สโค้ด",
-    fileApplyWaitingForName: "ตั้งค่าสีชื่อของคุณด้านบน แล้วกลับมาดาวน์โหลดไฟล์ที่อัปเดต",
+    fileApplyWaitingForName:
+      "ตั้งค่าสีชื่อของคุณด้านบน แล้วกลับมาดาวน์โหลดไฟล์ที่อัปเดต",
   },
 
   vi: {
@@ -1440,8 +1595,7 @@ export const translations: Record<Language, Translations> = {
     applyGradient: "Áp dụng gradient",
     chatColoursTitle: "Màu chat",
     colonColourLabel: "Màu dấu hai chấm",
-    colonColourHint:
-      "Màu của dấu hai chấm (:) hiển thị sau tên bạn trong chat",
+    colonColourHint: "Màu của dấu hai chấm (:) hiển thị sau tên bạn trong chat",
     messageColourLabel: "Màu tin nhắn",
     messageColourHint: "Màu tin nhắn chat của bạn",
     previewTitle: "Xem trước",
@@ -1452,19 +1606,21 @@ export const translations: Record<Language, Translations> = {
     copyButton: "Sao chép",
     copiedButton: "Đã sao chép!",
     instructionsTitle: "Cách áp dụng",
-    instructionIntro:
-      "Để áp dụng tên tùy chỉnh, chỉnh sửa tệp PlayerData.txt:",
+    instructionIntro: "Để áp dụng tên tùy chỉnh, chỉnh sửa tệp PlayerData.txt:",
     step1: "Đóng trò chơi hoàn toàn.",
     step2: "Đi tới tệp PlayerData.txt tại:",
-    stepBackup: "Sao lưu tệp bằng cách sao chép (ví dụ: thành PlayerData-backup.txt).",
-    step3: 'Mở tệp trong trình soạn thảo văn bản và tìm trường "Name". Nó sẽ trông như thế này:',
+    stepBackup:
+      "Sao lưu tệp bằng cách sao chép (ví dụ: thành PlayerData-backup.txt).",
+    step3:
+      'Mở tệp trong trình soạn thảo văn bản và tìm trường "Name". Nó sẽ trông như thế này:',
     step3Example: '"Name":"TênHiệnTạiCủaBạn"',
     step4: "Thay thế giá trị bằng mã được tạo ở trên.",
     step5: "Lưu tệp và khởi động trò chơi.",
     windowsLabel: "Windows",
     macLabel: "Mac",
     altMethodTitle: "StatusManager Mod",
-    altMethodDesc: "Bạn cũng có thể sử dụng mod StatusManager và dùng lệnh /setname trong trò chơi.",
+    altMethodDesc:
+      "Bạn cũng có thể sử dụng mod StatusManager và dùng lệnh /setname trong trò chơi.",
     altMethodLink: "mod StatusManager",
     tipTitle: "Mẹo",
     tip40Char:
@@ -1473,28 +1629,34 @@ export const translations: Record<Language, Translations> = {
     tipEscapeQuotes:
       'Nếu tên chứa dấu ngoặc kép, hãy thoát chúng bằng dấu gạch chéo ngược (\\") trong tệp JSON.',
     enterName: "Nhập tên ở trên để bắt đầu",
-    noLettersSelected:
-      "Chọn một hoặc nhiều chữ cái để đặt màu",
+    noLettersSelected: "Chọn một hoặc nhiều chữ cái để đặt màu",
     languageLabel: "Ngôn ngữ",
     enableChatColours: "Bật màu chat",
     autoApplyTitle: "Áp dụng tự động",
-    autoApplyDesc: "Kéo file PlayerData.txt của bạn vào đây và tải xuống phiên bản đã sửa đổi với tên mới của bạn. Hãy sao lưu file PlayerData.txt hiện có trước, sau đó thay thế bằng file đã tải xuống.",
+    autoApplyDesc:
+      "Kéo file PlayerData.txt của bạn vào đây và tải xuống phiên bản đã sửa đổi với tên mới của bạn. Hãy sao lưu file PlayerData.txt hiện có trước, sau đó thay thế bằng file đã tải xuống.",
+    autoApplyPrivacy:
+      "Mọi thứ chạy cục bộ trong trình duyệt của bạn — dữ liệu của bạn không bao giờ rời khỏi máy tính.",
     manualMethodTitle: "Chỉnh sửa file thủ công",
     fileApplyDropZone: "Thả file PlayerData.txt của bạn vào đây",
     fileApplyDropHint: "hoặc nhấp để duyệt",
     fileApplyNoCode: "Hãy cấu hình màu tên của bạn trước, sau đó quay lại đây.",
-    fileApplyNoName: "Không tìm thấy trường Name trong file này. Hãy đảm bảo đây là file PlayerData.txt hợp lệ.",
+    fileApplyNoName:
+      "Không tìm thấy trường Name trong file này. Hãy đảm bảo đây là file PlayerData.txt hợp lệ.",
     fileApplyReadError: "Không thể đọc file. Vui lòng thử lại.",
     fileApplyLoaded: "Đã tải file",
     fileApplyOldName: "Tên hiện tại",
     fileApplyDownload: "Tải xuống file đã sửa đổi",
     fileApplyDownloaded: "Đã tải xuống!",
-    fileApplyDownloadHint: "Thay thế PlayerData.txt gốc bằng file đã tải xuống, sau đó khởi động trò chơi.",
+    fileApplyDownloadHint:
+      "Thay thế PlayerData.txt gốc bằng file đã tải xuống, sau đó khởi động trò chơi.",
     fileApplyReset: "Đặt lại",
-    footerFanCreation: "Đây là sáng tạo của người hâm mộ và không liên kết chính thức với On-Together hoặc GigaPuff.",
+    footerFanCreation:
+      "Đây là sáng tạo của người hâm mộ và không liên kết chính thức với On-Together hoặc GigaPuff.",
     footerInspired: "Lấy cảm hứng từ",
     footerGuideLink: "Hướng dẫn của Ranch",
     footerSourceCode: "Mã nguồn",
-    fileApplyWaitingForName: "Đặt màu tên của bạn ở trên, sau đó quay lại để tải xuống file đã cập nhật.",
+    fileApplyWaitingForName:
+      "Đặt màu tên của bạn ở trên, sau đó quay lại để tải xuống file đã cập nhật.",
   },
 };

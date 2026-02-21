@@ -115,17 +115,32 @@ export function NameCustomiser() {
     <div className="mx-auto max-w-2xl space-y-6 p-4 pb-16">
       {/* Header */}
       <header className="-mx-4 -mt-4 bg-card/95 backdrop-blur-sm px-4 py-4 rounded-b-2xl border-b border-border/50">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">
-              {t("appTitle")}
-            </h1>
-            <p className="text-sm text-muted-foreground mt-1">
-              {t("appSubtitle")}
-            </p>
-          </div>
+        <div className="flex items-center justify-between gap-4">
+          <h1 className="text-2xl font-bold tracking-tight">{t("appTitle")}</h1>
           <LanguageSelector />
         </div>
+        <p className="text-sm text-muted-foreground mt-1">
+          {(() => {
+            const gameName = "On-Together: Virtual Co-Working";
+            const subtitle = t("appSubtitle");
+            const idx = subtitle.indexOf(gameName);
+            if (idx === -1) return subtitle;
+            return (
+              <>
+                {subtitle.slice(0, idx)}
+                <a
+                  href="https://gigapuff.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground"
+                >
+                  {gameName}
+                </a>
+                {subtitle.slice(idx + gameName.length)}
+              </>
+            );
+          })()}
+        </p>
       </header>
 
       {/* Name Input */}
@@ -149,9 +164,7 @@ export function NameCustomiser() {
       <Card>
         <CardHeader>
           <CardTitle>{t("letterColoursTitle")}</CardTitle>
-          {name && (
-            <CardDescription>{t("letterColoursHint")}</CardDescription>
-          )}
+          {name && <CardDescription>{t("letterColoursHint")}</CardDescription>}
         </CardHeader>
         <CardContent>
           <LetterEditor
@@ -316,15 +329,6 @@ export function NameCustomiser() {
           {t("footerFanCreation")}
         </p>
         <p className="text-center text-xs text-muted-foreground">
-          <a
-            href="https://gigapuff.co/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-foreground"
-          >
-            On-Together: Virtual Co-Working
-          </a>
-          {" · "}
           {t("footerInspired")}{" "}
           <a
             href="https://steamcommunity.com/sharedfiles/filedetails/?id=3651157970"
@@ -334,8 +338,7 @@ export function NameCustomiser() {
           >
             {t("footerGuideLink")}
           </a>
-        </p>
-        <p className="text-center text-xs text-muted-foreground">
+          {" · "}
           <a
             href="https://github.com/HowManyOliversAreThere/On-Together-Name-Customiser"
             target="_blank"

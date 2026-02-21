@@ -1,25 +1,13 @@
-import {
-  createContext,
-  useState,
-  useCallback,
-  type ReactNode,
-} from "react";
+import { useState, useCallback, type ReactNode } from "react";
 import {
   translations,
   LANGUAGE_NAMES,
   type Language,
 } from "@/lib/translations";
+import { I18nContext } from "@/lib/i18n-context";
 
 export type { Language };
 export { LANGUAGE_NAMES };
-
-interface I18nContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
-}
-
-export const I18nContext = createContext<I18nContextType | null>(null);
 
 function detectLanguage(): Language {
   const saved = localStorage.getItem("otNameLang");

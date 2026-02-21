@@ -16,7 +16,7 @@ test("extractName - name with TMP colour tags", () => {
     '{"Name":"</color><color=#FF0000>Red</color><color=#00FF00><color=#0000FF>","Other":"x"}';
   assert.is(
     extractName(data),
-    '</color><color=#FF0000>Red</color><color=#00FF00><color=#0000FF>'
+    "</color><color=#FF0000>Red</color><color=#00FF00><color=#0000FF>"
   );
 });
 
@@ -45,7 +45,7 @@ test("extractName - real PlayerData file", () => {
     '{"TodoDatas":[],"Name":"</color><b><color=#FFE3B3>F</color><color=#FFDAAE>r</color><color=#FFD1AA>e</color><color=#FFC9A5>y</color><color=#FFC2A1>a</color><color=#FFC2CD>a</color><color=#FFE3B3><color=#EEEEEE></b>","DateOfBirth":"whatever"}';
   assert.is(
     extractName(data),
-    '</color><b><color=#FFE3B3>F</color><color=#FFDAAE>r</color><color=#FFD1AA>e</color><color=#FFC9A5>y</color><color=#FFC2A1>a</color><color=#FFC2CD>a</color><color=#FFE3B3><color=#EEEEEE></b>'
+    "</color><b><color=#FFE3B3>F</color><color=#FFDAAE>r</color><color=#FFD1AA>e</color><color=#FFC9A5>y</color><color=#FFC2A1>a</color><color=#FFC2CD>a</color><color=#FFE3B3><color=#EEEEEE></b>"
   );
 });
 
@@ -61,7 +61,7 @@ test("replaceName - simple replacement", () => {
 
 test("replaceName - replaces with TMP tags", () => {
   const data = '{"Name":"Oliver","Location":"here"}';
-  const tags = '</color><color=#FF0000>N</color><color=#00FF00><color=#0000FF>';
+  const tags = "</color><color=#FF0000>N</color><color=#00FF00><color=#0000FF>";
   const result = replaceName(data, tags);
   assert.is(
     result,
@@ -72,7 +72,8 @@ test("replaceName - replaces with TMP tags", () => {
 test("replaceName - replaces existing TMP tags with new ones", () => {
   const data =
     '{"Name":"</color><color=#FF0000>Old</color><color=#FFFFFF><color=#FFFFFF>","Loc":"x"}';
-  const newTags = '</color><color=#00FF00>New</color><color=#AABBCC><color=#112233>';
+  const newTags =
+    "</color><color=#00FF00>New</color><color=#AABBCC><color=#112233>";
   const result = replaceName(data, newTags);
   assert.is(
     result,
@@ -132,7 +133,8 @@ test("replaceName - full PlayerData round-trip", () => {
   const oldName = extractName(original);
   assert.ok(oldName !== null);
 
-  const newTags = '</color><color=#AABBCC>Te</color><color=#112233><color=#445566>';
+  const newTags =
+    "</color><color=#AABBCC>Te</color><color=#112233><color=#445566>";
   const modified = replaceName(original, newTags);
   assert.ok(modified !== null);
 

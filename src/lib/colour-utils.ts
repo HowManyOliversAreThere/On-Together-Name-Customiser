@@ -27,11 +27,7 @@ export function interpolateColour(
 ): string {
   const [r1, g1, b1] = hexToRgb(colour1);
   const [r2, g2, b2] = hexToRgb(colour2);
-  return rgbToHex(
-    r1 + (r2 - r1) * t,
-    g1 + (g2 - g1) * t,
-    b1 + (b2 - b1) * t
-  );
+  return rgbToHex(r1 + (r2 - r1) * t, g1 + (g2 - g1) * t, b1 + (b2 - b1) * t);
 }
 
 export function generateGradient(

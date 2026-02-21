@@ -83,7 +83,9 @@ export function LetterEditor({
   }, []);
 
   const handleSelectAll = () => {
-    onSelectionChange(new Set(Array.from({ length: name.length }, (_, i) => i)));
+    onSelectionChange(
+      new Set(Array.from({ length: name.length }, (_, i) => i))
+    );
   };
 
   const handleDeselectAll = () => {
@@ -92,14 +94,16 @@ export function LetterEditor({
 
   if (!name) {
     return (
-      <p className="text-muted-foreground text-sm italic">
-        {t("enterName")}
-      </p>
+      <p className="text-muted-foreground text-sm italic">{t("enterName")}</p>
     );
   }
 
   return (
-    <div className="space-y-4" onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
+    <div
+      className="space-y-4"
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+    >
       {/* Letter tiles */}
       <div className="flex flex-wrap gap-1.5 select-none">
         {name.split("").map((letter, index) => {
@@ -178,10 +182,7 @@ export function LetterEditor({
                 />
               </div>
             </div>
-            <Button
-              size="sm"
-              onClick={() => onApplyColour(pickerColour)}
-            >
+            <Button size="sm" onClick={() => onApplyColour(pickerColour)}>
               {t("applyColour")}
             </Button>
           </div>

@@ -17,9 +17,7 @@ export function LanguageSelector() {
   const handleChange = (value: string) => {
     const lang = value as Language;
     setLanguage(lang);
-    document.documentElement.dir = RTL_LANGUAGES.includes(lang)
-      ? "rtl"
-      : "ltr";
+    document.documentElement.dir = RTL_LANGUAGES.includes(lang) ? "rtl" : "ltr";
   };
 
   return (
