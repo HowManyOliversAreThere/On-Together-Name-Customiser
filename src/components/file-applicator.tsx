@@ -1,7 +1,10 @@
 import { useState, useCallback, useRef, useMemo } from "react";
 import { useI18n } from "@/hooks/use-i18n";
+import { usePreviewBg } from "@/hooks/use-preview-bg";
+import { PREVIEW_BG_COLOURS } from "@/lib/preview-bg-context";
 import { extractName, replaceName } from "@/lib/player-data";
 import { parseTmpName } from "@/lib/tmp-parser";
+import { BackgroundSelector } from "@/components/background-selector";
 import { Button } from "@/components/ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { DownloadIcon, Tick02Icon } from "@hugeicons/core-free-icons";
@@ -25,6 +28,8 @@ export function FileApplicator({
   onNameLoaded,
 }: FileApplicatorProps) {
   const { t } = useI18n();
+  const { background } = usePreviewBg();
+  const bgColour = PREVIEW_BG_COLOURS[background];
   const [dragOver, setDragOver] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
   const [oldName, setOldName] = useState<string | null>(null);
@@ -159,7 +164,10 @@ export function FileApplicator({
           </p>
           {oldName && parsedOldName && (
             <>
-              <div className="rounded-lg bg-[#8B5C7B] px-3 py-2 text-sm leading-relaxed">
+              <div
+                className="rounded-lg px-3 py-2 text-sm leading-relaxed"
+                style={{ backgroundColor: bgColour }}
+              >
                 {/* Name with colours */}
                 <span>
                   {parsedOldName.letters.map((l, i) => (
@@ -205,6 +213,7 @@ export function FileApplicator({
                   {t("previewSampleMessage")}
                 </span>
               </div>
+              <BackgroundSelector />
             </>
           )}
           {oldName && (
