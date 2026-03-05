@@ -47,7 +47,7 @@ type Translations = Record<string, string>;
 
 export const translations: Record<Language, Translations> = {
   en: {
-    appTitle: "Name Maker for On-Together",
+    appTitle: "Name Styler for On-Together",
     appSubtitle:
       "Customise your display name colours for On-Together: Virtual Co-Working",
     nameLabel: "Display Name",
@@ -152,7 +152,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   "en-US": {
-    appTitle: "Name Maker for On-Together",
+    appTitle: "Name Styler for On-Together",
     appSubtitle:
       "Customize your display name colors for On-Together: Virtual Co-Working",
     nameLabel: "Display Name",
@@ -256,7 +256,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   ja: {
-    appTitle: "On-Together用ネームメーカー",
+    appTitle: "On-Together用ネームスタイラー",
     appSubtitle: "On-Together: Virtual Co-Working の表示名の色をカスタマイズ",
     nameLabel: "表示名",
     namePlaceholder: "表示名を入力...",
@@ -360,7 +360,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   ko: {
-    appTitle: "On-Together 네임 메이커",
+    appTitle: "On-Together 네임 스타일러",
     appSubtitle: "On-Together: Virtual Co-Working 표시 이름 색상 커스터마이즈",
     nameLabel: "표시 이름",
     namePlaceholder: "표시 이름을 입력하세요...",
@@ -462,7 +462,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   "zh-CN": {
-    appTitle: "On-Together 名称制作工具",
+    appTitle: "On-Together 名称样式工具",
     appSubtitle: "自定义你在 On-Together: Virtual Co-Working 中的显示名称颜色",
     nameLabel: "显示名称",
     namePlaceholder: "输入你的显示名称...",
@@ -556,7 +556,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   "zh-TW": {
-    appTitle: "On-Together 名稱製作工具",
+    appTitle: "On-Together 名稱樣式工具",
     appSubtitle: "自訂你在 On-Together: Virtual Co-Working 中的顯示名稱顏色",
     nameLabel: "顯示名稱",
     namePlaceholder: "輸入你的顯示名稱...",
@@ -649,7 +649,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   fr: {
-    appTitle: "Créateur de nom pour On-Together",
+    appTitle: "Styliseur de nom pour On-Together",
     appSubtitle:
       "Personnalisez les couleurs de votre nom dans On-Together : Virtual Co-Working",
     nameLabel: "Nom d'affichage",
@@ -757,7 +757,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   de: {
-    appTitle: "Namensgenerator für On-Together",
+    appTitle: "Namensstyler für On-Together",
     appSubtitle:
       "Passe die Farben deines Anzeigenamens in On-Together: Virtual Co-Working an",
     nameLabel: "Anzeigename",
@@ -865,7 +865,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   es: {
-    appTitle: "Creador de nombre para On-Together",
+    appTitle: "Estilizador de nombre para On-Together",
     appSubtitle:
       "Personaliza los colores de tu nombre en On-Together: Virtual Co-Working",
     nameLabel: "Nombre para mostrar",
@@ -973,7 +973,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   "pt-BR": {
-    appTitle: "Criador de nome para On-Together",
+    appTitle: "Estilizador de nome para On-Together",
     appSubtitle:
       "Personalize as cores do seu nome no On-Together: Virtual Co-Working",
     nameLabel: "Nome de exibição",
@@ -1079,7 +1079,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   ru: {
-    appTitle: "Генератор имени для On-Together",
+    appTitle: "Стилизатор имени для On-Together",
     appSubtitle:
       "Настройте цвета отображаемого имени в On-Together: Virtual Co-Working",
     nameLabel: "Отображаемое имя",
@@ -1185,7 +1185,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   it: {
-    appTitle: "Creatore di nomi per On-Together",
+    appTitle: "Stilizzatore di nomi per On-Together",
     appSubtitle:
       "Personalizza i colori del tuo nome visualizzato in On-Together: Virtual Co-Working",
     nameLabel: "Nome visualizzato",
@@ -1292,7 +1292,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   tr: {
-    appTitle: "On-Together İsim Oluşturucu",
+    appTitle: "On-Together İsim Biçimlendirici",
     appSubtitle:
       "On-Together: Virtual Co-Working'deki görünen adınızın renklerini özelleştirin",
     nameLabel: "Görünen Ad",
@@ -1400,7 +1400,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   pl: {
-    appTitle: "Generator nazw dla On-Together",
+    appTitle: "Stylizator nazw dla On-Together",
     appSubtitle:
       "Dostosuj kolory wyświetlanej nazwy w On-Together: Virtual Co-Working",
     nameLabel: "Nazwa wyświetlana",
@@ -1503,7 +1503,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   uk: {
-    appTitle: "Генератор імені для On-Together",
+    appTitle: "Стилізатор імені для On-Together",
     appSubtitle:
       "Налаштуйте кольори відображуваного імені в On-Together: Virtual Co-Working",
     nameLabel: "Відображуване ім'я",
@@ -1611,7 +1611,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   ar: {
-    appTitle: "صانع الأسماء لـ On-Together",
+    appTitle: "مُنسّق الأسماء لـ On-Together",
     appSubtitle: "خصّص ألوان اسمك المعروض في On-Together: Virtual Co-Working",
     nameLabel: "الاسم المعروض",
     namePlaceholder: "أدخل اسمك...",
@@ -1711,7 +1711,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   id: {
-    appTitle: "Pembuat Nama untuk On-Together",
+    appTitle: "Penata Gaya Nama untuk On-Together",
     appSubtitle:
       "Kustomisasi warna nama tampilan Anda di On-Together: Virtual Co-Working",
     nameLabel: "Nama Tampilan",
@@ -1817,7 +1817,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   th: {
-    appTitle: "เครื่องมือสร้างชื่อสำหรับ On-Together",
+    appTitle: "เครื่องมือจัดสไตล์ชื่อสำหรับ On-Together",
     appSubtitle: "ปรับแต่งสีชื่อแสดงผลของคุณใน On-Together: Virtual Co-Working",
     nameLabel: "ชื่อที่แสดง",
     namePlaceholder: "ป้อนชื่อของคุณ...",
@@ -1917,7 +1917,7 @@ export const translations: Record<Language, Translations> = {
   },
 
   vi: {
-    appTitle: "Trình tạo tên cho On-Together",
+    appTitle: "Trình tạo kiểu tên cho On-Together",
     appSubtitle:
       "Tùy chỉnh màu sắc tên hiển thị trong On-Together: Virtual Co-Working",
     nameLabel: "Tên hiển thị",

@@ -1,6 +1,8 @@
-# Name Maker for On-Together: Virtual Co-Working
+# Name Styler for On-Together: Virtual Co-Working
 
-A web-based tool for creating colourful, styled display names in [On-Together: Virtual Co-Working](https://gigapuff.co/). Generates [TextMeshPro Rich Text Tags](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/RichTextSupportedTags.html) that can be pasted into your `PlayerData.txt` file to customise how your name appears in-game (or let Name Maker edit your file for you!).
+A web-based tool for creating colourful, styled display names in [On-Together: Virtual Co-Working](https://gigapuff.co/). Generates [TextMeshPro Rich Text Tags](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/RichTextSupportedTags.html) that can be pasted into your `PlayerData.txt` file to customise how your name appears in-game (or let Name Styler edit your file for you!).
+
+Hosted at [NameStyler.app](https://namestyler.app/)
 
 ## Features
 
