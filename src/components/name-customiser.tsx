@@ -85,34 +85,57 @@ export function NameCustomiser() {
     }
   }, []);
 
-  const handleNameChange = useCallback((newName: string) => {
-    setName(newName);
-    setLetterColours((prev) => {
-      const next = [...prev];
-      while (next.length < newName.length) {
-        next.push(DEFAULT_COLOUR);
+  const handleNameChange = useCallback(
+    (newName: string, cursorPos: number | null) => {
+      const oldLength = name.length;
+      setName(newName);
+      setLetterColours((prev) => {
+        const next = [...prev];
+        while (next.length < newName.length) {
+          next.push(DEFAULT_COLOUR);
+        }
+        return next.slice(0, newName.length);
+      });
+      setLetterBold((prev) => {
+        const next = [...prev];
+        while (next.length < newName.length) {
+          next.push(false);
+        }
+        return next.slice(0, newName.length);
+      });
+      setLetterItalic((prev) => {
+        const next = [...prev];
+        while (next.length < newName.length) {
+          next.push(false);
+        }
+        return next.slice(0, newName.length);
+      });
+      const diff = newName.length - oldLength;
+      if (diff > 0 && cursorPos !== null) {
+        const insertPos = cursorPos - diff;
+        setSelectedIndices((prev) => {
+          const shifted = new Set<number>();
+          for (const i of prev) {
+            if (i < insertPos) {
+              shifted.add(i);
+            } else {
+              shifted.add(i + diff);
+            }
+          }
+          for (let i = insertPos; i < cursorPos; i++) {
+            shifted.add(i);
+          }
+          return shifted;
+        });
+      } else {
+        setSelectedIndices((prev) => {
+          const filtered = new Set([...prev].filter((i) => i < newName.length));
+          return filtered.size === prev.size ? prev : filtered;
+        });
       }
-      return next.slice(0, newName.length);
-    });
-    setLetterBold((prev) => {
-      const next = [...prev];
-      while (next.length < newName.length) {
-        next.push(false);
-      }
-      return next.slice(0, newName.length);
-    });
-    setLetterItalic((prev) => {
-      const next = [...prev];
-      while (next.length < newName.length) {
-        next.push(false);
-      }
-      return next.slice(0, newName.length);
-    });
-    setSelectedIndices((prev) => {
-      const filtered = new Set([...prev].filter((i) => i < newName.length));
-      return filtered.size === prev.size ? prev : filtered;
-    });
-  }, []);
+    },
+    [name.length]
+  );
 
   const handleApplyColour = useCallback(
     (colour: string) => {
@@ -301,7 +324,7 @@ export function NameCustomiser() {
         <CardContent>
           <Input
             value={name}
-            onChange={(e) => handleNameChange(e.target.value)}
+            onChange={(e) => handleNameChange(e.target.value, e.target.selectionStart)}
             placeholder={t("namePlaceholder")}
             className="text-base"
             autoComplete="off"
