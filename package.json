@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . && tsc --noEmit && prettier --check .",
+    "lint": "eslint . && tsc --noEmit && prettier --check . && npm run check-translations",
     "preview": "vite preview",
     "test": "tsx ./node_modules/uvu/bin.js tests",
-    "prettify": "prettier --write ."
+    "prettify": "prettier --write .",
+    "check-translations": "tsx scripts/check-translations.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.2.0",
