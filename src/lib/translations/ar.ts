@@ -1,0 +1,118 @@
+const translations: Record<string, string> = {
+  appTitle: "مُنسّق الأسماء لـ On-Together",
+  appSubtitle: "خصّص ألوان اسمك المعروض في On-Together: Virtual Co-Working",
+  nameLabel: "الاسم المعروض",
+  namePlaceholder: "أدخل اسمك...",
+  letterStylingTitle: "نمط الحروف",
+  letterStylingHint:
+    "انقر على الحروف لتحديدها، ثم طبّق لوناً أو تدرجاً. Shift+نقر للنطاق، Ctrl/Cmd+نقر للتبديل.",
+  selectAll: "تحديد الكل",
+  deselectAll: "إلغاء التحديد",
+  colourLabel: "اللون",
+  applyColour: "تطبيق اللون",
+  randomColour: "عشوائي",
+  gradientLabel: "تدرج",
+  gradientStart: "البداية",
+  gradientEnd: "النهاية",
+  swapGradient: "تبديل الألوان",
+  applyGradient: "تطبيق التدرج",
+  singleColourTitle: "لون واحد",
+  gradient2Title: "تدرج بلونين",
+  gradient3Title: "تدرج بثلاثة ألوان",
+  gradientMid: "الوسط",
+  chatStylingTitle: "نمط الدردشة",
+  colonColourLabel: "لون النقطتين",
+  colonColourHint: "لون النقطتين (:) المعروضتين بعد اسمك في الدردشة",
+  messageColourLabel: "لون الرسالة",
+  messageColourHint: "لون رسائلك في الدردشة",
+  previewTitle: "معاينة",
+  previewSampleMessage: "مرحباً بالجميع!",
+  previewBgLabel: "الخلفية:",
+  previewBgDefault: "افتراضي",
+  previewBgGrass: "عشب",
+  previewBgRoad: "طريق",
+  previewBgWater: "ماء",
+  previewBgWood: "خشب",
+  generatedCodeTitle: "الكود المُنشأ",
+  generatedCodeHint: 'انسخ هذا والصقه كقيمة "Name" في ملف PlayerData.txt',
+  copyButton: "نسخ",
+  copiedButton: "تم النسخ!",
+  instructionsTitle: "كيفية التطبيق",
+  instructionIntro: "لتطبيق اسمك المخصص، عدّل ملف PlayerData.txt:",
+  step1: "أغلق اللعبة تماماً.",
+  step2: "انتقل إلى ملف PlayerData.txt الموجود في:",
+  stepBackup:
+    "قم بعمل نسخة احتياطية من الملف (مثلاً انسخه كـ PlayerData-backup.txt).",
+  step3: 'افتح الملف في محرر نصوص وابحث عن حقل "Name". سيبدو بهذا الشكل:',
+  step3Example: '"Name":"اسمك_الحالي"',
+  step4:
+    'استبدل القيمة (مثلاً YourCurrentName في المثال أعلاه) بالكود من قسم "الكود المُنشأ".',
+  step5: "احفظ الملف وابدأ اللعبة.",
+  windowsLabel: "Windows",
+  macLabel: "Mac",
+  altMethodTitle: "StatusManager Mod",
+  altMethodDesc:
+    "يمكنك أيضاً استخدام مود StatusManager واستخدام أمر /setname في اللعبة.",
+  altMethodLink: "مود StatusManager",
+  tipTitle: "نصائح",
+  tip40Char:
+    "حقل الاسم في اللعبة محدود بـ 40 حرفاً، لكن تعديل PlayerData.txt يتجاوز هذا.",
+  tipBackup: "احرص دائماً على نسخ PlayerData.txt احتياطياً قبل التعديل.",
+  tipEscapeQuotes:
+    'إذا كان اسمك يحتوي على علامات اقتباس، قم بتهريبها بشرطة مائلة عكسية (\\") في ملف JSON.',
+  enterName: "أدخل اسماً أعلاه للبدء",
+  noLettersSelected: "حدد حرفاً واحداً أو أكثر لتعيين لونه",
+  languageLabel: "اللغة",
+  enableChatColours: "تفعيل ألوان الدردشة",
+  autoApplyTitle: "التطبيق التلقائي",
+  autoApplyDesc:
+    "اسحب ملف PlayerData.txt هنا وقم بتنزيل النسخة المعدلة مع اسمك الجديد. قم بعمل نسخة احتياطية من ملف PlayerData.txt الحالي أولاً، ثم استبدله بالملف الذي تم تنزيله.",
+  autoApplyPrivacy:
+    "كل شيء يعمل محلياً في متصفحك — بياناتك لا تغادر جهازك أبداً.",
+  manualMethodTitle: "تحرير الملف يدوياً",
+  fileApplyDropZone: "أفلت ملف PlayerData.txt هنا",
+  fileApplyDropHint: "أو انقر للاستعراض",
+  fileApplyNoCode: "قم بتكوين ألوان اسمك أولاً، ثم عد إلى هنا.",
+  fileApplyNoName:
+    "تعذر العثور على حقل Name في هذا الملف. تأكد من أنه ملف PlayerData.txt صالح.",
+  fileApplyReadError: "تعذرت قراءة الملف. يرجى المحاولة مرة أخرى.",
+  fileApplyLoaded: "تم تحميل الملف",
+  fileApplyOldName: "الاسم الحالي",
+  fileApplyDownload: "تنزيل الملف المعدل",
+  fileApplyDownloaded: "تم التنزيل!",
+  fileApplyDownloadHint:
+    "استبدل ملف PlayerData.txt الأصلي بالملف الذي تم تنزيله، ثم ابدأ اللعبة.",
+  fileApplyReset: "إعادة تعيين",
+  footerFanCreation:
+    "هذا إنشاء معجبين وليس مرتبطًا رسميًا بـ On-Together أو GigaPuff.",
+  footerInspired: "مستوحى من",
+  footerGuideLink: "دليل Ranch",
+  footerSourceCode: "الكود المصدري",
+  fileApplyWaitingForName:
+    "قم بتعيين ألوان اسمك أعلاه، ثم عد لتنزيل الملف المحدث.",
+  boldLabel: "غامق",
+  chatBoldLabel: "غامق في الدردشة",
+  italicLabel: "مائل",
+  chatItalicLabel: "مائل في الدردشة",
+  nameLoadHint:
+    'يمكنك تحميل اسم العرض الحالي عن طريق إسقاط ملف PlayerData في المطبّق التلقائي في قسم "كيفية التطبيق" أدناه.',
+  nameOverrideTitle: "استبدال الاسم الحالي؟",
+  nameOverrideDesc:
+    "لديك اسم مُدخل بالفعل. هل تريد استبداله بالاسم من ملف PlayerData؟",
+  nameOverrideConfirm: "استبدال",
+  nameOverrideCancel: "الإبقاء على الحالي",
+  footerKofi: "ادعم على Ko-fi",
+  faqTitle: "الأسئلة الشائعة",
+  faqCharLimitQ: "هل يمكنني استخدام حقل الاسم في اللعبة مباشرة؟",
+  faqCharLimitA:
+    "حقل الاسم في اللعبة محدود بـ 40 حرفًا، ويتم استهلاكها بسرعة كبيرة عند إضافة علامات الألوان. إذا تجاوز الكود المُنشأ هذا الحد، فستحتاج إلى استخدام إحدى الطرق من قسم \u00ABكيفية التطبيق\u00BB أعلاه.",
+  faqCantTypeQ:
+    "أحاول كتابة اسمي في حقل الاسم في اللعبة لكنه يسمح لي فقط بكتابة عدد قليل من الأحرف!",
+  faqCantTypeA:
+    "يحدث هذا عندما تبقى علامات الأنماط غير المرئية في مربع النص \u2014 لا يمكن إزالتها بالضغط على Backspace فقط. اضغط Ctrl+A (أو Cmd+A على Mac) لتحديد الكل، ثم احذفه. يجب أن تتمكن الآن من كتابة الـ 40 حرفًا كاملة مرة أخرى.",
+  faqHowWorksQ: "كيف يعمل تنسيق الاسم هذا؟",
+  faqHowWorksA:
+    "On-Together مبني باستخدام Unity ويستخدم TextMeshPro لعرض النص. يدعم TextMeshPro علامات النص الغني (Rich Text Tags) (مشابهة لـ HTML) التي يمكن تضمينها في النص لتغيير الألوان وإضافة الخط العريض/المائل وغيرها. تقوم هذه الأداة بإنشاء تلك العلامات لك.",
+};
+
+export default translations;

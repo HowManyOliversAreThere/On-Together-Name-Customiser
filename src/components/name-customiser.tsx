@@ -7,6 +7,12 @@ import { LetterEditor } from "@/components/letter-editor";
 import { Preview } from "@/components/preview";
 import { CodeOutput } from "@/components/code-output";
 import { Instructions } from "@/components/instructions";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ColourPicker } from "@/components/ui/colour-picker";
@@ -324,7 +330,9 @@ export function NameCustomiser() {
         <CardContent>
           <Input
             value={name}
-            onChange={(e) => handleNameChange(e.target.value, e.target.selectionStart)}
+            onChange={(e) =>
+              handleNameChange(e.target.value, e.target.selectionStart)
+            }
             placeholder={t("namePlaceholder")}
             className="text-base"
             autoComplete="off"
@@ -482,6 +490,29 @@ export function NameCustomiser() {
             generatedCode={generatedCode}
             onNameLoaded={handleNameLoaded}
           />
+        </CardContent>
+      </Card>
+
+      {/* FAQ */}
+      <Card>
+        <CardHeader>
+          <CardTitle>{t("faqTitle")}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="multiple">
+            <AccordionItem value="char-limit">
+              <AccordionTrigger>{t("faqCharLimitQ")}</AccordionTrigger>
+              <AccordionContent>{t("faqCharLimitA")}</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="cant-type">
+              <AccordionTrigger>{t("faqCantTypeQ")}</AccordionTrigger>
+              <AccordionContent>{t("faqCantTypeA")}</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="how-works">
+              <AccordionTrigger>{t("faqHowWorksQ")}</AccordionTrigger>
+              <AccordionContent>{t("faqHowWorksA")}</AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
 
