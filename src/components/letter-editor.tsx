@@ -217,7 +217,18 @@ export function LetterEditor({
                     compact
                   />
                 </div>
-                <span className="text-muted-foreground mt-4">→</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const temp = gradientStart;
+                    setGradientStart(gradientEnd);
+                    setGradientEnd(temp);
+                  }}
+                  className="mt-4 p-1 rounded hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+                  title={t("swapGradient")}
+                >
+                  ⇄
+                </button>
                 <div className="space-y-1">
                   <span className="text-xs text-muted-foreground">
                     {t("gradientEnd")}
