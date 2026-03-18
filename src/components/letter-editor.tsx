@@ -3,6 +3,12 @@ import { useI18n } from "@/hooks/use-i18n";
 import { getContrastColour } from "@/lib/colour-utils";
 import { Button } from "@/components/ui/button";
 import { ColourPicker } from "@/components/ui/colour-picker";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
 interface LetterEditorProps {
@@ -14,6 +20,7 @@ interface LetterEditorProps {
   onSelectionChange: (indices: Set<number>) => void;
   onApplyColour: (colour: string) => void;
   onApplyGradient: (start: string, end: string) => void;
+  onApplyGradient3: (start: string, mid: string, end: string) => void;
   onToggleBold: () => void;
   onToggleItalic: () => void;
 }
@@ -27,6 +34,7 @@ export function LetterEditor({
   onSelectionChange,
   onApplyColour,
   onApplyGradient,
+  onApplyGradient3,
   onToggleBold,
   onToggleItalic,
 }: LetterEditorProps) {
@@ -34,6 +42,9 @@ export function LetterEditor({
   const [pickerColour, setPickerColour] = useState("#ffffff");
   const [gradientStart, setGradientStart] = useState("#ff6b6b");
   const [gradientEnd, setGradientEnd] = useState("#4ecdc4");
+  const [gradient3Start, setGradient3Start] = useState("#ff6b6b");
+  const [gradient3Mid, setGradient3Mid] = useState("#ffd93d");
+  const [gradient3End, setGradient3End] = useState("#4ecdc4");
   const lastClickedRef = useRef<number | null>(null);
   const isDraggingRef = useRef(false);
   const dragStartRef = useRef<number | null>(null);
@@ -188,68 +199,144 @@ export function LetterEditor({
             </Button>
           </div>
 
-          {/* Single colour */}
-          <div className="flex flex-wrap items-end gap-3">
-            <div className="space-y-1.5">
-              <label className="text-sm font-medium">{t("colourLabel")}</label>
-              <ColourPicker value={pickerColour} onChange={setPickerColour} />
-            </div>
-            <Button size="sm" onClick={() => onApplyColour(pickerColour)}>
-              {t("applyColour")}
-            </Button>
-          </div>
+          {/* Colour application modes */}
+          <Accordion type="single" collapsible defaultValue="single-colour">
+            {/* Single colour */}
+            <AccordionItem value="single-colour">
+              <AccordionTrigger>{t("singleColourTitle")}</AccordionTrigger>
+              <AccordionContent>
+                <div className="flex flex-wrap items-end gap-3">
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium">
+                      {t("colourLabel")}
+                    </label>
+                    <ColourPicker
+                      value={pickerColour}
+                      onChange={setPickerColour}
+                    />
+                  </div>
+                  <Button size="sm" onClick={() => onApplyColour(pickerColour)}>
+                    {t("applyColour")}
+                  </Button>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
 
-          {/* Gradient */}
-          <div className="flex flex-wrap items-end gap-3">
-            <div className="space-y-1.5">
-              <label className="text-sm font-medium">
-                {t("gradientLabel")}
-              </label>
-              <div className="flex items-center gap-2">
-                <div className="space-y-1">
-                  <span className="text-xs text-muted-foreground">
-                    {t("gradientStart")}
-                  </span>
-                  <ColourPicker
-                    value={gradientStart}
-                    onChange={setGradientStart}
-                    showInput={false}
-                    compact
-                  />
+            {/* 2-point gradient */}
+            <AccordionItem value="gradient-2">
+              <AccordionTrigger>{t("gradient2Title")}</AccordionTrigger>
+              <AccordionContent>
+                <div className="flex flex-wrap items-end gap-3">
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2">
+                      <div className="space-y-1">
+                        <span className="text-xs text-muted-foreground">
+                          {t("gradientStart")}
+                        </span>
+                        <ColourPicker
+                          value={gradientStart}
+                          onChange={setGradientStart}
+                          showInput={false}
+                          compact
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const temp = gradientStart;
+                          setGradientStart(gradientEnd);
+                          setGradientEnd(temp);
+                        }}
+                        className="mt-4 p-1 rounded hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+                        title={t("swapGradient")}
+                      >
+                        ⇄
+                      </button>
+                      <div className="space-y-1">
+                        <span className="text-xs text-muted-foreground">
+                          {t("gradientEnd")}
+                        </span>
+                        <ColourPicker
+                          value={gradientEnd}
+                          onChange={setGradientEnd}
+                          showInput={false}
+                          compact
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    onClick={() => onApplyGradient(gradientStart, gradientEnd)}
+                  >
+                    {t("applyGradient")}
+                  </Button>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const temp = gradientStart;
-                    setGradientStart(gradientEnd);
-                    setGradientEnd(temp);
-                  }}
-                  className="mt-4 p-1 rounded hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
-                  title={t("swapGradient")}
-                >
-                  ⇄
-                </button>
-                <div className="space-y-1">
-                  <span className="text-xs text-muted-foreground">
-                    {t("gradientEnd")}
-                  </span>
-                  <ColourPicker
-                    value={gradientEnd}
-                    onChange={setGradientEnd}
-                    showInput={false}
-                    compact
-                  />
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* 3-point gradient */}
+            <AccordionItem value="gradient-3">
+              <AccordionTrigger>{t("gradient3Title")}</AccordionTrigger>
+              <AccordionContent>
+                <div className="flex flex-wrap items-end gap-3">
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2">
+                      <div className="space-y-1">
+                        <span className="text-xs text-muted-foreground">
+                          {t("gradientStart")}
+                        </span>
+                        <ColourPicker
+                          value={gradient3Start}
+                          onChange={setGradient3Start}
+                          showInput={false}
+                          compact
+                        />
+                      </div>
+                      <span className="text-muted-foreground mt-4">→</span>
+                      <div className="space-y-1">
+                        <span className="text-xs text-muted-foreground">
+                          {t("gradientMid")}
+                        </span>
+                        <ColourPicker
+                          value={gradient3Mid}
+                          onChange={setGradient3Mid}
+                          showInput={false}
+                          compact
+                        />
+                      </div>
+                      <span className="text-muted-foreground mt-4">→</span>
+                      <div className="space-y-1">
+                        <span className="text-xs text-muted-foreground">
+                          {t("gradientEnd")}
+                        </span>
+                        <ColourPicker
+                          value={gradient3End}
+                          onChange={setGradient3End}
+                          showInput={false}
+                          compact
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    onClick={() =>
+                      onApplyGradient3(
+                        gradient3Start,
+                        gradient3Mid,
+                        gradient3End
+                      )
+                    }
+                  >
+                    {t("applyGradient")}
+                  </Button>
                 </div>
-              </div>
-            </div>
-            <Button
-              size="sm"
-              variant="secondary"
-              onClick={() => onApplyGradient(gradientStart, gradientEnd)}
-            >
-              {t("applyGradient")}
-            </Button>
-          </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       )}
     </div>

@@ -41,6 +41,24 @@ export function generateGradient(
   );
 }
 
+export function generate3PointGradient(
+  startColour: string,
+  midColour: string,
+  endColour: string,
+  steps: number
+): string[] {
+  if (steps <= 1) return [startColour];
+  if (steps === 2) return [startColour, endColour];
+  return Array.from({ length: steps }, (_, i) => {
+    const t = i / (steps - 1);
+    if (t <= 0.5) {
+      return interpolateColour(startColour, midColour, t * 2);
+    } else {
+      return interpolateColour(midColour, endColour, (t - 0.5) * 2);
+    }
+  });
+}
+
 export function getContrastColour(hex: string): string {
   const [r, g, b] = hexToRgb(hex);
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;

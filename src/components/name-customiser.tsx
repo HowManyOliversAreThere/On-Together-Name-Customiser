@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 import { useI18n } from "@/hooks/use-i18n";
-import { generateGradient } from "@/lib/colour-utils";
+import { generateGradient, generate3PointGradient } from "@/lib/colour-utils";
 import { generateTags } from "@/lib/tag-generator";
 import { LanguageSelector } from "@/components/language-selector";
 import { LetterEditor } from "@/components/letter-editor";
@@ -136,6 +136,26 @@ export function NameCustomiser() {
         return;
       }
       const gradient = generateGradient(start, end, sorted.length);
+      setLetterColours((prev) => {
+        const next = [...prev];
+        sorted.forEach((letterIndex, gradientIndex) => {
+          next[letterIndex] = gradient[gradientIndex];
+        });
+        return next;
+      });
+    },
+    [selectedIndices, handleApplyColour]
+  );
+
+  const handleApplyGradient3 = useCallback(
+    (start: string, mid: string, end: string) => {
+      const sorted = [...selectedIndices].sort((a, b) => a - b);
+      if (sorted.length === 0) return;
+      if (sorted.length === 1) {
+        handleApplyColour(start);
+        return;
+      }
+      const gradient = generate3PointGradient(start, mid, end, sorted.length);
       setLetterColours((prev) => {
         const next = [...prev];
         sorted.forEach((letterIndex, gradientIndex) => {
@@ -306,6 +326,7 @@ export function NameCustomiser() {
             onSelectionChange={setSelectedIndices}
             onApplyColour={handleApplyColour}
             onApplyGradient={handleApplyGradient}
+            onApplyGradient3={handleApplyGradient3}
             onToggleBold={handleToggleBold}
             onToggleItalic={handleToggleItalic}
           />
