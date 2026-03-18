@@ -105,6 +105,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "名稱樣式是如何運作的？",
   faqHowWorksA:
     "On-Together 使用 Unity 建構，文字呈現採用 TextMeshPro。TextMeshPro 支援富文字標籤（類似 HTML），可以嵌入文字中更改顏色、加入粗體/斜體等。此工具可為您自動產生這些標籤。",
+  undoButton: "復原",
+  redoButton: "重做",
 };
 
 export default translations;

@@ -114,6 +114,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "이 이름 스타일링은 어떻게 작동하나요?",
   faqHowWorksA:
     "On-Together는 Unity로 제작되었으며 텍스트 렌더링에 TextMeshPro를 사용합니다. TextMeshPro는 텍스트에 삽입하여 색상 변경, 굵게/기울임 추가 등이 가능한 리치 텍스트 태그(HTML과 유사)를 지원합니다. 이 도구는 이러한 태그를 자동으로 생성합니다.",
+  undoButton: "실행 취소",
+  redoButton: "다시 실행",
 };
 
 export default translations;

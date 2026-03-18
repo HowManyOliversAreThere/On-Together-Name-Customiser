@@ -121,6 +121,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "Comment fonctionne ce style de nom ?",
   faqHowWorksA:
     "On-Together est développé avec Unity et utilise TextMeshPro pour le rendu du texte. TextMeshPro prend en charge les balises Rich Text (similaires au HTML) qui peuvent être intégrées au texte pour changer les couleurs, ajouter du gras/italique, etc. Cet outil génère ces balises pour vous.",
+  undoButton: "Annuler",
+  redoButton: "Rétablir",
 };
 
 export default translations;

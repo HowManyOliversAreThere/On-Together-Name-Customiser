@@ -119,6 +119,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "Come funziona questa stilizzazione del nome?",
   faqHowWorksA:
     "On-Together è sviluppato con Unity e utilizza TextMeshPro per il rendering del testo. TextMeshPro supporta i Rich Text Tag (simili all'HTML) che possono essere incorporati nel testo per cambiare colori, aggiungere grassetto/corsivo e altro. Questo strumento genera quei tag per te.",
+  undoButton: "Annulla",
+  redoButton: "Ripeti",
 };
 
 export default translations;

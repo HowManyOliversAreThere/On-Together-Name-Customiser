@@ -119,6 +119,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "Bu isim stillendirmesi nasıl çalışıyor?",
   faqHowWorksA:
     "On-Together, Unity ile geliştirilmiştir ve metin oluşturma için TextMeshPro kullanır. TextMeshPro, metne gömülebilen Rich Text Etiketlerini (HTML'ye benzer) destekler; renk değiştirme, kalın/italik ekleme ve daha fazlasını sağlar. Bu araç bu etiketleri sizin için oluşturur.",
+  undoButton: "Geri Al",
+  redoButton: "Yinele",
 };
 
 export default translations;

@@ -1,5 +1,6 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { useI18n } from "@/hooks/use-i18n";
+import { useUndoRedo } from "@/hooks/use-undo-redo";
 import { generateGradient, generate3PointGradient } from "@/lib/colour-utils";
 import { generateTags } from "@/lib/tag-generator";
 import { LanguageSelector } from "@/components/language-selector";
@@ -40,26 +41,64 @@ import {
   Copy01Icon,
   GithubIcon,
   KoFiIcon,
+  RedoIcon,
   Tick02Icon,
+  UndoIcon,
 } from "@hugeicons/core-free-icons";
 
 const DEFAULT_COLOUR = "#ffffff";
 
+interface StylingState {
+  name: string;
+  letterColours: string[];
+  letterBold: boolean[];
+  letterItalic: boolean[];
+  colonColour: string;
+  messageColour: string;
+  includeExtras: boolean;
+  chatBold: boolean;
+  chatItalic: boolean;
+}
+
+const INITIAL_STYLING: StylingState = {
+  name: "",
+  letterColours: [],
+  letterBold: [],
+  letterItalic: [],
+  colonColour: "#ffffff",
+  messageColour: "#ffffff",
+  includeExtras: true,
+  chatBold: false,
+  chatItalic: false,
+};
+
 export function NameCustomiser() {
   const { t } = useI18n();
 
-  const [name, setName] = useState("");
-  const [letterColours, setLetterColours] = useState<string[]>([]);
+  const {
+    state: styling,
+    push,
+    undo,
+    redo,
+    canUndo,
+    canRedo,
+  } = useUndoRedo(INITIAL_STYLING);
+
+  const {
+    name,
+    letterColours,
+    letterBold,
+    letterItalic,
+    colonColour,
+    messageColour,
+    includeExtras,
+    chatBold,
+    chatItalic,
+  } = styling;
+
   const [selectedIndices, setSelectedIndices] = useState<Set<number>>(
     new Set()
   );
-  const [colonColour, setColonColour] = useState("#ffffff");
-  const [messageColour, setMessageColour] = useState("#ffffff");
-  const [includeExtras, setIncludeExtras] = useState(true);
-  const [letterBold, setLetterBold] = useState<boolean[]>([]);
-  const [letterItalic, setLetterItalic] = useState<boolean[]>([]);
-  const [chatBold, setChatBold] = useState(false);
-  const [chatItalic, setChatItalic] = useState(false);
   const [copied, setCopied] = useState(false);
   const [overrideDialogOpen, setOverrideDialogOpen] = useState(false);
   const [pendingNameData, setPendingNameData] = useState<{
@@ -94,28 +133,25 @@ export function NameCustomiser() {
   const handleNameChange = useCallback(
     (newName: string, cursorPos: number | null) => {
       const oldLength = name.length;
-      setName(newName);
-      setLetterColours((prev) => {
-        const next = [...prev];
-        while (next.length < newName.length) {
-          next.push(DEFAULT_COLOUR);
-        }
-        return next.slice(0, newName.length);
+
+      const newColours = [...letterColours];
+      while (newColours.length < newName.length)
+        newColours.push(DEFAULT_COLOUR);
+
+      const newBold = [...letterBold];
+      while (newBold.length < newName.length) newBold.push(false);
+
+      const newItalic = [...letterItalic];
+      while (newItalic.length < newName.length) newItalic.push(false);
+
+      push({
+        ...styling,
+        name: newName,
+        letterColours: newColours.slice(0, newName.length),
+        letterBold: newBold.slice(0, newName.length),
+        letterItalic: newItalic.slice(0, newName.length),
       });
-      setLetterBold((prev) => {
-        const next = [...prev];
-        while (next.length < newName.length) {
-          next.push(false);
-        }
-        return next.slice(0, newName.length);
-      });
-      setLetterItalic((prev) => {
-        const next = [...prev];
-        while (next.length < newName.length) {
-          next.push(false);
-        }
-        return next.slice(0, newName.length);
-      });
+
       const diff = newName.length - oldLength;
       if (diff > 0 && cursorPos !== null) {
         const insertPos = cursorPos - diff;
@@ -140,20 +176,18 @@ export function NameCustomiser() {
         });
       }
     },
-    [name.length]
+    [name.length, letterColours, letterBold, letterItalic, styling, push]
   );
 
   const handleApplyColour = useCallback(
     (colour: string) => {
-      setLetterColours((prev) => {
-        const next = [...prev];
-        for (const i of selectedIndices) {
-          next[i] = colour;
-        }
-        return next;
-      });
+      const next = [...letterColours];
+      for (const i of selectedIndices) {
+        next[i] = colour;
+      }
+      push({ ...styling, letterColours: next });
     },
-    [selectedIndices]
+    [selectedIndices, letterColours, styling, push]
   );
 
   const handleApplyGradient = useCallback(
@@ -165,15 +199,13 @@ export function NameCustomiser() {
         return;
       }
       const gradient = generateGradient(start, end, sorted.length);
-      setLetterColours((prev) => {
-        const next = [...prev];
-        sorted.forEach((letterIndex, gradientIndex) => {
-          next[letterIndex] = gradient[gradientIndex];
-        });
-        return next;
+      const next = [...letterColours];
+      sorted.forEach((letterIndex, gradientIndex) => {
+        next[letterIndex] = gradient[gradientIndex];
       });
+      push({ ...styling, letterColours: next });
     },
-    [selectedIndices, handleApplyColour]
+    [selectedIndices, handleApplyColour, letterColours, styling, push]
   );
 
   const handleApplyGradient3 = useCallback(
@@ -185,38 +217,32 @@ export function NameCustomiser() {
         return;
       }
       const gradient = generate3PointGradient(start, mid, end, sorted.length);
-      setLetterColours((prev) => {
-        const next = [...prev];
-        sorted.forEach((letterIndex, gradientIndex) => {
-          next[letterIndex] = gradient[gradientIndex];
-        });
-        return next;
+      const next = [...letterColours];
+      sorted.forEach((letterIndex, gradientIndex) => {
+        next[letterIndex] = gradient[gradientIndex];
       });
+      push({ ...styling, letterColours: next });
     },
-    [selectedIndices, handleApplyColour]
+    [selectedIndices, handleApplyColour, letterColours, styling, push]
   );
 
   const handleToggleBold = useCallback(() => {
     const allBold = [...selectedIndices].every((i) => letterBold[i]);
-    setLetterBold((prev) => {
-      const next = [...prev];
-      for (const i of selectedIndices) {
-        next[i] = !allBold;
-      }
-      return next;
-    });
-  }, [selectedIndices, letterBold]);
+    const next = [...letterBold];
+    for (const i of selectedIndices) {
+      next[i] = !allBold;
+    }
+    push({ ...styling, letterBold: next });
+  }, [selectedIndices, letterBold, styling, push]);
 
   const handleToggleItalic = useCallback(() => {
     const allItalic = [...selectedIndices].every((i) => letterItalic[i]);
-    setLetterItalic((prev) => {
-      const next = [...prev];
-      for (const i of selectedIndices) {
-        next[i] = !allItalic;
-      }
-      return next;
-    });
-  }, [selectedIndices, letterItalic]);
+    const next = [...letterItalic];
+    for (const i of selectedIndices) {
+      next[i] = !allItalic;
+    }
+    push({ ...styling, letterItalic: next });
+  }, [selectedIndices, letterItalic, styling, push]);
 
   const applyParsedName = useCallback(
     (data: {
@@ -229,20 +255,27 @@ export function NameCustomiser() {
       colonColour: string | null;
       messageColour: string | null;
     }) => {
-      setName(data.name);
-      setLetterColours(data.letterColours);
-      setLetterBold(data.letterBold);
-      setLetterItalic(data.letterItalic);
+      push({
+        ...styling,
+        name: data.name,
+        letterColours: data.letterColours,
+        letterBold: data.letterBold,
+        letterItalic: data.letterItalic,
+        chatBold: data.chatBold,
+        chatItalic: data.chatItalic,
+        ...(data.colonColour || data.messageColour
+          ? {
+              includeExtras: true,
+              ...(data.colonColour ? { colonColour: data.colonColour } : {}),
+              ...(data.messageColour
+                ? { messageColour: data.messageColour }
+                : {}),
+            }
+          : {}),
+      });
       setSelectedIndices(new Set());
-      setChatBold(data.chatBold);
-      setChatItalic(data.chatItalic);
-      if (data.colonColour || data.messageColour) {
-        setIncludeExtras(true);
-        if (data.colonColour) setColonColour(data.colonColour);
-        if (data.messageColour) setMessageColour(data.messageColour);
-      }
     },
-    []
+    [styling, push]
   );
 
   const handleNameLoaded = useCallback(
@@ -288,6 +321,36 @@ export function NameCustomiser() {
     chatBold,
     chatItalic,
   ]);
+
+  // Trim selection when name length changes (e.g. after undo)
+  const trimmedSelectedIndices = useMemo(() => {
+    const filtered = new Set(
+      [...selectedIndices].filter((i) => i < name.length)
+    );
+    return filtered.size === selectedIndices.size ? selectedIndices : filtered;
+  }, [selectedIndices, name.length]);
+
+  // Keyboard shortcuts for undo/redo
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+
+      const isMod = e.metaKey || e.ctrlKey;
+      if (isMod && e.key === "z" && !e.shiftKey) {
+        e.preventDefault();
+        undo();
+      } else if (
+        (isMod && e.key === "z" && e.shiftKey) ||
+        (isMod && e.key === "y")
+      ) {
+        e.preventDefault();
+        redo();
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [undo, redo]);
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 p-4 pb-16">
@@ -345,6 +408,28 @@ export function NameCustomiser() {
       <Card>
         <CardHeader>
           <CardTitle>{t("letterStylingTitle")}</CardTitle>
+          <CardAction>
+            <div className="flex gap-1">
+              <Button
+                size="icon-sm"
+                variant="ghost"
+                onClick={undo}
+                disabled={!canUndo}
+                title={t("undoButton")}
+              >
+                <HugeiconsIcon icon={UndoIcon} className="size-4" />
+              </Button>
+              <Button
+                size="icon-sm"
+                variant="ghost"
+                onClick={redo}
+                disabled={!canRedo}
+                title={t("redoButton")}
+              >
+                <HugeiconsIcon icon={RedoIcon} className="size-4" />
+              </Button>
+            </div>
+          </CardAction>
           {name && <CardDescription>{t("letterStylingHint")}</CardDescription>}
         </CardHeader>
         <CardContent>
@@ -353,7 +438,7 @@ export function NameCustomiser() {
             letterColours={letterColours}
             letterBold={letterBold}
             letterItalic={letterItalic}
-            selectedIndices={selectedIndices}
+            selectedIndices={trimmedSelectedIndices}
             onSelectionChange={setSelectedIndices}
             onApplyColour={handleApplyColour}
             onApplyGradient={handleApplyGradient}
@@ -368,6 +453,28 @@ export function NameCustomiser() {
       <Card>
         <CardHeader>
           <CardTitle>{t("chatStylingTitle")}</CardTitle>
+          <CardAction>
+            <div className="flex gap-1">
+              <Button
+                size="icon-sm"
+                variant="ghost"
+                onClick={undo}
+                disabled={!canUndo}
+                title={t("undoButton")}
+              >
+                <HugeiconsIcon icon={UndoIcon} className="size-4" />
+              </Button>
+              <Button
+                size="icon-sm"
+                variant="ghost"
+                onClick={redo}
+                disabled={!canRedo}
+                title={t("redoButton")}
+              >
+                <HugeiconsIcon icon={RedoIcon} className="size-4" />
+              </Button>
+            </div>
+          </CardAction>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -376,7 +483,9 @@ export function NameCustomiser() {
                 <input
                   type="checkbox"
                   checked={includeExtras}
-                  onChange={(e) => setIncludeExtras(e.target.checked)}
+                  onChange={(e) =>
+                    push({ ...styling, includeExtras: e.target.checked })
+                  }
                   className="size-4 rounded border-border accent-primary"
                 />
                 <span className="text-sm font-medium">
@@ -387,7 +496,9 @@ export function NameCustomiser() {
                 <input
                   type="checkbox"
                   checked={chatBold}
-                  onChange={(e) => setChatBold(e.target.checked)}
+                  onChange={(e) =>
+                    push({ ...styling, chatBold: e.target.checked })
+                  }
                   className="size-4 rounded border-border accent-primary"
                 />
                 <span className="text-sm font-medium">
@@ -398,7 +509,9 @@ export function NameCustomiser() {
                 <input
                   type="checkbox"
                   checked={chatItalic}
-                  onChange={(e) => setChatItalic(e.target.checked)}
+                  onChange={(e) =>
+                    push({ ...styling, chatItalic: e.target.checked })
+                  }
                   className="size-4 rounded border-border accent-primary"
                 />
                 <span className="text-sm font-medium">
@@ -412,7 +525,10 @@ export function NameCustomiser() {
                 {/* Colon colour */}
                 <div className="space-y-1.5">
                   <Label>{t("colonColourLabel")}</Label>
-                  <ColourPicker value={colonColour} onChange={setColonColour} />
+                  <ColourPicker
+                    value={colonColour}
+                    onChange={(c) => push({ ...styling, colonColour: c })}
+                  />
                   <p className="text-xs text-muted-foreground">
                     {t("colonColourHint")}
                   </p>
@@ -423,7 +539,7 @@ export function NameCustomiser() {
                   <Label>{t("messageColourLabel")}</Label>
                   <ColourPicker
                     value={messageColour}
-                    onChange={setMessageColour}
+                    onChange={(c) => push({ ...styling, messageColour: c })}
                   />
                   <p className="text-xs text-muted-foreground">
                     {t("messageColourHint")}

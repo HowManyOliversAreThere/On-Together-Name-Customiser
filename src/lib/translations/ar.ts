@@ -113,6 +113,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "كيف يعمل تنسيق الاسم هذا؟",
   faqHowWorksA:
     "On-Together مبني باستخدام Unity ويستخدم TextMeshPro لعرض النص. يدعم TextMeshPro علامات النص الغني (Rich Text Tags) (مشابهة لـ HTML) التي يمكن تضمينها في النص لتغيير الألوان وإضافة الخط العريض/المائل وغيرها. تقوم هذه الأداة بإنشاء تلك العلامات لك.",
+  undoButton: "تراجع",
+  redoButton: "إعادة",
 };
 
 export default translations;

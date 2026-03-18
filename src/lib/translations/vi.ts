@@ -116,6 +116,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "Kiểu dáng tên này hoạt động như thế nào?",
   faqHowWorksA:
     "On-Together được xây dựng bằng Unity và sử dụng TextMeshPro để hiển thị văn bản. TextMeshPro hỗ trợ Rich Text Tag (tương tự HTML) có thể nhúng vào văn bản để thay đổi màu sắc, thêm đậm/nghiêng và nhiều hơn. Công cụ này tạo các thẻ đó cho bạn.",
+  undoButton: "Hoàn tác",
+  redoButton: "Làm lại",
 };
 
 export default translations;

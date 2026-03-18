@@ -111,6 +111,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "การตกแต่งชื่อนี้ทำงานอย่างไร?",
   faqHowWorksA:
     "On-Together สร้างด้วย Unity และใช้ TextMeshPro สำหรับการแสดงข้อความ TextMeshPro รองรับ Rich Text Tag (คล้าย HTML) ที่สามารถฝังในข้อความเพื่อเปลี่ยนสี เพิ่มตัวหนา/ตัวเอียง และอื่นๆ เครื่องมือนี้สร้างแท็กเหล่านั้นให้คุณ",
+  undoButton: "เลิกทำ",
+  redoButton: "ทำซ้ำ",
 };
 
 export default translations;

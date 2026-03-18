@@ -118,6 +118,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "Як працює це стильоване імені?",
   faqHowWorksA:
     "On-Together розроблено на Unity і використовує TextMeshPro для рендерингу тексту. TextMeshPro підтримує Rich Text теги (подібні до HTML), які можна вбудовувати в текст для зміни кольорів, додавання жирного/курсиву тощо. Цей інструмент генерує ці теги для вас.",
+  undoButton: "Скасувати",
+  redoButton: "Повторити",
 };
 
 export default translations;

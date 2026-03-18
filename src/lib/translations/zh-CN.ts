@@ -105,6 +105,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "名称样式是如何工作的？",
   faqHowWorksA:
     "On-Together 使用 Unity 构建，文本渲染采用 TextMeshPro。TextMeshPro 支持富文本标签（类似 HTML），可以嵌入文本中更改颜色、添加粗体/斜体等。此工具可为您自动生成这些标签。",
+  undoButton: "撤销",
+  redoButton: "重做",
 };
 
 export default translations;

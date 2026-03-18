@@ -118,6 +118,8 @@ const translations: Record<string, string> = {
   faqHowWorksQ: "Bagaimana cara kerja penataan gaya nama ini?",
   faqHowWorksA:
     "On-Together dibangun dengan Unity dan menggunakan TextMeshPro untuk rendering teks. TextMeshPro mendukung Rich Text Tag (mirip HTML) yang dapat disisipkan dalam teks untuk mengubah warna, menambah tebal/miring, dan lainnya. Alat ini menghasilkan tag tersebut untuk Anda.",
+  undoButton: "Urungkan",
+  redoButton: "Ulangi",
 };
 
 export default translations;
