@@ -2,6 +2,7 @@ import { useState, useCallback, useRef } from "react";
 import { useI18n } from "@/hooks/use-i18n";
 import { getContrastColour } from "@/lib/colour-utils";
 import { Button } from "@/components/ui/button";
+import { ColourPicker } from "@/components/ui/colour-picker";
 import { cn } from "@/lib/utils";
 
 interface LetterEditorProps {
@@ -191,32 +192,7 @@ export function LetterEditor({
           <div className="flex flex-wrap items-end gap-3">
             <div className="space-y-1.5">
               <label className="text-sm font-medium">{t("colourLabel")}</label>
-              <div className="flex items-center gap-2">
-                <div className="relative">
-                  <input
-                    type="color"
-                    value={pickerColour}
-                    onChange={(e) => setPickerColour(e.target.value)}
-                    className="absolute inset-0 h-9 w-12 cursor-pointer opacity-0"
-                  />
-                  <div
-                    className="h-9 w-12 rounded-lg border border-border cursor-pointer"
-                    style={{ backgroundColor: pickerColour }}
-                  />
-                </div>
-                <input
-                  type="text"
-                  value={pickerColour.toUpperCase()}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    if (/^#[0-9a-fA-F]{0,6}$/.test(val)) {
-                      setPickerColour(val);
-                    }
-                  }}
-                  className="h-9 w-24 rounded-lg border border-border bg-input/30 px-2 text-sm font-mono"
-                  maxLength={7}
-                />
-              </div>
+              <ColourPicker value={pickerColour} onChange={setPickerColour} />
             </div>
             <Button size="sm" onClick={() => onApplyColour(pickerColour)}>
               {t("applyColour")}
@@ -234,40 +210,24 @@ export function LetterEditor({
                   <span className="text-xs text-muted-foreground">
                     {t("gradientStart")}
                   </span>
-                  <div className="flex items-center gap-1.5">
-                    <div className="relative">
-                      <input
-                        type="color"
-                        value={gradientStart}
-                        onChange={(e) => setGradientStart(e.target.value)}
-                        className="absolute inset-0 h-9 w-10 cursor-pointer opacity-0"
-                      />
-                      <div
-                        className="h-9 w-10 rounded-lg border border-border cursor-pointer"
-                        style={{ backgroundColor: gradientStart }}
-                      />
-                    </div>
-                  </div>
+                  <ColourPicker
+                    value={gradientStart}
+                    onChange={setGradientStart}
+                    showInput={false}
+                    compact
+                  />
                 </div>
                 <span className="text-muted-foreground mt-4">→</span>
                 <div className="space-y-1">
                   <span className="text-xs text-muted-foreground">
                     {t("gradientEnd")}
                   </span>
-                  <div className="flex items-center gap-1.5">
-                    <div className="relative">
-                      <input
-                        type="color"
-                        value={gradientEnd}
-                        onChange={(e) => setGradientEnd(e.target.value)}
-                        className="absolute inset-0 h-9 w-10 cursor-pointer opacity-0"
-                      />
-                      <div
-                        className="h-9 w-10 rounded-lg border border-border cursor-pointer"
-                        style={{ backgroundColor: gradientEnd }}
-                      />
-                    </div>
-                  </div>
+                  <ColourPicker
+                    value={gradientEnd}
+                    onChange={setGradientEnd}
+                    showInput={false}
+                    compact
+                  />
                 </div>
               </div>
             </div>

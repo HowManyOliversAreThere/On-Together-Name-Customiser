@@ -9,6 +9,7 @@ import { CodeOutput } from "@/components/code-output";
 import { Instructions } from "@/components/instructions";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ColourPicker } from "@/components/ui/colour-picker";
 import {
   Card,
   CardAction,
@@ -359,32 +360,7 @@ export function NameCustomiser() {
                 {/* Colon colour */}
                 <div className="space-y-1.5">
                   <Label>{t("colonColourLabel")}</Label>
-                  <div className="flex items-center gap-2">
-                    <div className="relative">
-                      <input
-                        type="color"
-                        value={colonColour}
-                        onChange={(e) => setColonColour(e.target.value)}
-                        className="absolute inset-0 h-9 w-12 cursor-pointer opacity-0"
-                      />
-                      <div
-                        className="h-9 w-12 rounded-lg border border-border cursor-pointer"
-                        style={{ backgroundColor: colonColour }}
-                      />
-                    </div>
-                    <input
-                      type="text"
-                      value={colonColour.toUpperCase()}
-                      onChange={(e) => {
-                        const val = e.target.value;
-                        if (/^#[0-9a-fA-F]{0,6}$/.test(val)) {
-                          setColonColour(val);
-                        }
-                      }}
-                      className="h-9 w-24 rounded-lg border border-border bg-input/30 px-2 text-sm font-mono"
-                      maxLength={7}
-                    />
-                  </div>
+                  <ColourPicker value={colonColour} onChange={setColonColour} />
                   <p className="text-xs text-muted-foreground">
                     {t("colonColourHint")}
                   </p>
@@ -393,32 +369,10 @@ export function NameCustomiser() {
                 {/* Message colour */}
                 <div className="space-y-1.5">
                   <Label>{t("messageColourLabel")}</Label>
-                  <div className="flex items-center gap-2">
-                    <div className="relative">
-                      <input
-                        type="color"
-                        value={messageColour}
-                        onChange={(e) => setMessageColour(e.target.value)}
-                        className="absolute inset-0 h-9 w-12 cursor-pointer opacity-0"
-                      />
-                      <div
-                        className="h-9 w-12 rounded-lg border border-border cursor-pointer"
-                        style={{ backgroundColor: messageColour }}
-                      />
-                    </div>
-                    <input
-                      type="text"
-                      value={messageColour.toUpperCase()}
-                      onChange={(e) => {
-                        const val = e.target.value;
-                        if (/^#[0-9a-fA-F]{0,6}$/.test(val)) {
-                          setMessageColour(val);
-                        }
-                      }}
-                      className="h-9 w-24 rounded-lg border border-border bg-input/30 px-2 text-sm font-mono"
-                      maxLength={7}
-                    />
-                  </div>
+                  <ColourPicker
+                    value={messageColour}
+                    onChange={setMessageColour}
+                  />
                   <p className="text-xs text-muted-foreground">
                     {t("messageColourHint")}
                   </p>
